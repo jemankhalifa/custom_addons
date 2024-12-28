@@ -1,0 +1,93 @@
+
+/* Background image for login page */
+.oe_website_login_container {
+	background-image: url('http://localhost:8069/login_customization/static/src/img/cafe_bg2.jpeg');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;  /* Full viewport height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+/* Edit login form design*/
+.oe_login_form {
+    background-color: rgba(0, 0, 0, 0.5);  /*Dark background*/
+    padding: 30px;
+    border-radius: 10px;  
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);  
+}
+/*change Labels color*/
+label {
+    color: white !important; 
+}
+/* change the color of "Links" in Login form */
+.btn{
+    color:white;
+}
+/*Links hover effects*/
+.btn-sm:hover {
+    color: rgba(245, 158, 28, 0.685);
+    
+}
+/* change the color of "Select" button*/
+a.btn.btn-secondary{
+    background-color: rgba(170, 62, 0, 0.685);
+}
+a.btn.btn-secondary[disabled] {
+    background-color: #A9A9A9 !important; /*change the color when click on*/
+    color: white !important;
+}
+/* Primary button design*/
+.btn-primary {
+    background-color: rgba(170, 62, 0, 0.685);
+    color: white;
+    border: none;
+    border-radius: 5px; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);  /*shadow*/
+    transition: all 0.3s ease-in-out;
+}
+/*Button hover effects*/
+.btn-primary:hover {
+    background-color: rgba(245, 158, 28, 0.685);
+    color: #000000;
+    border: none;
+    transform: scale(1.1);  /*Enlarge button*/
+}
+/*The effects on click*/
+.btn-primary:active,
+.btn-primary:focus {
+    background-color: rgba(170, 62, 0, 0.685)!important; 
+    color: #ffffff !important; 
+    box-shadow: none !important; /* remove shadow*/
+}
+/* The effects on action*/
+.btn-primary[disabled] {
+    background-color: #A9A9A9 !important; 
+    color: white !important;
+}
+/* The effects when pressed for a while during execution*/
+.btn-primary:focus:active {
+    background-color: rgba(245, 158, 28, 0.685) !important; 
+    color: rgb(0, 0, 0) !important;
+}
+/* Edit rest password form design*/
+.oe_reset_password_form {
+    background-color: rgba(0, 0, 0, 0.5);  /*Dark background*/
+    padding: 30px;
+    border-radius: 10px;  
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);  
+}
+/* change the color of "Links" in Rest passowrd form */
+a{
+    color:white;
+}
+/* change the color of "Links" in Choose the user form*/
+p{
+    color:white;
+}
+
+
+/* You can delete this,I hid it to see the effects on the entire page*/ 
+.oe_structure{  
+    display: none !important
+}
