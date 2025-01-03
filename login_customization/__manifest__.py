@@ -1,10 +1,10 @@
 {
-    'name': 'Login Page Customization',
+    'name': 'Net4x Login Theme',
     'version': '1.0',
-    'author': 'Your Name',
+    'author': 'Tamadur',
     'category': 'Website',
     'summary': 'Customizes the login page design and theme.',
-    'depends': ['web'],
+    'depends': ['web','website'],
     'data': [
         'views/login_template.xml',
         'views/assets.xml',
