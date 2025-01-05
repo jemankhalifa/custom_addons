@@ -12,7 +12,7 @@
     'assets': {
         'web.assets_frontend': [
             'login_customization/static/src/css/login_styles.css',
-            'http://localhost:8069/login_customization/static/src/img/cafe_bg2.jpeg',
+            'login_customization/static/src/img/cafe_bg2.jpeg',
         ],
     },
     'installable': True,
