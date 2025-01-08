@@ -4,7 +4,7 @@
     'author': 'Your Name',
     'category': 'Website',
     'summary': 'Customizes the login page design and theme.',
-    'depends': ['web'],
+    'depends': ['web','website'],
     'data': [
         'views/login_template.xml',
         'views/assets.xml',
