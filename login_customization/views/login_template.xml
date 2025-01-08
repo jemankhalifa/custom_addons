@@ -1,7 +1,6 @@
 <odoo>
     <data>
         <template id="custom_login_page" inherit_id="web.login_layout">
-            <!-- تعديل عنصر body وإضافة الـ class الخاص بخلفية تسجيل الدخول -->
            <xpath expr="t" position="replace">
                 <t t-call="website.layout">
         	        <t t-asset="login_customization/static/src/css/login_styles.css"/>

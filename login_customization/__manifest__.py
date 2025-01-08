@@ -1,10 +1,10 @@
 {
     'name': 'Net4x Login Theme',
     'version': '1.0',
-    'author': 'Tamadur',
+    'author': 'Your Name',
     'category': 'Website',
     'summary': 'Customizes the login page design and theme.',
-    'depends': ['web','website'],
+    'depends': ['web'],
     'data': [
         'views/login_template.xml',
         'views/assets.xml',
@@ -12,7 +12,7 @@
     'assets': {
         'web.assets_frontend': [
             'login_customization/static/src/css/login_styles.css',
-            'login_customization/static/src/img/cafe_bg2.jpeg',
+            '/login_customization/static/src/img/cafe_bg2.jpeg',
         ],
     },
     'installable': True,
