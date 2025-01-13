@@ -1,5 +1,5 @@
 {
-    'name': 'Net4x Login Theme',
+    'name': 'Cafe Login Theme',
     'version': '1.0',
     'author': 'Your Name',
     'category': 'Website',

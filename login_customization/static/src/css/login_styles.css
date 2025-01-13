@@ -85,9 +85,17 @@ a{
 p{
     color:white;
 }
-
-
-/* You can delete this,I hid it to see the effects on the entire page*/ 
+/*Hide the footer*/ 
 .oe_structure{  
     display: none !important
 }
+/*Hide the copyright*/ 
+.o_footer_copyright{  
+    display: none !important
+}
+/*Hide the navbar*/ 
+.navbar{  
+    display: none !important
+}
+
+
