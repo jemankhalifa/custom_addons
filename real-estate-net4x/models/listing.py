@@ -9,12 +9,11 @@ class PropertyListing(models.Model):
     name = fields.Char(string="Property Name", required=True,tracking=True)
     location = fields.Char(string="Location",tracking=True)
     product_id = fields.Many2one('product.product', string="Product", tracking=True)
-    price = fields.Float(string="Price",tracking=True,)
+    price = fields.Float(string="Price",tracking=True)
     contact_id = fields.Many2one('res.partner', string="Assigned Contact",tracking=True)
     owner_id = fields.Many2one('res.partner', string="Owner",tracking=True,)
     enquiry_ids = fields.One2many('property.enquiry', 'property_id', string="Enquiries",tracking=True)
     sale_id = fields.Many2one('sale.order', string="Sale",tracking=True)
-    lease_id = fields.Many2one('real.estate.lease', string="Lease")
     status = fields.Selection([('available', 'Available'), ('sold', 'Sold'), ('leased', 'Leased')], string="Status", default='available',tracking=True)
     sales_count = fields.Integer()
 

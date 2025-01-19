@@ -10,7 +10,7 @@ This module allows real estate agencies, property managers, and landlords to man
 """,
     'author': 'Net4x Innovation',
     'website': 'https://net4x-innovations.com',
-    'depends': ['base','web','crm'],
+    'depends': ['base','web','crm','stock','sale'],
     'data': [
         'security/real_estate_security.xml',
         'security/ir.model.access.csv',
