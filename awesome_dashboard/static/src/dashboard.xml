@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="awesome_dashboard.AwesomeDashboard">
+          <div class="o_dashboard_sheet">
+            <!-- Row for the dashboard -->
+            <div class="o_dashboard_row">
+                <!-- Card 1 -->
+                <div class="o_dashboard_card" t-on-click="action_1">
+                    <div class="o_card_icon">
+                        <i class="fa fa-users"></i>
+                    </div>
+                    <div class="o_card_label">
+                        <t t-esc="'Agents'"/>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="o_dashboard_card" t-on-click="action_2">
+                    <div class="o_card_icon">
+                        <i class="fa fa-file"></i>
+                    </div>
+                    <div class="o_card_label">
+                        <t t-esc="'Enquiries'"/>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="o_dashboard_card" t-on-click="action_3">
+                    <div class="o_card_icon">
+                        <i class="fa fa-tasks"></i>
+                    </div>
+                    <div class="o_card_label">
+                        <t t-esc="'Inventory List'"/>
+                    </div>
+                </div>
+            </div>
+            <div class="o_dashboard_row">
+                <!-- Card 4 -->
+                <div class="o_dashboard_card" t-on-click="action_4">
+                    <div class="o_card_icon">
+                        <i class="fa fa-cogs"></i>
+                    </div>
+                    <div class="o_card_label">
+                        <t t-esc="'Total Commissions'"/>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="o_dashboard_card" t-on-click="action_5">
+                    <div class="o_card_icon">
+                        <i class="fa fa-shopping-cart"></i>
+                    </div>
+                    <div class="o_card_label">
+                        <t t-esc="'Sales'"/>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="o_dashboard_card" t-on-click="action_6">
+                    <div class="o_card_icon">
+                        <i class="fa fa-money"></i>
+                    </div>
+                    <div class="o_card_label">
+                        <t t-esc="'Company Commissions'"/>
+                    </div>
+                </div>
+            </div>
+             <div class="o_dashboard_pie_chart">
+                <canvas id="pieChart"></canvas> <!-- Chart.js canvas -->
+            </div>
+        </div>
+    </t>
+
+</templates>

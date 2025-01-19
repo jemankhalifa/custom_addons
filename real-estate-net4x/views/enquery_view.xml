@@ -1,6 +1,46 @@
 <odoo>
     <data>
-    
+         <record id="enguery_view_kanban" model="ir.ui.view">
+        <field name="name">property.enquiry.kanban</field>
+        <field name="model">property.enquiry</field>
+        <field name="arch" type="xml">
+         <kanban >
+                    
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                            <div t-att-style="
+                                'height: 1cm; width: 100%; background-color: ' +
+                                (record.status.raw_value === 'untouched' ? 'red' :
+                                (record.status.raw_value === 'touched' ? 'green' :
+                                'gray'));">
+                           
+                        </div>
+
+                                <div class="row mb4">
+                                    <div class="col-8">
+                                       
+                                    <field name="name" class="fw-bold"/>
+                                    </div>
+                                    <div class="col-8" t-att-style="record.status.raw_value === 'untouched' ? 'color: red;' : 'color: green;'">
+                                    <field name="status" class="d-block"/>
+                                    </div>
+                                    <div class="col-8">
+                                    <field name="property_id"/>
+                                    </div>
+                                  
+                                   
+                                </div>
+                           
+                              
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+
+        </field>
+    </record>
+
      <record id="view_property_enquiry_list" model="ir.ui.view">
             <field name="name">property.enquiry.form</field>
             <field name="model">property.enquiry</field>

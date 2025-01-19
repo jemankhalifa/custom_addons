@@ -13,7 +13,7 @@
                             <field name="price"/>
                             <field name="contact_id"/>
                     
-                    
+                
                 </list>
             </field>
         </record>
