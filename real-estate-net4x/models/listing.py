@@ -24,7 +24,6 @@ class PropertyListing(models.Model):
             'name': self.name,
             'lst_price': self.price,
             'type': 'consu',
-            'uom_id': 1,
-            'uom_po_id': 1})
+            })
         self.product_id = product_id
         self.status = 'available'
