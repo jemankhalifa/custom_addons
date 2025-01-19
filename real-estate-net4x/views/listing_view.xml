@@ -6,7 +6,7 @@
             <field name="name">property.listing.form</field>
             <field name="model">property.listing</field>
             <field name="arch" type="xml">
-                <list string="Property Listing">
+                <list string="Property Listing" decoration-danger="status == 'sold'" decoration-success="status == 'available'">
                   
                             <field name="name"/>
                             <field name="location"/>

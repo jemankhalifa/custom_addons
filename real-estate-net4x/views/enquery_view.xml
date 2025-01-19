@@ -5,7 +5,7 @@
             <field name="name">property.enquiry.form</field>
             <field name="model">property.enquiry</field>
             <field name="arch" type="xml">
-                <list>
+                <list decoration-danger="status == 'untouched'" decoration-success="status == 'touched'">
                     
                     <field name="name"/>
                     <field name="status"/>

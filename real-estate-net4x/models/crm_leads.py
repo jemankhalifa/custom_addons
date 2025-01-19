@@ -4,7 +4,7 @@ class CRMLead(models.Model):
     _inherit = 'crm.lead'
 
     enquiry_id = fields.Many2one('property.enquiry', string="Related Enquiry")
-    property_id = fields.Many2one('property.listing', string="Related Property")
+    property_id = fields.Many2one('property.listing', string="Property")
     sales_value = fields.Float(string="Sales Value")
     commission_percentage = fields.Float(string="Commission Percentage")
     commission_amount = fields.Float(string="Commission Amount", compute="_compute_commission_amount", store=True)
@@ -14,6 +14,7 @@ class CRMLead(models.Model):
     agent_share = fields.Float(string="Agent Share", compute="_compute_agent_share", store=True)
     documents = fields.Many2many('ir.attachment', string="Attached Documents")
     product_id = fields.Many2one('product.product', string="Product",related="property_id.product_id")
+    agent_id = fields.Many2one('res.partner', string="Agent")
     @api.depends('sales_value', 'commission_percentage','company_share_percentage')
     def _compute_commission_amount(self):
         for record in self:
