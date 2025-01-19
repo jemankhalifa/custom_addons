@@ -1,0 +1,21 @@
+<odoo>
+<data>
+<record id="view_res_partner_form_inherit_property" model="ir.ui.view">
+    <field name="name">res.partner.form.inherit.property</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_partner_form"/>
+    <field name="arch" type="xml">
+        <notebook position="inside">
+            <page string="Properties Enquiries">
+                <group>
+                    <field name="property_ids" widget="many2many_tags"/>
+                       
+                    <field name="enquiry_ids" widget="many2many_tags"/>
+                       
+                </group>
+            </page>
+        </notebook>
+    </field>
+</record>
+</data>
+</odoo>

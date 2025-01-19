@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_real_estate_property_enquiry,access_real_estate_enquery,model_property_enquiry,,1,1,1,1
+access_property_listing,access_property_listing,model_property_listing,,1,1,1,1
+access_crm_dashboard,access_crm_dashboard,model_crm_lead_dashboard,,1,1,1,1
+
+

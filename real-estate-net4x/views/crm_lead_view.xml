@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+
+    <!-- CRM Lead Form View Extension -->
+        <record id="view_crm_lead_form_inherit_property" model="ir.ui.view">
+            <field name="name">crm.lead.form.inherit.property</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@class='d-flex']" position="after">
+                    <group string="Property Details" col="4">
+                        <field name="enquiry_id"/>
+                        <field name="property_id"/>
+                        <field name="sales_value"/>
+                        <field name="commission_percentage"/>
+                        <field name="commission_amount" readonly="1"/>
+                        <field name="company_share_percentage"/>
+                        <field name="company_share" readonly="1"/>
+                        <field name="agent_share_percentage"/>
+                        <field name="agent_share" readonly="1"/>
+                        <field name="documents" widget="many2many_binary"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

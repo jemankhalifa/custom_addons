@@ -1,0 +1,58 @@
+<odoo>
+<data>
+
+   <!-- Property Listing Form View -->
+   <record id="view_property_listing_list" model="ir.ui.view">
+            <field name="name">property.listing.form</field>
+            <field name="model">property.listing</field>
+            <field name="arch" type="xml">
+                <list string="Property Listing">
+                  
+                            <field name="name"/>
+                            <field name="location"/>
+                            <field name="price"/>
+                            <field name="contact_id"/>
+                    
+                    
+                </list>
+            </field>
+        </record>
+
+        <record id="view_property_listing_form" model="ir.ui.view">
+            <field name="name">property.listing.form</field>
+            <field name="model">property.listing</field>
+            <field name="arch" type="xml">
+                <form string="Property Listing">
+                 <header>
+                    <button string="Add to Inventory" type="object" name="action_product_create"  class="oe_highlight" invisible="product_id != False"/>
+                    <field name="status" widget="statusbar" statusbar_visible="available,sold" options="{'clickable': '1'}" />
+                 </header>
+                    <sheet>
+                        <group>
+                            <group col="4">
+                                <field name="name"/>
+                                <field name="location"/>
+                                <field name="price"/>
+                            </group>
+
+                            <group col="4">
+                                <field name="contact_id"/>
+                                <field name="owner_id"/>
+                                <field name="sale_id" readonly="1" invisible="sale_id == False"/>
+                                <field name="product_id" readonly="1" invisible="product_id == False"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Enquiries">
+                                <field name="enquiry_ids" readonly="1"/>
+                            </page>
+                        </notebook>
+
+                    </sheet>
+                        <chatter reload_on_post="True"/>
+                </form>
+            </field>
+        </record>
+
+</data>
+</odoo>

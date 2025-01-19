@@ -11,8 +11,8 @@
     ],
     'assets': {
         'web.assets_frontend': [
-            'login_customization/static/src/css/login_styles.css',
-            '/login_customization/static/src/img/cafe_bg2.jpeg',
+            'real_estate_login_customization/static/src/css/login_styles.css',
+            '/real_estate_login_customization/static/src/img/back.jpg',
         ],
     },
     'installable': True,
