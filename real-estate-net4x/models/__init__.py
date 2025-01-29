@@ -1,5 +1,3 @@
 from . import crm_leads
-from . import enquiry
-from . import listing
-from . import partner
-from . import crm_dashboard
+from . import analytic_account_listing
+from . import main_configs
