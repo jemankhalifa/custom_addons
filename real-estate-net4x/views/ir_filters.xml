@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo noupdate="1">
+
+<!--     <record id="filter_default_property_availability" model="ir.filters" forcecreate="0">
+        <field name="name">Availability</field>
+        <field name="model_id">sale.order</field>
+        <field name="user_id" eval="False"/>
+        <field name="is_default" eval="True"/>
+        <field name="action_id" ref="action_availability"/>
+        <field name="domain">[]</field>
+        <field name="context">{'group_by': ['x_related_buildings_ids', 'x_account_analytic_account_id']}</field>
+        <field name="sort">[]</field>
+    </record>
+
+    <record id="sale_order_user_filter" model="ir.filters">
+        <field name="name">Running contracts</field>
+        <field name="model_id">sale.order</field>
+        <field name="is_default" eval="True"/>
+        <field name="action_id" ref="action_rental_contracts"/>
+        <field name="context" eval="{'group_by': ['x_related_buildings_ids']}"/>
+    </record> -->
+
+ <record id="action_real_estate_properties" model="ir.actions.act_window">
+        <field name="name">Properties</field>
+        <field name="res_model">account.analytic.account</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="domain">[('is_real_estate', '=', True)]</field>
+        <field name="view_ids" eval="[
+            (5, 0, 0),
+            (0, 0, {'view_mode': 'kanban', 'view_id': ref('real_estate_kanban_view')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('real_estate_form_view')}),
+        ]"/>
+    </record>
+    <record id="property_stage_filter_view" model="ir.filters">
+        <field name="name">Properties</field>
+        <field name="model_id">account.analytic.account</field>
+        <field name="is_default" eval="True"/>
+        <field name="action_id" ref="action_real_estate_properties"/>
+        <!-- <field name="context" eval="{'group_by': ['x_property_building_id']}"/> -->
+        <field name="context" eval="{'group_by': ['stage_id']}"/>
+    </record>
+
+
+    <!-- <record id="crm.crm_lead_action_pipeline" model="ir.actions.act_window">
+        <field name="context">{'default_type': 'opportunity', 'search_default_assigned_to_me': 0}</field>
+    </record>
+
+    <record id="action_rental_contracts" model="ir.actions.act_window">
+        <field name="name">Rental Contracts</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">kanban,list,form,calendar</field>
+        <field name="domain">[('x_account_analytic_account_id', '!=', False)]</field>
+        <field name="view_ids" eval="[
+            (5, 0, 0),
+            (0, 0, {'view_mode': 'kanban', 'view_id': ref('sale.view_sale_order_kanban')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('rental_form_view')}),
+        ]"/>
+    </record>
+
+    <record id="action_availability" model="ir.actions.act_window">
+        <field name="name">Availability</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">gantt,list,form</field>
+        <field name="domain">[('x_account_analytic_account_id', '!=', False)]</field>
+        <field name="view_ids" eval="[
+            (5, 0, 0),
+            (0, 0, {'view_mode': 'gantt', 'view_id': ref('rental_gantt_view')}),
+        ]"/>
+    </record>
+ -->
+   
+
+    <!-- <record id="action_configuration_meters" model="ir.actions.act_window">
+        <field name="name">Meters</field>
+        <field name="res_model">x_meters</field>
+        <field name="view_mode">list</field>
+        <field name="view_ids" eval="[
+            (5, 0, 0),
+            (0, 0, {'view_mode': 'list', 'view_id': ref('meters_list_view')}),
+        ]"/>
+    </record>
+
+    <record id="action_products" model="ir.actions.act_window">
+        <field name="name">Products</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">kanban,list,form</field>
+    </record>
+
+    <record id="action_buildings" model="ir.actions.act_window">
+        <field name="name">Buildings</field>
+        <field name="res_model">x_buildings</field>
+        <field name="view_mode">kanban,form</field>
+    </record> -->
+
+</odoo>

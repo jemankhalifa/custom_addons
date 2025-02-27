@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <record id="reale_state_stage_draft" model="property.stage" forcecreate="True">
+        <field name="name">Draft</field>
+        <field name="sequence">1</field>
+    </record>
+    <record id="reale_state_stage_confirmed" model="property.stage" forcecreate="True">
+        <field name="name">Confirmed</field>
+        <field name="sequence">2</field>
+    </record>
+   <!--<record id="reale_state_stage_avilable_for_rent" model="property.stage" forcecreate="True">
+        <field name="name">Avilable For Rent</field>
+        <field name="sequence">3</field>
+    </record>-->
+    <record id="reale_state_stage_avilable_for_sale" model="property.stage" forcecreate="True">
+        <field name="name">Avilable For Sale</field>
+        <field name="sequence">4</field>
+    </record>
+    <record id="reale_state_stage_booked_for_rent" model="property.stage" forcecreate="True">
+        <field name="name">Booked For Rent</field>
+        <field name="sequence">5</field>
+    </record>
+    <record id="reale_state_stage_booked_for_sale" model="property.stage" forcecreate="True">
+        <field name="name">Booked For Sale</field>
+        <field name="sequence">6</field>
+    </record>
+    </odoo>

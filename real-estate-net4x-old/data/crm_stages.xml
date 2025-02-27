@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo noupdate="1">
+    <record id="crm.reale_state_stage_lead1" model="crm.stage" forcecreate="True">
+        <field name="name">Approved Property</field>
+        <field name="sequence">2</field>
+    </record>
+    <!-- <record id="crm.reale_state_stage_lead2" model="crm.stage" forcecreate="True">
+        <field name="name">Contract</field>
+        <field name="sequence">3</field>
+    </record> -->
+</odoo>

@@ -1,0 +1,199 @@
+<odoo>
+    <data>
+        <!-- views -->
+         <record id="property_types_list_view" model="ir.ui.view">
+            <field name="name">property.types.tree.view</field>
+            <field name="model">property.types</field>
+            <field name="active" eval="True"/>
+            <field name="type">list</field>
+            <field name="arch" type="xml">
+                <list editable="bottom">
+                    <!-- <field name="sequence" widget="handle"/> -->
+                    <field name="name"/>
+                </list>
+            </field>
+        </record>
+         <record id="property_balcones_list_view" model="ir.ui.view">
+            <field name="name">property.balcones.tree.view</field>
+            <field name="model">property.balcones</field>
+            <field name="active" eval="True"/>
+            <field name="type">list</field>
+            <field name="arch" type="xml">
+                <list editable="bottom">
+                    <!-- <field name="sequence" widget="handle"/> -->
+                    <field name="name"/>
+                </list>
+            </field>
+        </record>
+         <record id="property_beds_list_view" model="ir.ui.view">
+            <field name="name">property.beds.tree.view</field>
+            <field name="model">property.beds</field>
+            <field name="active" eval="True"/>
+            <field name="type">list</field>
+            <field name="arch" type="xml">
+                <list editable="bottom">
+                    <!-- <field name="sequence" widget="handle"/> -->
+                    <field name="name"/>
+                </list>
+            </field>
+        </record>
+         <record id="property_baths_list_view" model="ir.ui.view">
+            <field name="name">property.baths.tree.view</field>
+            <field name="model">property.baths</field>
+            <field name="active" eval="True"/>
+            <field name="type">list</field>
+            <field name="arch" type="xml">
+                <list editable="bottom">
+                    <!-- <field name="sequence" widget="handle"/> -->
+                    <field name="name"/>
+                </list>
+            </field>
+        </record>
+         <record id="property_furniture_type_list_view" model="ir.ui.view">
+            <field name="name">property.furniture.type.tree.view</field>
+            <field name="model">property.furniture.type</field>
+            <field name="active" eval="True"/>
+            <field name="type">list</field>
+            <field name="arch" type="xml">
+                <list editable="bottom">
+                    <!-- <field name="sequence" widget="handle"/> -->
+                    <field name="name"/>
+                </list>
+            </field>
+        </record>
+         <record id="property_usage_list_view" model="ir.ui.view">
+            <field name="name">property.usage.tree.view</field>
+            <field name="model">property.usage</field>
+            <field name="active" eval="True"/>
+            <field name="type">list</field>
+            <field name="arch" type="xml">
+                <list editable="bottom">
+                    <!-- <field name="sequence" widget="handle"/> -->
+                    <field name="name"/>
+                </list>
+            </field>
+        </record>
+         <record id="property_parking_spaces_list_view" model="ir.ui.view">
+            <field name="name">property.parking.spaces.tree.view</field>
+            <field name="model">property.parking.spaces</field>
+            <field name="active" eval="True"/>
+            <field name="type">list</field>
+            <field name="arch" type="xml">
+                <list editable="bottom">
+                    <!-- <field name="sequence" widget="handle"/> -->
+                    <field name="name"/>
+                </list>
+            </field>
+        </record>
+         <record id="maintenance_services_types_list_view" model="ir.ui.view">
+            <field name="name">maintenance.services.types.tree.view</field>
+            <field name="model">maintenance.services.types</field>
+            <field name="active" eval="True"/>
+            <field name="type">list</field>
+            <field name="arch" type="xml">
+                <list editable="bottom">
+                    <!-- <field name="sequence" widget="handle"/> -->
+                    <field name="name"/>
+                </list>
+            </field>
+        </record>
+         <record id="property_floor_list_view" model="ir.ui.view">
+            <field name="name">property.floor.tree.view</field>
+            <field name="model">property.floor</field>
+            <field name="active" eval="True"/>
+            <field name="type">list</field>
+            <field name="arch" type="xml">
+                <list editable="bottom">
+                    <!-- <field name="sequence" widget="handle"/> -->
+                    <field name="name"/>
+                </list>
+            </field>
+        </record>
+
+
+        <!-- actions -->
+        <record id="action_configuration_property_types" model="ir.actions.act_window">
+            <field name="name">Property Types</field>
+            <field name="res_model">property.types</field>
+            <field name="view_mode">list</field>
+            <field name="view_ids" eval="[
+                (5, 0, 0),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('property_types_list_view')}),
+            ]"/>
+        </record>
+        <record id="action_configuration_property_floor" model="ir.actions.act_window">
+            <field name="name">Property Floor</field>
+            <field name="res_model">property.floor</field>
+            <field name="view_mode">list</field>
+            <field name="view_ids" eval="[
+                (5, 0, 0),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('property_floor_list_view')}),
+            ]"/>
+        </record>
+        <record id="action_configuration_property_balcones" model="ir.actions.act_window">
+            <field name="name">Property Balcones</field>
+            <field name="res_model">property.balcones</field>
+            <field name="view_mode">list</field>
+            <field name="view_ids" eval="[
+                (5, 0, 0),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('property_balcones_list_view')}),
+            ]"/>
+        </record>
+        <record id="action_configuration_property_beds" model="ir.actions.act_window">
+            <field name="name">Property Beds</field>
+            <field name="res_model">property.beds</field>
+            <field name="view_mode">list</field>
+            <field name="view_ids" eval="[
+                (5, 0, 0),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('property_beds_list_view')}),
+            ]"/>
+        </record>
+        <record id="action_configuration_property_baths" model="ir.actions.act_window">
+            <field name="name">Property Baths</field>
+            <field name="res_model">property.baths</field>
+            <field name="view_mode">list</field>
+            <field name="view_ids" eval="[
+                (5, 0, 0),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('property_baths_list_view')}),
+            ]"/>
+        </record>
+        <record id="action_configuration_property_furniture_type" model="ir.actions.act_window">
+            <field name="name">Property Furniture Type</field>
+            <field name="res_model">property.furniture.type</field>
+            <field name="view_mode">list</field>
+            <field name="view_ids" eval="[
+                (5, 0, 0),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('property_furniture_type_list_view')}),
+            ]"/>
+        </record>
+        <record id="action_configuration_property_usage" model="ir.actions.act_window">
+            <field name="name">Property Usage</field>
+            <field name="res_model">property.usage</field>
+            <field name="view_mode">list</field>
+            <field name="view_ids" eval="[
+                (5, 0, 0),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('property_usage_list_view')}),
+            ]"/>
+        </record>
+        <record id="action_configuration_property_parking_spaces" model="ir.actions.act_window">
+            <field name="name">Property Parking Spaces</field>
+            <field name="res_model">property.parking.spaces</field>
+            <field name="view_mode">list</field>
+            <field name="view_ids" eval="[
+                (5, 0, 0),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('property_parking_spaces_list_view')}),
+            ]"/>
+        </record>
+        <record id="action_configuration_maintenance_services_types" model="ir.actions.act_window">
+            <field name="name">Maintenance Services Types</field>
+            <field name="res_model">maintenance.services.types</field>
+            <field name="view_mode">list</field>
+            <field name="view_ids" eval="[
+                (5, 0, 0),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('maintenance_services_types_list_view')}),
+            ]"/>
+        </record>
+
+
+    </data>
+</odoo>

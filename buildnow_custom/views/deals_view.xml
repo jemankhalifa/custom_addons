@@ -1,0 +1,84 @@
+<odoo>
+<data>
+<record id="view_buildnnow_deals" model="ir.ui.view">
+    <field name="name">deals</field>
+    <field name="model">buildnow.deal</field>
+    <field name="arch" type="xml">
+    <form>
+        <group>
+        <group col="4">
+            <field name="name"/>
+            <field name="transaction_id"/>
+            <field name="customer_id"/>
+            <field name="vendor_id"/>
+        
+        </group>
+        <group col="4">
+            <field name="estimate"/>
+            <field name="purchase_id"/>
+            <field name="sale_id"/>
+            <!--<field name="purchase_status"/>-->
+            <field name="rate"/>
+
+        </group>
+        </group>
+
+    </form>
+        
+    </field>
+</record>
+
+<record id="view_buildnnow_deals_tree" model="ir.ui.view">
+    <field name="name">deals List</field>
+    <field name="model">buildnow.deal</field>
+    <field name="arch" type="xml">
+    <list>
+        <field name="name"/>
+        <field name="transaction_id"/>
+        <field name="customer_id"/>
+        <field name="vendor_id"/>
+
+    </list>
+        
+    </field>
+</record>
+
+      <record id="action_deals_open" model="ir.actions.act_window">
+            <field name="name">Buildnow deal</field>
+            <field name="res_model">buildnow.deal</field>
+            <field name="view_mode">list,form</field>
+            <field name="domain">[('type','=','deal')]</field>
+            <field name="context">{'type':'deal'}</field>
+        </record>
+
+       <record id="action_deals_third" model="ir.actions.act_window">
+            <field name="name">Buildnow deal</field>
+            <field name="res_model">buildnow.deal</field>
+            <field name="view_mode">list,form</field>
+            <field name="domain">[('type','=','third_party')]</field>
+            <field name="context">{'type':'third_party'}</field>
+        </record>
+              <record id="action_deals_cash" model="ir.actions.act_window">
+            <field name="name">Buildnow deal</field>
+            <field name="res_model">buildnow.deal</field>
+            <field name="view_mode">list,form</field>
+            <field name="domain">[('type','=','cash_deal')]</field>
+            <field name="context">{'type':'cash_deal'}</field>
+        </record>
+
+
+
+        <menuitem id="menu_deals_root" name="Deals" sequence="0" parent="crm.crm_menu_root"/>
+
+        <menuitem id="menu_deal_sub" name="Deal" parent="menu_deals_root" action="action_deals_open" sequence="1"/>
+
+        <menuitem id="menu_third_party" name="Third Party Deal" parent="menu_deals_root" action="action_deals_third" sequence="30"/>
+        <menuitem id="menu_cash" name="Cash Deal" parent="menu_deals_root" action="action_deals_cash" sequence="20"/>
+
+
+
+
+
+
+</data>
+</odoo>

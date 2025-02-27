@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_buildnow_deal,access_buildnow_deal,model_buildnow_deal,,1,1,1,1
+access_estimate,access_estimate_model,model_deal_estimate,,1,1,1,1
+
+
+
