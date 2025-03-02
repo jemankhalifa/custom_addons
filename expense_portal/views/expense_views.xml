@@ -1,0 +1,70 @@
+<odoo>
+
+    <record id="expense_view_tree" model="ir.ui.view">
+        <field name="name">expense.view.list</field>
+        <field name="model">expense.portal</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="employee_id"/>
+                <field name="amount"/>
+                <field name="date"/>
+                <field name="state"/>
+                <field name="note"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="expense_view_form" model="ir.ui.view">
+        <field name="name">expense.view.form</field>
+        <field name="model">expense.portal</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <header>
+                        <button name="action_save" type="object" class="btn-primary"
+                                string="Save"/>
+                        <button name="action_submit" type="object" class="btn-warning"
+                                string="Submit"/>
+                        <button name="action_cancel" type="object" class="btn-danger"
+                                string="Cancel" invisible="state == 'save'"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <group>
+                        <group>
+                            <field name="employee_id"/>
+                            <field name="amount"/>
+                            <field name="date"/>
+                            <field name="note"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="expense_view_action" model="ir.actions.act_window">
+        <field name="name">Expense</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">expense.portal</field>
+        <field name="view_mode">form,list</field>
+    </record>
+
+    <menuitem
+            id="menu_expense_root"
+            name="Expenses Portal"
+            web_icon="expense_portal/static/description/icon.png"/>
+
+    <menuitem
+            id="menu_expense"
+            name="Expenses"
+            parent="menu_expense_root"
+            sequence="10"/>
+
+    <menuitem
+            id="expense"
+            name="Expenses"
+            parent="menu_expense"
+            action="expense_view_action"
+            sequence="10"/>
+
+</odoo>
