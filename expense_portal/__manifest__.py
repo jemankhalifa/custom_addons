@@ -6,6 +6,7 @@
     'summary': 'Custom Expense Portal for Employees',
     'depends': ['hr_expense'],
     'data': [
+        'security/ir.model.access.csv',
         'views/custom_expense_views.xml',
     ],
     'installable': True,

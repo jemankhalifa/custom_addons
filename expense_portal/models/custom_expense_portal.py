@@ -8,11 +8,13 @@ class ExpensePortal(models.Model):
 
     employee_id = fields.Many2one('hr.employee', string='Employee', required=True,
                                   default=lambda self: self.env.user.employee_id)
-    amount = fields.Float(string='Amount', required=True, default=0.0)
+    amount = fields.Monetary(string='Amount', required=True, default=0.0)
+    company_id = fields.Many2one('res.company', string='Company', required=True, readonly=False,default=lambda self: self.env.company)
+    currency_id = fields.Many2one('res.currency', 'Currency', related='company_id.currency_id', readonly=True, required=True)
     date = fields.Date(string='Date', default=fields.Date.today())
     note = fields.Text(string='Note')
     state = fields.Selection([
-        ('draft', 'Save'),
+        ('draft', 'Draft'),
         ('submitted', 'Submitted To Manager'),
         ('approved', 'Approved'),
         ('rejected', 'Rejected')
@@ -28,7 +30,7 @@ class ExpensePortal(models.Model):
 
     def action_save(self):
         """Save the expense as a draft."""
-        self.write({'status': 'draft'})
+        self.write({'state': 'draft'})
 
     def action_submit(self):
         """Submit the expense to the manager and create a corresponding record in hr.expense."""
@@ -38,7 +40,7 @@ class ExpensePortal(models.Model):
                 'employee_id': rec.employee_id.id,
                 'name': f"Expense by {rec.employee_id.name}",
                 'product_id': self.env.ref('hr_expense.product_product_no_cost').id,
-                'unit_amount': rec.amount,
+                'total_amount_currency': rec.amount,
                 'date': rec.date,
                 'description': rec.note,
             })
@@ -48,9 +50,8 @@ class ExpensePortal(models.Model):
 
             # Call the submit_to_manager method from the hr.expense model
             expense.action_submit_expenses()
+            expense.action_view_sheet()
 
-            # Call the create_report method from the hr.expense model
-            expense.action_create_report()
 
     def action_cancel(self):
         """Cancel the expense."""
