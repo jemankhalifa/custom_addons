@@ -1,0 +1,104 @@
+<odoo>
+    <data>
+        <!-- <record id="view_crm_lead_filter_inherit_property" model="ir.ui.view">
+            <field name="name">crm.lead.filter.inherit.property</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.view_crm_case_leads_filter"/>
+            <field name="arch" type="xml">
+              <group expand="0" string="Group By">
+                <filter string="Property" name="property_id" />
+             </group>
+            </field>
+        </record> -->
+
+
+    <!-- Sale CRM Lead Form View Extension -->
+                    <!-- depends on  sale_renting_crm -->
+
+    
+        <record id="view_sale_crm_lead_form_inherit_property_2" model="ir.ui.view">
+            <field name="name">sale.crm.lead.form.inherit.property2</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="sale_renting_crm.crm_case_form_view_oppor"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_rental_quotations_new']" position="replace">
+                </xpath> 
+            </field>
+        </record> 
+
+    <!-- CRM Lead Form View Extension -->
+        <record id="view_crm_lead_form_inherit_property" model="ir.ui.view">
+            <field name="name">crm.lead.form.inherit.property</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_sale_quotations_new']" position="replace">
+                </xpath>
+
+                <xpath expr="//button[@name='action_set_won_rainbowman']" position="before">
+                    <button string="Approve Oppourtinity" name="action_approve_real_estate_lead" type="object" class="oe_highlight" data-hotkey="q"
+                       
+                        invisible="not is_real_estate_lead or approved_real_estate_lead"
+                        />
+                    <button string="Create Contract" name="action_real_estate_quotations_new" type="object" class="oe_highlight" data-hotkey="q"
+                        title="Create new quotation"
+                     
+                        invisible="not approved_real_estate_lead"
+                        />
+                </xpath>
+                <xpath expr="//div[@class='oe_title']/h1" position="after">
+                   
+                       <label for="is_real_estate_lead" string="Property Lead"/>
+                        <field name="is_real_estate_lead" />
+                   
+                </xpath>
+
+
+                <xpath expr="//div[@class='d-flex']" position="after">
+                <!-- <xpath expr="//field[@name='lead_properties']" position="after"> -->
+                    <group string="Property Details" invisible="not is_real_estate_lead" col="4" >
+                        <field name="property_id" domain="[('is_property','=',True)]"/>
+                        <field name="agent_id"/>
+                        <field name="sales_value"/>
+                        <field name="commission_percentage"/>
+                        <field name="commission_amount" />
+                        <field name="company_share_percentage"/>
+                        <field name="company_share" />
+                        <field name="referal_agent_percentage"/>
+                        <field name="referal_agent_share" />
+                        <field name="agent_share_percentage"/>
+                        <field name="agent_share" />
+                        <field name="documents" widget="many2many_binary"/> 
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+
+        <!-- Real Estate Leads -->
+        <record id="real_estate_crm_lead_action" model="ir.actions.act_window">
+            <field name="name">Real Estate Leads</field>
+            <field name="res_model">crm.lead</field>
+            <field name="view_mode">list,kanban,graph,pivot,calendar,form,activity</field>
+            <field name="view_id" ref="crm.crm_lead_view_tree_reporting"/>
+            <field name="view_ids" eval="[
+            (5, 0, 0),
+            (0, 0, {'view_mode': 'list', 'view_id': ref('crm.crm_lead_view_tree_reporting')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('view_crm_lead_form_inherit_property')}),
+        ]"/>
+
+            <field name="domain">[("is_real_estate_lead", "=", True)]</field>
+            <!-- <field name="search_view_id" ref="crm.view_crm_case_my_activities_filter"/> -->
+            <field name="context">{'default_real_estate_lead': True,
+                    'search_default_is_real_estate_lead': 1}
+            </field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Looks like no Real Estate Leads.
+                </p>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

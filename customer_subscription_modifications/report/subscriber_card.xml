@@ -1,0 +1,44 @@
+<odoo>
+    <template id="subscriber_card_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 100px;"/>
+                            <h2>Subscriber Card</h2>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th>Customer Name</th>
+                                    <td><span t-field="partner.name"/></td>
+                                </tr>
+                                <tr>
+                                    <th>phone</th>
+                                    <td><span t-field="partner.phone"/></td>
+                                </tr>
+                                <tr>
+                                    <th>email</th>
+                                    <td><span t-field="partner.email"/></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <report
+        id="action_subscriber_card_report"
+        model="res.partner"
+        string="Subscriber Card"
+        report_type="qweb-pdf"
+        name="custom_customer_id.subscriber_card_template"
+        file="custom_customer_id.subscriber_card_template"
+        paperformat="custom_paperformat"
+    />
+</odoo>

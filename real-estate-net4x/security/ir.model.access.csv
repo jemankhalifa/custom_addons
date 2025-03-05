@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_property_types,access_property_types,model_property_types,,1,1,1,1
+access_floor_nums,access_floor_nums,model_property_floor,,1,1,1,1
+access_balcones,access_balcones,model_property_balcones,,1,1,1,1
+access_beds,access_beds,model_property_beds,,1,1,1,1
+access_baths,access_baths,model_property_baths,,1,1,1,1
+access_furniture_type,access_furniture_type,model_property_furniture_type,,1,1,1,1
+access_property_parking_spaces,access_property_parking_spaces,model_property_parking_spaces,,1,1,1,1
+access_maintenance_services_types,access_maintenance_services_types,model_maintenance_services_types,,1,1,1,1
+access_usage,access_usage,model_property_usage,,1,1,1,1
+access_stage,access_stage,model_property_stage,,1,1,1,1
+access_realestate_lead_report_wizard,access_realestate_lead_report_wizard,model_realestate_lead_report_wizard,,1,1,1,1

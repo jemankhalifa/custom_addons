@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+   
+    <record id="real_estate_contract_action" model="ir.actions.act_window">
+        <field name="name">Real Estate Contracts</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">list,kanban,form,calendar,pivot,graph,activity</field>
+        <field name="domain">[("is_real_estate_lead", "=", True)]</field>
+
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new quotation, the first step of a new rental!
+            </p>
+            <p>
+                Once the quotation is confirmed, it becomes a rental order.<br/> You will be able to create an invoice and collect the payment.
+            </p>
+        </field>
+    </record>
+
+    <record id="action_real_estates" model="ir.actions.act_window">
+        <field name="name">Real Estates</field>
+        <field name="res_model">account.analytic.account</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="domain">[('is_real_estate', '=', True)]</field>
+        <field name="context">{'default_is_real_estate': True
+                               }
+        </field>
+   
+        <field name="view_ids" eval="[
+            (5, 0, 0),
+            (0, 0, {'view_mode': 'kanban', 'view_id': ref('real_estate_kanban_view')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('real_estate_form_view')}),
+        ]"/>
+    </record>
+
+    <menuitem
+        id="real_estate_menu_root"
+        name="Real Estates"
+        web_icon="real-estate-net4x,static/description/icon.png"
+        sequence="1"/>
+
+        <menuitem id="real_estate_all"
+                name="Real Estates"
+                action="action_real_estates"
+                parent="real-estate-net4x.real_estate_menu_root"
+                sequence="1"/>
+
+        <menuitem id="real_estate_crm_leads_menu"
+            name="Leads"
+            action="real_estate_crm_lead_action"
+            parent="real-estate-net4x.real_estate_menu_root"
+            sequence="2"/>
+
+        <menuitem id="real_estate_contract_menu"
+            name="Contracts"
+            action="real_estate_contract_action"
+            parent="real-estate-net4x.real_estate_menu_root"
+            sequence="2"/>
+
+        <menuitem id="menu_rental_products"
+            name="Products"
+            action="real_estate_product_template_action"
+            parent="real-estate-net4x.real_estate_menu_root"
+
+            sequence="3"/>
+
+        <!--Reporting Menues -->
+        <menuitem id="menu_reports_root"
+            name="Reporting"
+            sequence="4"
+            parent="real-estate-net4x.real_estate_menu_root"/>
+
+        <menuitem id="menu_realestate_leads_report" 
+                action="action_real_estate_leads_reoport"
+                parent="real-estate-net4x.menu_reports_root" />
+
+     
+        <!--configuration Menues -->
+        <menuitem id="menu_configuration_root"
+            name="Configurations"
+            sequence="5"
+            parent="real-estate-net4x.real_estate_menu_root"/>
+
+            <menuitem id="menu_configuration_property_types" 
+                action="action_configuration_property_types"
+                parent="real-estate-net4x.menu_configuration_root" />
+
+
+            <menuitem id="menu_configuration_property_floor" 
+                action="action_configuration_property_floor"
+                parent="real-estate-net4x.menu_configuration_root" />
+
+            <menuitem id="menu_configuration_property_balcones" 
+                action="action_configuration_property_balcones" 
+                parent="real-estate-net4x.menu_configuration_root"/>
+
+            <menuitem id="menu_configuration_property_beds" 
+                action="action_configuration_property_beds" 
+                parent="real-estate-net4x.menu_configuration_root"/>
+
+            <menuitem id="menu_configuration_property_baths" 
+                action="action_configuration_property_baths" 
+                parent="real-estate-net4x.menu_configuration_root"/>
+
+            <menuitem id="menu_configuration_property_furniture_type" 
+                action="action_configuration_property_furniture_type" 
+                parent="real-estate-net4x.menu_configuration_root"/>
+
+            <menuitem id="menu_configuration_property_usage" 
+                action="action_configuration_property_usage" 
+                parent="real-estate-net4x.menu_configuration_root"/>
+
+            <menuitem id="menu_configuration_property_parking_spaces" 
+                action="action_configuration_property_parking_spaces" 
+                parent="real-estate-net4x.menu_configuration_root"/>
+
+            <menuitem id="menu_configuration_maintenance_services_types" 
+                action="action_configuration_maintenance_services_types" 
+                parent="real-estate-net4x.menu_configuration_root"/>
+                
+            <menuitem id="menu_configuration_property_stages" 
+                action="action_configuration_property_stages" 
+                parent="real-estate-net4x.menu_configuration_root"/>
+            
+</odoo>

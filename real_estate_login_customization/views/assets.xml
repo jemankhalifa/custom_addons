@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <template id="assets_frontend" name="custom_login_page" inherit_id="web.frontend_layout">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" type="text/css" href="/real_estate_login_customization/static/src/css/login_styles.css"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>
+

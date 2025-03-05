@@ -1,0 +1,67 @@
+<odoo>
+    <data>
+
+    <!-- Real Estate quotation Form View Extension -->
+        <record id="real_estate_form_quotations_new" model="ir.ui.view">
+            <field name="name">sale.order.form.inherit.quotation</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="attributes">
+                    <attribute name="string">Real Estate Quotation</attribute>
+                 </xpath>
+
+               <!-- <xpath expr="//div[@class='oe_title']/h1" position="after">
+                    <h1>
+                        <label for="is_real_estate_lead" string="Property Lead"/>
+                        <field name="is_real_estate_lead" class="oe_inline" />
+                    </h1>
+                </xpath> -->
+
+
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="is_real_estate_lead" invisible="1"/>
+                </xpath>
+                <!-- <xpath expr="//div[@class='oe_title']" position="after">
+                    <group string="Property Details"  >
+                       
+                        <field name="agent_id"/>
+                        <field name="sales_value"/>
+                        <field name="commission_percentage"/>
+                        <field name="commission_amount" readonly="1"/>
+                        <field name="company_share_percentage"/>
+                        <field name="company_share" readonly="1"/>
+                        <field name="referal_agent_percentage"/>
+                        <field name="referal_agent_share" readonly="1"/>
+                        <field name="agent_share_percentage"/>
+                        <field name="agent_share" readonly="1"/>
+                        <field name="documents" widget="many2many_binary"/> 
+                    </group>
+                </xpath> -->
+                <xpath expr="//page[@name='order_lines']" position="after">
+                    <page string="Property Informations" name="property_infos" >
+                        <group string="Property Details">
+                        </group>
+                   </page>
+                </xpath>
+
+            </field>
+        </record>
+
+
+        <!-- Real Estate quotation -->
+        <record id="real_estate_action_quotations_new" model="ir.actions.act_window">
+            <field name="name">Real Estate Quotation</field>
+            <field name="res_model">sale.order</field>
+            <!-- <field name="view_mode">list,kanban,graph,pivot,calendar,form,activity</field> -->
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="real_estate_form_quotations_new"/>
+
+            <field name="domain">[("is_real_estate_lead", "=", True)]</field>
+            <!-- <field name="search_view_id" ref="crm.view_crm_case_my_activities_filter"/> -->
+            <field name="context">{'default_is_real_estate_lead': True,
+                    'search_default_is_real_estate_lead': 1}
+            </field>
+        </record>
+    </data>
+</odoo>
