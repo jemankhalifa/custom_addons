@@ -7,7 +7,9 @@
     'depends': ['hr_expense'],
     'data': [
         'security/ir.model.access.csv',
+        'security/expenses_group.xml',
         'views/custom_expense_views.xml',
+        'views/current_balance_labor.xml'
     ],
     'installable': True,
     'application': True,
