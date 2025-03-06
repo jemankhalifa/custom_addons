@@ -6,6 +6,7 @@ class ExpensePortal(models.Model):
     _name = 'expense.portal'
     _description = 'Employee Expense Portal'
 
+    name = fields.Char(compute="set_name_value",string="Name")
     employee_id = fields.Many2one('hr.employee', string='Employee', required=True,
                                   default=lambda self: self.env.user.employee_id)
     amount = fields.Monetary(string='Amount', required=True, default=0.0)
@@ -19,7 +20,13 @@ class ExpensePortal(models.Model):
         ('approved', 'Approved'),
         ('rejected', 'Rejected')
     ], string='Status', default='draft')
-    expense_id = fields.Many2one('hr.expense', string='Linked Expense', readonly=True)
+    payment_id = fields.Many2one('account.payment', string="Payment")
+    expensed = fields.Boolean(string="Expensed?")
+
+    @api.depends('employee_id')
+    def set_name_value(self):
+        for rec in self:
+            rec.name = f'{rec.employee_id.name} - {rec.date}'
 
     # definition of validation of amount > 0
     @api.constrains('amount')
@@ -31,27 +38,34 @@ class ExpensePortal(models.Model):
     def action_save(self):
         """Save the expense as a draft."""
         self.write({'state': 'draft'})
-
+    
     def action_submit(self):
+        self.write({'state': 'submitted'})
+
+    def action_reject(self):
+        """Save the expense as a draft."""
+        self.write({'state': 'rejected'})
+
+    def action_approve(self):
         """Submit the expense to the manager and create a corresponding record in hr.expense."""
+        journal_id = self.env['account.journal'].search([('type','=','cash')])[0]
         for rec in self:
             # Create a record in the hr.expense model
-            expense = self.env['hr.expense'].create({
-                'employee_id': rec.employee_id.id,
-                'name': f"Expense by {rec.employee_id.name}",
-                'product_id': self.env.ref('hr_expense.product_product_no_cost').id,
-                'total_amount_currency': rec.amount,
+            payment = self.env['account.payment'].create({
+                'partner_id': rec.employee_id.user_id.partner_id.id,
+                'payment_type': 'inbound',
+                'amount': rec.amount,
+                'journal_id': journal_id.id,
+                'currency_id': rec.currency_id.id,
+                'payment_method_id': 1,  # Manual payment method
+                'partner_type':'customer',
                 'date': rec.date,
-                'description': rec.note,
+                'memo': rec.note,
             })
 
             # Link the portal expense to the hr.expense record
-            rec.write({'expense_id': expense.id, 'state': 'submitted'})
-
-            # Call the submit_to_manager method from the hr.expense model
-            expense.action_submit_expenses()
-            expense.action_view_sheet()
-
+            rec.write({'state': 'approved'})
+            rec.payment_id = payment
 
     def action_cancel(self):
         """Cancel the expense."""

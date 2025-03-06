@@ -6,25 +6,31 @@
         <field name="model">expense.portal</field>
         <field name="arch" type="xml">
             <form>
-                <sheet>
-                    <header>
-                        <!--<button name="action_save" string="Save" type="object" class="btn-primary"
-                                invisible="state != 'draft'"/>-->
+              <header>
+                      
                         <button name="action_submit" string="Submit to Manager" type="object"
                                 class="btn-secondary"
                                 invisible="state != 'draft'"/>
-                        <button name="action_cancel" string="Cancel" type="object" class="btn-danger"
+                        <button name="action_approve" string="Approve" type="object"
+                                class="btn-secondary"
+                                invisible="state != 'submitted'" group="expense_portal.group_expense_manager"/>
+                        <button name="action_reject" string="Reject" type="object" class="btn-danger"
+                                invisible="state != 'submitted'"/>
+                        <button name="action_cancel" string="Cancel" type="object" class="btn-secondary"
                                 invisible="state != 'draft'"/>
                         <field name="state" widget="statusbar"/>
                     </header>
-                    <group>
+                <sheet>
+                  
+                    <group col="4">
                         <field name="employee_id" readonly="1"/>
                         <field name="amount" readonly="state not in ['draft']"/>
                         <field name="date" readonly="state not in ['draft']"/>
                         <field name="note" readonly="state not in ['draft']"/>
-                        <field name="state" readonly="1"/>
                     </group>
                 </sheet>
+                 
+               
             </form>
         </field>
     </record>
@@ -37,9 +43,7 @@
                 <field name="employee_id"/>
                 <field name="amount"/>
                 <field name="date"/>
-                <field name="note"/>
                 <field name="state"/>
-                <field name="expense_id"/>
             </list>
         </field>
     </record>
@@ -54,15 +58,10 @@
               name="Expense Portal"
               web_icon="expense_portal/static/description/icon.png"/>
 
-    <menuitem id="menu_expense_portal1"
-              name="Expense Portal"
-              parent="menu_expense_portal_root1"/>
-
     <menuitem id="expense_portal1"
               name="Expenses"
-              parent="menu_expense_portal1"
+              parent="menu_expense_portal_root1"
               action="action_expense_portal1"
               sequence="1"/>
-
 
 </odoo>
