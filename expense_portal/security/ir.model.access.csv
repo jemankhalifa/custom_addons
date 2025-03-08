@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_expense_portal,expense.portal,model_expense_portal,,1,1,1,1
+access_labor_balance,current_balance_labor,model_current_balance_labor,,1,1,1,1
+access_laborlines,current_balance_labor_lines,model_current_balance_labor_lines,,1,1,1,1

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_balance_labor1" model="ir.ui.view">
+        <field name="name">current.balance.labor.form</field>
+        <field name="model">current.balance.labor</field>
+        <field name="arch" type="xml">
+            <form>
+                 <header>
+                        <button name="compute_balance" string="Compute" type="object"
+                                class="btn-primary"/>        
+                    </header>
+                    
+                <sheet>
+
+                    <group col="4">
+                        <field name="name" />
+                        <field name="employee_ids" widget="many2many_tags"/>
+                        <field name="totals" />
+                        <field name="from_date" />
+                        <field name="to_date" />
+                    </group>
+
+                    <notebook>
+                        <page string="Employees">
+                            <field name="balance_lines" mode="list">
+                                <list editable="bottom" >
+                                    <field name="employee_id" />
+                                    <field name="total_expense_paid" />
+                                    <field name="total_work_amount" />
+                                    <field name="remaining_balance" />
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_labor_balance1" model="ir.ui.view">
+        <field name="name">labor.balance.list</field>
+        <field name="model">current.balance.labor</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="totals"/>
+                <field name="from_date"/>
+                <field name="to_date"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_labor_balance1" model="ir.actions.act_window">
+        <field name="name">Labor Balance</field>
+        <field name="res_model">current.balance.labor</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="labor_balance_menu"
+              name="Balance Sheet"
+              parent="menu_expense_portal_root1"
+              action="action_labor_balance1"
+              sequence="2"/>
+
+</odoo>

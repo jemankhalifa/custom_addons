@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="sale_subscription_primary_form_view1" model="ir.ui.view">
+            <field name="name">sale.subscription.order.primary.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_subscription.sale_subscription_primary_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <group>
+                        <field name="capacity"/>
+                        <field name="current_capacity" readonly="1"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
