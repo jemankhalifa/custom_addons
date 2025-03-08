@@ -11,8 +11,8 @@
     ],
     'assets': {
         'web.assets_frontend': [
-            'login_customization/static/src/css/login_styles.css',
-            '/login_customization/static/src/img/account_bg.png',
+            'login_accounting_customization/static/src/css/login_styles.css',
+            '/login_accounting_customization/static/src/img/account_bg.png',
         ],
     },
     'installable': True,

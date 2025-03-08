@@ -1,7 +1,7 @@
 
 /* Background image for login page */
 .oe_website_login_container {
-	background-image: url('/login_customization/static/src/img/account_bg.png');
+	background-image: url('/login_accounting_customization/static/src/img/account_bg.png');
         background-size: cover;
         background-position: center;
         height: 100vh;  /* Full viewport height */
