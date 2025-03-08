@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+        <template id="custom_login_page" inherit_id="web.login_layout">
+           <xpath expr="t" position="replace">
+                <t t-call="website.layout">
+        	        <t t-asset="login_customization/static/src/css/login_styles.css"/>
+                    <div class="oe_website_login_container" t-out="0"/>
+                </t>
+            </xpath>
+        </template>
+    </data>
+</odoo>
+
