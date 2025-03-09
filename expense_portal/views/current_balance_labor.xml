@@ -8,11 +8,11 @@
             <form>
                  <header>
                         <button name="compute_balance" string="Compute" type="object"
-                                class="btn-primary"/>
-                       
+                                class="btn-primary"/>        
                     </header>
+                    
                 <sheet>
-                
+
                     <group col="4">
                         <field name="name" />
                         <field name="employee_ids" widget="many2many_tags"/>
@@ -30,7 +30,6 @@
                                     <field name="total_work_amount" />
                                     <field name="remaining_balance" />
                                 </list>
-
                             </field>
                         </page>
                     </notebook>

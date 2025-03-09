@@ -19,6 +19,7 @@
                         <button name="action_cancel" string="Cancel" type="object" class="btn-secondary"
                                 invisible="state != 'draft'"/>
                         <field name="state" widget="statusbar"/>
+                        
                     </header>
                 <sheet>
                   
@@ -28,10 +29,34 @@
                         <field name="date" readonly="state not in ['draft']"/>
                         <field name="note" readonly="state not in ['draft']"/>
                     </group>
+
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button"
+                            type="object"
+                            name="action_view_payments"
+                            icon="fa-money">
+                            <field string="Payments" name="payment_count" widget="statinfo"/>
+                        </button>
+                    </div>
+
                 </sheet>
-                 
-               
+
+                <!-- Add Chatter -->
+                <chatter reload_on_follower="True"/>
             </form>
+        </field>
+    </record>
+
+    <record id="view_account_payment_tree" model="ir.ui.view">
+        <field name="name">account.payment.tree</field>
+        <field name="model">account.payment</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="date"/>
+                <field name="partner_id"/>
+                <field name="state"/>
+            </list>
         </field>
     </record>
 

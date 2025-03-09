@@ -2,9 +2,11 @@ from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 
 
+
 class ExpensePortal(models.Model):
     _name = 'expense.portal'
     _description = 'Employee Expense Portal'
+    _inherit = 'mail.thread'
 
     name = fields.Char(compute="set_name_value",string="Name")
     employee_id = fields.Many2one('hr.employee', string='Employee', required=True,
@@ -20,8 +22,11 @@ class ExpensePortal(models.Model):
         ('approved', 'Approved'),
         ('rejected', 'Rejected')
     ], string='Status', default='draft')
+
     payment_id = fields.Many2one('account.payment', string="Payment")
     expensed = fields.Boolean(string="Expensed?")
+
+    payment_count = fields.Integer(string="Payment Count", compute="_compute_payment_count")
 
     @api.depends('employee_id')
     def set_name_value(self):
@@ -70,3 +75,19 @@ class ExpensePortal(models.Model):
     def action_cancel(self):
         """Cancel the expense."""
         self.write({'state': 'cancelled'})
+
+    def _compute_payment_count(self):
+        for rec in self:
+            rec.payment_count = self.env['account.payment'].search_count([('id', '=', rec.payment_id.id)])
+
+    def action_view_payments(self):
+        self.ensure_one()
+        domain = [('id', '=', self.payment_id.id)] if self.payment_id else []
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Payments',
+            'res_model': 'account.payment',
+            'view_mode': 'list,form',
+            'domain': domain,
+            'context': {'create': False},
+        }
