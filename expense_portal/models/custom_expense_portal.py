@@ -53,24 +53,27 @@ class ExpensePortal(models.Model):
 
     def action_approve(self):
         """Submit the expense to the manager and create a corresponding record in hr.expense."""
-        journal_id = self.env['account.journal'].search([('type','=','cash')])[0]
+        journal = self.env['account.journal'].search([('type', '=', 'cash')], limit=1)
+        if not journal:
+            raise ValidationError('No cash journal found! Please create a cash journal.')
+
         for rec in self:
             # Create a record in the hr.expense model
             payment = self.env['account.payment'].create({
                 'partner_id': rec.employee_id.user_id.partner_id.id,
                 'payment_type': 'inbound',
                 'amount': rec.amount,
-                'journal_id': journal_id.id,
+                'journal_id': journal.id,
                 'currency_id': rec.currency_id.id,
                 'payment_method_id': 1,  # Manual payment method
-                'partner_type':'customer',
+                'partner_type': 'customer',
                 'date': rec.date,
                 'memo': rec.note,
-            })
+        })
 
-            # Link the portal expense to the hr.expense record
-            rec.write({'state': 'approved'})
-            rec.payment_id = payment
+        # Link the portal expense to the hr.expense record
+        rec.write({'state': 'approved'})
+        rec.payment_id = payment
 
     def action_cancel(self):
         """Cancel the expense."""
