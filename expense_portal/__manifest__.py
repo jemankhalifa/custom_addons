@@ -4,7 +4,7 @@
     'version': '1.0',
     'category': 'Human Resources',
     'summary': 'Custom Expense Portal for Employees',
-    'depends': ['hr_expense','accountant'],
+    'depends': ['hr_expense'],
     'data': [
         'security/ir.model.access.csv',
         'security/expenses_group.xml',
