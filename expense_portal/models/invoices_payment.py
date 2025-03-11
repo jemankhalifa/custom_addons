@@ -6,4 +6,3 @@ class AccountMove(models.Model):
     _inherit = 'account.move'
 
     expensed = fields.Boolean(string="Expensed?")
-

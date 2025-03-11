@@ -2,18 +2,19 @@ from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 
 
-
 class ExpensePortal(models.Model):
     _name = 'expense.portal'
     _description = 'Employee Expense Portal'
     _inherit = 'mail.thread'
 
-    name = fields.Char(compute="set_name_value",string="Name")
+    name = fields.Char(compute="set_name_value", string="Name")
     employee_id = fields.Many2one('hr.employee', string='Employee', required=True,
                                   default=lambda self: self.env.user.employee_id)
     amount = fields.Monetary(string='Amount', required=True, default=0.0)
-    company_id = fields.Many2one('res.company', string='Company', required=True, readonly=False,default=lambda self: self.env.company)
-    currency_id = fields.Many2one('res.currency', 'Currency', related='company_id.currency_id', readonly=True, required=True)
+    company_id = fields.Many2one('res.company', string='Company', required=True, readonly=False,
+                                 default=lambda self: self.env.company)
+    currency_id = fields.Many2one('res.currency', 'Currency', related='company_id.currency_id', readonly=True,
+                                  required=True)
     date = fields.Date(string='Date', default=fields.Date.today())
     note = fields.Text(string='Note')
     state = fields.Selection([
@@ -43,7 +44,7 @@ class ExpensePortal(models.Model):
     def action_save(self):
         """Save the expense as a draft."""
         self.write({'state': 'draft'})
-    
+
     def action_submit(self):
         self.write({'state': 'submitted'})
 
@@ -69,7 +70,7 @@ class ExpensePortal(models.Model):
                 'partner_type': 'customer',
                 'date': rec.date,
                 'memo': rec.note,
-        })
+            })
 
         # Link the portal expense to the hr.expense record
         rec.write({'state': 'approved'})
