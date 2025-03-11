@@ -1,76 +1,74 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-
     <record id="view_balance_labor1" model="ir.ui.view">
         <field name="name">current.balance.labor.form</field>
         <field name="model">current.balance.labor</field>
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button name="compute_balance" string="Compute" type="object" class="btn-primary"/>
-                    <button name="action_approve" string="Approve" type="object" class="btn-secondary"
-                        invisible="state != 'draft'"/>
+                    # The compute button
+                    <button name="compute_balance" string="Compute" type="object" class="btn-primary"
+                            invisible="state != 'draft'"/>
+                    <button name="action_approve" string="Approve" type="object" class="btn-success"
+                            invisible="state != 'draft'"/>
                     <button name="action_cancel" string="Cancel" type="object" class="btn-danger"
-                        invisible="state != 'draft'"/>
+                            visible="state == 'pay'"/>
                     <button name="action_pay" string="Pay" type="object" class="btn-primary"
-                        invisible="state != 'approved'"/>
+                            invisible="state != 'approved'"/>
                     <field name="state" widget="statusbar"/>
-                </header>      
-                  
+                </header>
                 <sheet>
-
                     <group col="4">
-                        <field name="name" />
+                        <field name="name"/>
                         <field name="employee_ids" widget="many2many_tags"/>
-                        <field name="totals" readonly="1"/> 
-                        <field name="from_date" />
-                        <field name="to_date" />
+                        <field name="totals"/>
+                        <field name="from_date"/>
+                        <field name="to_date"/>
                     </group>
-
                     <notebook>
                         <page string="Employees">
-                            <field name="balance_lines" mode="list">
-                                <list editable="bottom" >
-                                    <field name="employee_id" />
-                                    <field name="total_expense_paid" />
-                                    <field name="total_work_amount" />
-                                    <field name="remaining_balance" />
+                            <field name="balance_lines" mode="list" readonly="1">
+                                <list editable="bottom">
+                                    <field name="employee_id"/>
+                                    <field name="total_expense_paid"/>
+                                    <field name="total_work_amount"/>
+                                    <field name="remaining_balance"/>
                                 </list>
                             </field>
                         </page>
                     </notebook>
-
                 </sheet>
-
-                <!-- Add Chatter -->
+                # The smart button that shows the payments of an employee
+                <div class="oe_button_box" name="button_box">
+                    <button class="oe_stat_button" type="object" name="action_view_payments" string="Payments"
+                            icon="fa-money">
+                        <field string="Payments" name="payment_count" widget="statinfo"/>
+                    </button>
+                </div>
+                <!--  Add Chatter  -->
                 <chatter reload_on_follower="True"/>
             </form>
         </field>
     </record>
-
     <record id="view_labor_balance1" model="ir.ui.view">
         <field name="name">labor.balance.list</field>
         <field name="model">current.balance.labor</field>
         <field name="arch" type="xml">
             <list>
-                <field name="name"/>
+                <field name="name" widget="badge"/>
                 <field name="totals"/>
                 <field name="from_date"/>
                 <field name="to_date"/>
+                <field name="state" widget="badge" decoration-danger="state == 'cancelled'"
+                       decoration-warning="state == 'draft'" decoration-success="state == 'approved'"
+                       decoration-info="state == 'paid'"/>
             </list>
         </field>
     </record>
-
     <record id="action_labor_balance1" model="ir.actions.act_window">
         <field name="name">Labor Balance</field>
         <field name="res_model">current.balance.labor</field>
         <field name="view_mode">list,form</field>
     </record>
-
-    <menuitem id="labor_balance_menu"
-              name="Balance Sheet"
-              parent="menu_expense_portal_root1"
-              action="action_labor_balance1"
-              sequence="2"/>
-
+    <menuitem id="labor_balance_menu" name="Balance Sheet" parent="menu_expense_portal_root1"
+              action="action_labor_balance1" sequence="2"/>
 </odoo>
