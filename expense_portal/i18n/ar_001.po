@@ -1,0 +1,400 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* expense_portal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e-20241211\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-11 07:48+0000\n"
+"PO-Revision-Date: 2025-03-11 07:48+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: expense_portal
+#: model_terms:ir.ui.view,arch_db:expense_portal.view_balance_labor1
+msgid "# The compute button"
+msgstr "حساب"
+
+#. module: expense_portal
+#: model_terms:ir.ui.view,arch_db:expense_portal.view_balance_labor1
+msgid "# The smart button that shows the payments of an employee"
+msgstr "المدفوعات"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__message_needaction
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__message_needaction
+msgid "Action Needed"
+msgstr "مطلوب اتخاذ إجراء"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__amount
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: expense_portal
+#: model_terms:ir.ui.view,arch_db:expense_portal.view_balance_labor1
+#: model_terms:ir.ui.view,arch_db:expense_portal.view_expense_form1
+msgid "Approve"
+msgstr "إعتماد"
+
+#. module: expense_portal
+#: model:ir.model.fields.selection,name:expense_portal.selection__current_balance_labor__state__approved
+#: model:ir.model.fields.selection,name:expense_portal.selection__expense_portal__state__approved
+msgid "Approved"
+msgstr "معتمد"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__message_attachment_count
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__balance_lines
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor_lines__balance_line_id
+msgid "Balance"
+msgstr "الميزانية"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_account_payment__balance_sheet_id
+#: model:ir.ui.menu,name:expense_portal.labor_balance_menu
+msgid "Balance Sheet"
+msgstr "الميزانية العمومية"
+
+#. module: expense_portal
+#: model_terms:ir.ui.view,arch_db:expense_portal.view_balance_labor1
+#: model_terms:ir.ui.view,arch_db:expense_portal.view_expense_form1
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: expense_portal
+#: model:ir.model.fields.selection,name:expense_portal.selection__current_balance_labor__state__cancelled
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: expense_portal
+#: model_terms:ir.ui.view,arch_db:expense_portal.view_balance_labor1
+msgid "Compute"
+msgstr "حساب"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__create_uid
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor_lines__create_uid
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__create_uid
+msgid "Created by"
+msgstr "تم إنشاؤه بواسطة"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__create_date
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor_lines__create_date
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__create_date
+msgid "Created on"
+msgstr "تم إنشاؤه في"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__display_name
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor_lines__display_name
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: expense_portal
+#: model:ir.model.fields.selection,name:expense_portal.selection__current_balance_labor__state__draft
+#: model:ir.model.fields.selection,name:expense_portal.selection__expense_portal__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__employee_id
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: expense_portal
+#: model:ir.model,name:expense_portal.model_expense_portal
+msgid "Employee Expense Portal"
+msgstr "بوابة نفقات الموظفين"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__employee_ids
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor_lines__employee_id
+#: model_terms:ir.ui.view,arch_db:expense_portal.view_balance_labor1
+msgid "Employees"
+msgstr "الموظفين"
+
+#. module: expense_portal
+#: model:res.groups,name:expense_portal.group_expense_manager
+msgid "Expense Manager"
+msgstr "مدير النفقات"
+
+#. module: expense_portal
+#: model:ir.actions.act_window,name:expense_portal.action_expense_portal1
+#: model:ir.ui.menu,name:expense_portal.menu_expense_portal_root1
+msgid "Expense Portal"
+msgstr "بوابة النفقات"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_account_bank_statement_line__expensed
+#: model:ir.model.fields,field_description:expense_portal.field_account_move__expensed
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__expensed
+msgid "Expensed?"
+msgstr "مُنفَق؟"
+
+#. module: expense_portal
+#: model:ir.ui.menu,name:expense_portal.expense_portal1
+msgid "Expenses"
+msgstr "نفقات"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__message_follower_ids
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__message_partner_ids
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__from_date
+msgid "From Date"
+msgstr "من تاريخ"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__has_message
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__has_message
+msgid "Has Message"
+msgstr "لديه رسالة"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__id
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor_lines__id
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__id
+msgid "ID"
+msgstr "رقم تعريف"
+
+#. module: expense_portal
+#: model:ir.model.fields,help:expense_portal.field_current_balance_labor__message_needaction
+#: model:ir.model.fields,help:expense_portal.field_expense_portal__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديد هذا المربع، فإن الرسائل الجديدة تتطلب انتباهك."
+
+#. module: expense_portal
+#: model:ir.model.fields,help:expense_portal.field_current_balance_labor__message_has_error
+#: model:ir.model.fields,help:expense_portal.field_current_balance_labor__message_has_sms_error
+#: model:ir.model.fields,help:expense_portal.field_expense_portal__message_has_error
+#: model:ir.model.fields,help:expense_portal.field_expense_portal__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديد هذا المربع، فقد يكون لبعض الرسائل خطأ في التسليم."
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__message_is_follower
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__message_is_follower
+msgid "Is Follower"
+msgstr "هل هو متابع"
+
+#. module: expense_portal
+#: model:ir.model,name:expense_portal.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: expense_portal
+#: model:ir.actions.act_window,name:expense_portal.action_labor_balance1
+msgid "Labor Balance"
+msgstr "ميزانية العمل"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__write_uid
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor_lines__write_uid
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__write_date
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor_lines__write_date
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__message_has_error
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__message_ids
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__name
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__note
+msgid "Note"
+msgstr "ملحوظة"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__message_needaction_counter
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__message_has_error_counter
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: expense_portal
+#: model:ir.model.fields,help:expense_portal.field_current_balance_labor__message_needaction_counter
+#: model:ir.model.fields,help:expense_portal.field_expense_portal__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: expense_portal
+#: model:ir.model.fields,help:expense_portal.field_current_balance_labor__message_has_error_counter
+#: model:ir.model.fields,help:expense_portal.field_expense_portal__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: expense_portal
+#: model:ir.model.fields.selection,name:expense_portal.selection__current_balance_labor__state__paid
+msgid "Paid"
+msgstr "مدفوع"
+
+#. module: expense_portal
+#: model_terms:ir.ui.view,arch_db:expense_portal.view_balance_labor1
+msgid "Pay"
+msgstr "دفع"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__payment_id
+msgid "Payment"
+msgstr "دفع"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__payment_count
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__payment_count
+msgid "Payment Count"
+msgstr "عدد الدفعات"
+
+#. module: expense_portal
+#: model:ir.model,name:expense_portal.model_account_payment
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__payment_ids
+#: model_terms:ir.ui.view,arch_db:expense_portal.view_balance_labor1
+#: model_terms:ir.ui.view,arch_db:expense_portal.view_expense_form1
+msgid "Payments"
+msgstr "الدفعات"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__rating_ids
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__rating_ids
+msgid "Ratings"
+msgstr "التقييمات"
+
+#. module: expense_portal
+#: model_terms:ir.ui.view,arch_db:expense_portal.view_expense_form1
+msgid "Reject"
+msgstr "رفض"
+
+#. module: expense_portal
+#: model:ir.model.fields.selection,name:expense_portal.selection__expense_portal__state__rejected
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor_lines__remaining_balance
+msgid "Remaining Balance"
+msgstr "الرصيد المتبقي"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__message_has_sms_error
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__state
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: expense_portal
+#: model_terms:ir.ui.view,arch_db:expense_portal.view_expense_form1
+msgid "Submit to Manager"
+msgstr ""
+
+#. module: expense_portal
+#: model:ir.model.fields.selection,name:expense_portal.selection__expense_portal__state__submitted
+msgid "Submitted To Manager"
+msgstr "أرسل إلى المدير"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__to_date
+msgid "To Date"
+msgstr "الى تاريخ"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__totals
+msgid "Total Amount"
+msgstr "المبلغ الإجمالي"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor_lines__total_expense_paid
+msgid "Total Expenses Paid"
+msgstr "إجمالي النفقات المدفوعة"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor_lines__total_work_amount
+msgid "Total Work Amount"
+msgstr "إجمالي مبلغ العمل"
+
+#. module: expense_portal
+#: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__website_message_ids
+#: model:ir.model.fields,field_description:expense_portal.field_expense_portal__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: expense_portal
+#: model:ir.model.fields,help:expense_portal.field_current_balance_labor__website_message_ids
+#: model:ir.model.fields,help:expense_portal.field_expense_portal__website_message_ids
+msgid "Website communication history"
+msgstr "سجل اتصالات الموقع"
+
+#. module: expense_portal
+#: model:ir.model,name:expense_portal.model_current_balance_labor
+msgid "current.balance.labor"
+msgstr ""
+
+#. module: expense_portal
+#: model:ir.model,name:expense_portal.model_current_balance_labor_lines
+msgid "current.balance.labor.lines"
+msgstr ""
