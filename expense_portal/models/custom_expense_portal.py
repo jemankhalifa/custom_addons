@@ -23,6 +23,8 @@ class ExpensePortal(models.Model):
         ('rejected', 'Rejected')
     ], string='Status', default='draft')
 
+    yu = fields.Text()
+
     payment_id = fields.Many2one('account.payment', string="Payment")
     expensed = fields.Boolean(string="Expensed?")
 
