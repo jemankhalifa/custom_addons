@@ -1,0 +1,77 @@
+<odoo>
+    <template id="report_expense_portal_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2 class="text-center">
+                            <strong>Expense Details</strong>
+                        </h2>
+                        <tr>
+                            <th>Employee:</th>
+                            <td>
+                                <span t-esc="o.employee_id.name"/>
+                            </td>
+                        </tr>
+                        <br/>
+                        <tr>
+                            <th>Amount:</th>
+                            <td>
+                                <span t-esc="o.amount"/>
+                            </td>
+                        </tr>
+                        <br/>
+                        <tr>
+                            <th>Date:</th>
+                            <td>
+                                <span t-esc="o.date"/>
+                            </td>
+                        </tr>
+                        <br/>
+                        <tr>
+                            <th>Note:</th>
+                            <td>
+                                <span t-esc="o.note"/>
+                            </td>
+                        </tr>
+                        <br/>
+                        <tr>
+                            <th>Status:</th>
+                            <td>
+                                <span t-esc="o.state"/>
+                            </td>
+                        </tr>
+                        <br/>
+                        <br/>
+                        <br/>
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Amount</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="o.get_expense_lines()" t-as="line">
+                                    <tr>
+                                        <td>
+                                            <span t-field="line.description"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="line.amount"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="line.date"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

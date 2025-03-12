@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    
+
+    # Report Action
+    <record id="report_expense_portal" model="ir.actions.report">
+        <field name="name">Expense Details</field>
+        <field name="model">expense.portal</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">expense_portal.report_expense_portal_template</field>
+        <field name="report_file">expense_portal.report_expense_portal_template</field>
+        <field name="binding_model_id" ref="model_expense_portal"/>
+        <field name="binding_type">report</field>
+    </record>
 </odoo>

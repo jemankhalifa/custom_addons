@@ -95,3 +95,16 @@ class ExpensePortal(models.Model):
             'domain': domain,
             'context': {'create': False},
         }
+
+    # Definition print button
+    def action_print_report(self):
+        return self.env.ref('expense_portal.report_expense_portal').report_action(self)
+
+    def get_report_data(self):
+        return {
+            'expense': self,
+            'lines': self.get_expense_lines(),
+        }
+
+    def get_expense_lines(self):
+        return []
