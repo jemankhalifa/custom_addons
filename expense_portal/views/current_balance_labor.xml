@@ -8,6 +8,10 @@
                     # The compute button
                     <button name="compute_balance" string="Compute" type="object" class="btn-primary"
                             invisible="state != 'draft'"/>
+
+                    # print button
+                    <button string="Print PDF" type="object" class="btn-warning" name="action_print_report"/>
+
                     <button name="action_approve" string="Approve" type="object" class="btn-success"
                             invisible="state != 'draft'"/>
                     <button name="action_cancel" string="Cancel" type="object" class="btn-danger"
@@ -58,8 +62,10 @@
                 <field name="totals"/>
                 <field name="from_date"/>
                 <field name="to_date"/>
-                <field name="state" widget="badge" decoration-danger="state == 'cancelled'"
-                       decoration-warning="state == 'draft'" decoration-success="state == 'approved'"
+                <field name="state" widget="badge"
+                       decoration-danger="state == 'cancelled'"
+                       decoration-warning="state == 'draft'"
+                       decoration-success="state == 'approved'"
                        decoration-info="state == 'paid'"/>
             </list>
         </field>
