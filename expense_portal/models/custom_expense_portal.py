@@ -1,5 +1,6 @@
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
+from odoo.exceptions import UserError
 
 
 class ExpensePortal(models.Model):
@@ -21,7 +22,8 @@ class ExpensePortal(models.Model):
         ('draft', 'Draft'),
         ('submitted', 'Submitted To Manager'),
         ('approved', 'Approved'),
-        ('rejected', 'Rejected')
+        ('rejected', 'Rejected'),
+        ('cancelled', 'Cancelled')
     ], string='Status', default='draft')
 
     payment_id = fields.Many2one('account.payment', string="Payment")
@@ -29,6 +31,7 @@ class ExpensePortal(models.Model):
 
     payment_count = fields.Integer(string="Payment Count", compute="_compute_payment_count")
 
+    
     @api.depends('employee_id')
     def set_name_value(self):
         for rec in self:
@@ -95,3 +98,6 @@ class ExpensePortal(models.Model):
             'domain': domain,
             'context': {'create': False},
         }
+
+    def unlink(self):
+        raise UserError("Deleting any record in this form is not allowed.")
