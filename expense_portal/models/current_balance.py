@@ -1,6 +1,5 @@
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
-from odoo.exceptions import UserError
 
 
 class CurrentBalance(models.Model):
@@ -107,8 +106,12 @@ class CurrentBalance(models.Model):
 
             rec.write({'payment_ids': [(6, 0, payment_list)]})
             rec.state = 'paid'
-    def unlink(self):
-        raise UserError("Deleting any record in this form is not allowed.")
+
+        # Definition of print button
+    def action_print_report(self):
+        return self.env.ref('expense_portal.report_current_balance').report_action(self)
+
+
 
 
 class CurrentBalanceLines(models.Model):
