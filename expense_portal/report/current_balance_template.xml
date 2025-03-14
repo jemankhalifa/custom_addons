@@ -1,0 +1,103 @@
+<odoo>
+    <template id="report_current_balance_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h3 class="text-center">
+                            <t t-translation="off">Employees Payment Sheet</t>
+                        </h3>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <div class="row">
+                            <div class="col-3">
+                                <p>
+                                    <t t-translation="off">
+                                        <strong>From Date:</strong>
+                                    </t>
+                                    <span t-field="o.from_date"/>
+                                </p>
+                            </div>
+                            <div class="col-3">
+                                <p>
+                                    <t t-translation="off">
+                                        <strong>To Date:</strong>
+                                    </t>
+                                    <span t-field="o.to_date"/>
+                                </p>
+                            </div>
+                        </div>
+
+                        <br/>
+
+                        <div class="row">
+                            <div class="col-3">
+                                <p>
+                                    <t t-translation="off">
+                                        <strong>Total Amount:</strong>
+                                    </t>
+                                    <span t-field="o.totals"/>
+                                </p>
+                            </div>
+                            <div class="col-3">
+                                <p>
+                                    <t t-translation="off">
+                                        <strong>Status:</strong>
+                                    </t>
+                                    <span t-field="o.state"/>
+                                </p>
+                            </div>
+                        </div>
+
+                        <br/>
+
+                        <table class="table table-bordered"
+                               style="border-collapse: collapse; width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th style="border: 1px solid black;">
+                                        <t t-translation="off">
+                                            <strong>Employee</strong>
+                                        </t>
+                                    </th>
+                                    <th style="border: 1px solid black;">
+                                        <t t-translation="off">
+                                            <strong>Total Expenses Paid</strong>
+                                        </t>
+                                    </th>
+                                    <th style="border: 1px solid black;">
+                                        <t t-translation="off">
+                                            <strong>Total Work Amount</strong>
+                                        </t>
+                                    </th>
+                                    <th style="border: 1px solid black;">
+                                        <t t-translation="off">
+                                            <strong>Remaining Balance</strong>
+                                        </t>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.balance_lines" t-as="line">
+                                    <td style="border: 1px solid black;">
+                                        <span t-field="line.employee_id.name"/>
+                                    </td>
+                                    <td style="border: 1px solid black;">
+                                        <span t-field="line.total_expense_paid"/>
+                                    </td>
+                                    <td style="border: 1px solid black;">
+                                        <span t-field="line.total_work_amount"/>
+                                    </td>
+                                    <td style="border: 1px solid black;">
+                                        <span t-field="line.remaining_balance"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

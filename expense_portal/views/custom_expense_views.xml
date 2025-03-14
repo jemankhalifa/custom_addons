@@ -5,14 +5,14 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button name="action_submit" string="Submit to Manager" type="object" class="btn-success"
+                    <button name="action_submit" string="Submit to Manager" type="object" class="btn-secondary"
                             invisible="state != 'draft'"/>
-                    <button name="action_approve" string="Approve" type="object" class="btn-success"
+                    <button name="action_approve" string="Approve" type="object" class="btn-secondary"
                             invisible="state != 'submitted'" group="expense_portal.group_expense_manager"/>
                     <button name="action_reject" string="Reject" type="object" class="btn-danger"
-                            invisible="state != 'submitted'" group="expense_portal.group_expense_manager"/>
-                    <button name="action_cancel" string="Cancel" type="object" class="btn-danger"
                             invisible="state != 'submitted'"/>
+                    <button name="action_cancel" string="Cancel" type="object" class="btn-secondary"
+                            invisible="state != 'draft'"/>
                     <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>
@@ -62,8 +62,13 @@
         <field name="res_model">expense.portal</field>
         <field name="view_mode">list,form</field>
     </record>
-    <menuitem id="menu_expense_portal_root1" name="Expense Portal"
+
+    <menuitem id="menu_expense_portal_root1"
+              name="Expense Portal"
               web_icon="expense_portal/static/description/icon.png"/>
-    <menuitem id="expense_portal1" name="Expenses" parent="menu_expense_portal_root1" action="action_expense_portal1"
+    <menuitem id="expense_portal1"
+              name="Expenses"
+              parent="menu_expense_portal_root1"
+              action="action_expense_portal1"
               sequence="1"/>
 </odoo>
