@@ -1,0 +1,16 @@
+<odoo>
+    <!-- تعريف الإجراء (Action) -->
+    <record id="action_courses" model="ir.actions.act_window">
+        <field name="name">Courses</field>  <!-- اسم الإجراء -->
+        <field name="res_model">product.template</field>  <!-- النموذج المرتبط بالإجراء -->
+        <field name="view_mode">tree,form</field>  <!-- وضع العرض (قائمة ونموذج) -->
+        <field name="domain">[('is_published', '=', True)]</field>  <!-- فلتر لعرض الكورسات المنشورة فقط -->
+        <field name="context">{'search_default_filter_published': 1}</field>  <!-- سياق البحث -->
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create your first course!</p>
+        </field>
+    </record>
+
+    <!-- تعريف القائمة (Menu) -->
+    <menuitem id="menu_courses" name="Children's Courses" parent="website.main_menu" action="action_courses" sequence="10"/>
+</odoo>

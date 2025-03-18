@@ -6,8 +6,9 @@ from odoo.exceptions import UserError
 class ExpensePortal(models.Model):
     _name = 'expense.portal'
     _description = 'Employee Expense Portal'
-    _inherit = 'mail.thread'
+    _inherit = 'mail.thread' #This inherit for chatter...
 
+    # Definition of fields...
     name = fields.Char(compute="set_name_value", string="Name")
     employee_id = fields.Many2one('hr.employee', string='Employee', required=True,
                                   default=lambda self: self.env.user.employee_id)
@@ -18,6 +19,7 @@ class ExpensePortal(models.Model):
                                   required=True)
     date = fields.Date(string='Date', default=fields.Date.today())
     note = fields.Text(string='Note')
+    # Definition of Status - (5 Status)... 
     state = fields.Selection([
         ('draft', 'Draft'),
         ('submitted', 'Submitted To Manager'),
@@ -26,12 +28,12 @@ class ExpensePortal(models.Model):
         ('cancelled', 'Cancelled')
     ], string='Status', default='draft')
 
+    # Definition of Payments smart button ...
     payment_id = fields.Many2one('account.payment', string="Payment")
     expensed = fields.Boolean(string="Expensed?")
-
     payment_count = fields.Integer(string="Payment Count", compute="_compute_payment_count")
 
-    
+    # Set name as "Employee Name - Date"..
     @api.depends('employee_id')
     def set_name_value(self):
         for rec in self:
@@ -83,6 +85,7 @@ class ExpensePortal(models.Model):
         """Cancel the expense."""
         self.write({'state': 'cancelled'})
 
+    # Compute Payments ....
     def _compute_payment_count(self):
         for rec in self:
             rec.payment_count = self.env['account.payment'].search_count([('id', '=', rec.payment_id.id)])

@@ -3,6 +3,7 @@
         <field name="name">expense.portal.form</field>
         <field name="model">expense.portal</field>
         <field name="arch" type="xml">
+            <!--  Expense Portal Form  -->
             <form>
                 <header>
                     <button name="action_submit" string="Submit to Manager" type="object" class="btn-success"
@@ -22,6 +23,7 @@
                         <field name="date" readonly="state not in ['draft']"/>
                         <field name="note" readonly="state not in ['draft']"/>
                     </group>
+                    <!-- The smart button that shows the payments of an employee -->
                     <div class="oe_button_box" name="button_box">
                         <button class="oe_stat_button" type="object" name="action_view_payments" icon="fa-money">
                             <field string="Payments" name="payment_count" widget="statinfo"/>
