@@ -6,9 +6,9 @@
     'author': 'Tamadur Omer',
     'depends': ['website', 'website_sale', 'website_membership'],
     'data': [
-        'views/website_templates.xml',
-        'data/website_menus.xml',
-        'security/ir.model.access.csv',
+        #'views/website_templates.xml',
+        #'data/website_menus.xml',
+        #'security/ir.model.access.csv',
     ],
     'assets': {
     'web.assets_frontend': [

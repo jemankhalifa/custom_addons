@@ -47,3 +47,10 @@
     transform: scale(1.1) !important; 
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important; 
 }
+.s_banner {
+    width: 1500px;  
+    height: 500px;  
+    object-fit: cover; 
+    margin: 0 auto;  
+    display: block;
+}
