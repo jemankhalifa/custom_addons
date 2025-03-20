@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
         delay: 0.5,
         ease: "power2.out"
     });
-    if (document.body.classList.contains("o_web_client")){
+
+    if (document.body.classList.contains("oe_structure.oe_empty")){
     const bubbleContainer = document.createElement("div");
     bubbleContainer.classList.add("bubble-container");
     document.body.appendChild(bubbleContainer);
