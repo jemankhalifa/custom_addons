@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!--Check Report Action-->
+    <record id="report_check_printing" model="ir.actions.report">
+        <field name="name">Check Printing Report</field>
+        <field name="model">account.payment</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">check_printing_net4x.report_check_template</field>
+        <field name="report_file">check_printing_net4x.report_check_template</field>
+        <field name="binding_model_id" ref="model_account_payment"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

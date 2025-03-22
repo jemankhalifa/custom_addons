@@ -1,3 +1,11 @@
+# """"
+# The Expense Portal is a custom Odoo module designed to streamline the process of submitting,
+# tracking, and managing employee expenses for small businesses.
+# It provides employees with a user-friendly interface to submit their expenses,
+# allows managers to review and approve/reject expenses, and generates PDF reports for
+# record-keeping and auditing purposes.
+# """"
+
 {
     'name': 'Custom Expense Portal',
     'author': 'Net4X Innovation',
