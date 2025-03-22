@@ -63,6 +63,7 @@
             </list>
         </field>
     </record>
+
     <record id="action_expense_portal1" model="ir.actions.act_window">
         <field name="name">Expense Portal</field>
         <field name="res_model">expense.portal</field>

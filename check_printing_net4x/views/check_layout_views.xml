@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_check_layout_form" model="ir.ui.view">
+        <field name="name">check.layout.form</field>
+        <field name="model">check.layout.config</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="journal_id"/>
+                    </group>
+                    <group>
+                        <field name="check_number_x"/>
+                        <field name="check_number_y"/>
+                    </group>
+                    <group>
+                        <field name="date_x"/>
+                        <field name="date_y"/>
+                    </group>
+                    <group>
+                        <field name="payee_x"/>
+                        <field name="payee_y"/>
+                    </group>
+                    <group>
+                        <field name="amount_x"/>
+                        <field name="amount_y"/>
+                    </group>
+                    <group>
+                        <field name="amount_words_x"/>
+                        <field name="amount_words_y"/>
+                    </group>
+                    <group>
+                        <field name="signature_x"/>
+                        <field name="signature_y"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_check_layout_tree" model="ir.ui.view">
+        <field name="name">check.layout.tree</field>
+        <field name="model">check.layout.config</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="journal_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_check_layout" model="ir.actions.act_window">
+        <field name="name">Check Layouts</field>
+        <field name="res_model">check.layout.config</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="view_check_layout_tree"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Define check layouts with customizable padding.
+            </p>
+        </field>
+    </record>
+
+
+    <menuitem id="menu_check_layout"
+              name="Check Layouts"
+              parent="account.menu_finance_payables"
+              action="action_check_layout"
+              sequence="300"/>
+
+</odoo>
