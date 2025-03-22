@@ -5,12 +5,13 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    # The compute button
+                    <!--The compute button-->
                     <button name="compute_balance" string="Compute" type="object" class="btn-primary"
                             invisible="state != 'draft'"/>
 
-                    # print button
-                    <button string="Print PDF" type="object" class="btn-warning" name="action_print_report"/>
+                    <!--print PDF button-->
+                    <button string="Print PDF" type="object" class="btn-warning"
+                            name="action_print_report"/>
 
                     <button name="action_approve" string="Approve" type="object" class="btn-success"
                             invisible="state != 'draft'"/>
@@ -28,6 +29,15 @@
                         <field name="from_date"/>
                         <field name="to_date"/>
                     </group>
+
+                    <!--The smart button that shows the payments of an employee-->
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" type="object" name="action_view_payments"
+                                string="Payments" icon="fa-money">
+                            <field string="Payments" name="payment_count" widget="statinfo"/>
+                        </button>
+                    </div>
+
                     <notebook>
                         <page string="Employees">
                             <field name="balance_lines" mode="list" readonly="1">
@@ -41,13 +51,7 @@
                         </page>
                     </notebook>
                 </sheet>
-                # The smart button that shows the payments of an employee
-                <div class="oe_button_box" name="button_box">
-                    <button class="oe_stat_button" type="object" name="action_view_payments" string="Payments"
-                            icon="fa-money">
-                        <field string="Payments" name="payment_count" widget="statinfo"/>
-                    </button>
-                </div>
+
                 <!--  Add Chatter  -->
                 <chatter reload_on_follower="True"/>
             </form>

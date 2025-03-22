@@ -33,6 +33,7 @@
             </form>
         </field>
     </record>
+
     <record id="view_account_payment_tree" model="ir.ui.view">
         <field name="name">account.payment.tree</field>
         <field name="model">account.payment</field>
@@ -45,18 +46,24 @@
             </list>
         </field>
     </record>
+
     <record id="view_expense_list1" model="ir.ui.view">
         <field name="name">expense.list</field>
         <field name="model">expense.portal</field>
         <field name="arch" type="xml">
             <list>
-                <field name="employee_id"/>
+                <field name="employee_id" widget="badge"/>
                 <field name="amount"/>
                 <field name="date"/>
-                <field name="state"/>
+                <field name="state" widget="badge"
+                       decoration-danger="state == 'cancelled'"
+                       decoration-warning="state == 'Rejected'"
+                       decoration-success="state == 'approved'"
+                       decoration-info="state == 'submitted'"/>
             </list>
         </field>
     </record>
+
     <record id="action_expense_portal1" model="ir.actions.act_window">
         <field name="name">Expense Portal</field>
         <field name="res_model">expense.portal</field>
@@ -71,4 +78,5 @@
               parent="menu_expense_portal_root1"
               action="action_expense_portal1"
               sequence="1"/>
+
 </odoo>

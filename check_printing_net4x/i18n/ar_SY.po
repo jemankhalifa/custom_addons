@@ -1,0 +1,216 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* check_printing_net4x
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-22 10:15+0000\n"
+"PO-Revision-Date: 2025-03-22 10:15+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: check_printing_net4x
+#: model_terms:ir.ui.view,arch_db:check_printing_net4x.report_check_template
+msgid "<strong>Amount in Words:</strong>"
+msgstr "المبلغ بالكلمات:"
+
+#. module: check_printing_net4x
+#: model_terms:ir.ui.view,arch_db:check_printing_net4x.report_check_template
+msgid "<strong>Amount:</strong>"
+msgstr "المبلغ:"
+
+#. module: check_printing_net4x
+#: model_terms:ir.ui.view,arch_db:check_printing_net4x.report_check_template
+msgid "<strong>Check Date:</strong>"
+msgstr "تاريخ الشيك:"
+
+#. module: check_printing_net4x
+#: model_terms:ir.ui.view,arch_db:check_printing_net4x.report_check_template
+msgid "<strong>Check Number:</strong>"
+msgstr "رقم الشيك:"
+
+#. module: check_printing_net4x
+#: model_terms:ir.ui.view,arch_db:check_printing_net4x.report_check_template
+msgid "<strong>Payee:</strong>"
+msgstr "المستفيد:"
+
+#. module: check_printing_net4x
+#: model_terms:ir.ui.view,arch_db:check_printing_net4x.report_check_template
+msgid "<strong>Signature:</strong>______________________"
+msgstr "التوقيع:"
+
+#. module: check_printing_net4x
+#: model:ir.model.fields,field_description:check_printing_net4x.field_check_layout_config__amount_x
+msgid "Amount X"
+msgstr "المبلغ في المحور السيني:"
+
+#. module: check_printing_net4x
+#: model:ir.model.fields,field_description:check_printing_net4x.field_check_layout_config__amount_y
+msgid "Amount Y"
+msgstr "المبلغ في المحور الصادي:"
+
+#. module: check_printing_net4x
+#: model:ir.model.fields,field_description:check_printing_net4x.field_account_payment__amount_in_words
+msgid "Amount in Words"
+msgstr "المبلغ بالكلمات:"
+
+#. module: check_printing_net4x
+#: model:ir.model.fields,field_description:check_printing_net4x.field_check_layout_config__amount_words_x
+msgid "Amount in Words X"
+msgstr "المبلغ بالكلمات في المحور السيني:"
+
+#. module: check_printing_net4x
+#: model:ir.model.fields,field_description:check_printing_net4x.field_check_layout_config__amount_words_y
+msgid "Amount in Words Y"
+msgstr "المبلغ بالكلمات في المحور الصادي:"
+
+#. module: check_printing_net4x
+#: model:ir.model.fields,field_description:check_printing_net4x.field_check_layout_config__journal_id
+msgid "Bank Journal"
+msgstr "يومية البنك"
+
+#. module: check_printing_net4x
+#: model_terms:ir.ui.view,arch_db:check_printing_net4x.view_check_layout_wizard
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: check_printing_net4x
+#: model:ir.model.fields,field_description:check_printing_net4x.field_account_payment__check_layout_id
+#: model:ir.model.fields,field_description:check_printing_net4x.field_check_layout_wizard__layout_id
+msgid "Check Layout"
+msgstr "تخطيط الشيك"
+
+#. module: check_printing_net4x
+#: model:ir.model,name:check_printing_net4x.model_check_layout_config
+msgid "Check Layout Configuration"
+msgstr "تكوين تخطيط الشيك"
+
+#. module: check_printing_net4x
+#: model:ir.model,name:check_printing_net4x.model_check_layout_wizard
+msgid "Check Layout Selection Wizard"
+msgstr "اختيار تخطيط الشيك"
+
+#. module: check_printing_net4x
+#: model:ir.actions.act_window,name:check_printing_net4x.action_check_layout
+#: model:ir.ui.menu,name:check_printing_net4x.menu_check_layout
+msgid "Check Layouts"
+msgstr "تخطيطات الشيك"
+
+#. module: check_printing_net4x
+#: model:ir.model.fields,field_description:check_printing_net4x.field_check_layout_config__check_number_x
+msgid "Check Number X"
+msgstr "رقم الشيك في المحور السيني:"
+
+#. module: check_printing_net4x
+#: model:ir.model.fields,field_description:check_printing_net4x.field_check_layout_config__check_number_y
+msgid "Check Number Y"
+msgstr "رقم الشيك في المحور الصادي:"
+
+#. module: check_printing_net4x
+#: model:ir.actions.report,name:check_printing_net4x.report_check_printing
+#: model:ir.model,name:check_printing_net4x.model_report_check_printing_net4x_report_check_template
+msgid "Check Printing Report"
+msgstr "تقرير طباعة الشيك"
+
+#. module: check_printing_net4x
+#: model:ir.model.fields,field_description:check_printing_net4x.field_check_layout_config__create_uid
+#: model:ir.model.fields,field_description:check_printing_net4x.field_check_layout_wizard__create_uid
+msgid "Created by"
+msgstr "تم انشاءه بواسطة"
+
+#. module: check_printing_net4x
+#: model:ir.model.fields,field_description:check_printing_net4x.field_check_layout_config__create_date
+#: model:ir.model.fields,field_description:check_printing_net4x.field_check_layout_wizard__create_date
+msgid "Created on"
+msgstr "تم انشاءه على"
+
+#. module: check_printing_net4x
+#: model:ir.model.fields,field_description:check_printing_net4x.field_check_layout_config__date_x
+msgid "Date X"
+msgstr "التاريخ في المحور السيني:"
+
+#. module: check_printing_net4x
+#: model:ir.model.fields,field_description:check_printing_net4x.field_check_layout_config__date_y
+msgid "Date Y"
+msgstr "التاريخ في المحور الصادي:"
+
+#. module: check_printing_net4x
+#: model_terms:ir.actions.act_window,help:check_printing_net4x.action_check_layout
+msgid "Define check layouts with customizable padding."
+msgstr ""
+
+#. module: check_printing_net4x
+#: model:ir.model.fields,field_description:check_printing_net4x.field_check_layout_config__display_name
+#: model:ir.model.fields,field_description:check_printing_net4x.field_check_layout_wizard__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: check_printing_net4x
+#: model:ir.model.fields,field_description:check_printing_net4x.field_check_layout_config__id
+#: model:ir.model.fields,field_description:check_printing_net4x.field_check_layout_wizard__id
+msgid "ID"
+msgstr "معرف"
+
+#. module: check_printing_net4x
+#: model:ir.model.fields,field_description:check_printing_net4x.field_check_layout_config__write_uid
+#: model:ir.model.fields,field_description:check_printing_net4x.field_check_layout_wizard__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: check_printing_net4x
+#: model:ir.model.fields,field_description:check_printing_net4x.field_check_layout_config__write_date
+#: model:ir.model.fields,field_description:check_printing_net4x.field_check_layout_wizard__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: check_printing_net4x
+#: model:ir.model.fields,field_description:check_printing_net4x.field_check_layout_config__name
+msgid "Layout Name"
+msgstr "اسم المخطط"
+
+#. module: check_printing_net4x
+#: model:ir.model.fields,field_description:check_printing_net4x.field_check_layout_config__payee_x
+msgid "Payee X"
+msgstr "المستفيد في المحور السيني:"
+
+#. module: check_printing_net4x
+#: model:ir.model.fields,field_description:check_printing_net4x.field_check_layout_config__payee_y
+msgid "Payee Y"
+msgstr "المستفيد في المحور الصادي:"
+
+#. module: check_printing_net4x
+#: model:ir.model,name:check_printing_net4x.model_account_payment
+msgid "Payments"
+msgstr "الدفعات"
+
+#. module: check_printing_net4x
+#: model_terms:ir.ui.view,arch_db:check_printing_net4x.view_check_layout_wizard
+msgid "Print"
+msgstr "اطبع"
+
+#. module: check_printing_net4x
+#: model_terms:ir.ui.view,arch_db:check_printing_net4x.account_payment_form_view
+msgid "Print Check"
+msgstr "اطبع الشيك"
+
+#. module: check_printing_net4x
+#: model:ir.actions.act_window,name:check_printing_net4x.action_check_layout_wizard
+#: model_terms:ir.ui.view,arch_db:check_printing_net4x.view_check_layout_wizard
+msgid "Select Check Layout"
+msgstr "اختر تخطيط الشيك"
+
+#. module: check_printing_net4x
+#: model:ir.model.fields,field_description:check_printing_net4x.field_check_layout_config__signature_x
+msgid "Signature X"
+msgstr "التوقيع في المحور السيني:"
+
+#. module: check_printing_net4x
+#: model:ir.model.fields,field_description:check_printing_net4x.field_check_layout_config__signature_y
+msgid "Signature Y"
+msgstr "التحقيق في المحور الصادي:"

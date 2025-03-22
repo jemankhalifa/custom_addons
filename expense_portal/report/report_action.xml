@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
-    # Report Action
+            <!--Report Action-->
     <record id="report_current_balance" model="ir.actions.report">
         <field name="name">Balance Report</field>
         <field name="model">current.balance.labor</field>
