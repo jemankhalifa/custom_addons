@@ -12,45 +12,33 @@
                             <!-- Check Number -->
                             <div t-if="layout"
                                  t-att-style="'position: absolute; left: {}px; top: {}px; display: flex; align-items: center;' .format(layout.check_number_x, layout.check_number_y)">
-                                <strong>Check Number:</strong>
                                 <t t-esc="doc.check_number or 'No Number'"/>
                             </div>
 
                             <!-- Check Date -->
                             <div t-if="layout"
                                  t-att-style="'position: absolute; left: {}px; top: {}px; display: flex; align-items: center;' .format(layout.date_x, layout.date_y)">
-                                <strong>Check Date:</strong>
                                 <t t-esc="doc.date or 'No Date'"/>
                             </div>
 
                             <!-- Payee Name -->
                             <div t-if="layout"
                                  t-att-style="'position: absolute; left: {}px; top: {}px; display: flex; align-items: center;' .format(layout.payee_x, layout.payee_y)">
-                                <strong>Payee:</strong>
                                 <t t-esc="doc.partner_id.name or 'No Payee'"/>
                             </div>
 
                             <!-- Check Amount -->
                             <div t-if="layout"
                                  t-att-style="'position: absolute; left: {}px; top: {}px; display: flex; align-items: center;' .format(layout.amount_x, layout.amount_y)">
-                                <strong>Amount:</strong>
                                 <t t-esc="doc.amount or '0.00'"/>
                             </div>
 
                             <!-- Amount in Words -->
                             <div t-if="layout"
                                  t-att-style="'position: absolute; left: {}px; top: {}px; display: flex; align-items: center;' .format(layout.amount_words_x, layout.amount_words_y)">
-                                <strong>Amount in Words:</strong>
                                 <t t-esc="doc.currency_id.amount_to_text(doc.amount) or 'Zero'"/>
                             </div>
-
-                            <!-- Signature Placeholder -->
-                            <div t-if="layout"
-                                 t-att-style="'position: absolute; left: {}px; top: {}px; display: flex; align-items: center;' .format(layout.signature_x, layout.signature_y)">
-                                <strong>Signature:</strong>______________________
-                            </div>
                         </t>
-
                     </div>
                 </t>
             </main>
