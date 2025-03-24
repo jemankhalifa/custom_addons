@@ -1,7 +1,7 @@
 <odoo>
     <template id="report_check_template">
         <t t-call="web.external_layout">
-            <main>
+            <main t-att-style="'width: {}px; height: {}px;' .format(layout.page_width, layout.page_height)">
                 <t t-set="recs" t-value="docs.sudo().browse(payments)"/>
                 <t t-set="layout" t-value="docs.env['check.layout.config'].sudo().browse(layout_id)"/>
 

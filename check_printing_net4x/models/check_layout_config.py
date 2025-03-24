@@ -33,3 +33,9 @@ class CheckLayoutConfig(models.Model):
 
     signature_x = fields.Integer(string="Signature X", default=400)
     signature_y = fields.Integer(string="Signature Y", default=300)
+
+
+
+    """Page Width & Height"""
+    page_width = fields.Integer(string='Page Width')
+    page_height = fields.Integer(string='Page Height')
