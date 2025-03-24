@@ -1,5 +1,5 @@
 {
-    'name': 'Check Printing Net4X',
+    'name': 'Check Printing Management',
     'author': 'Net4X Innovation',
     'sequence': -99,
     'version': '1.0',
