@@ -34,14 +34,6 @@
     }
 }
 
-/* تنسيق عام للصور 
-.o_card_img {
-    transition: transform 0.3s ease-in-out; 
-    width: 100%;  
-    height: auto;  
-    border-radius: 10px; 
-}*/
-
 /* تأثير التكبير عند التحويم */
 .o_card_imgo:hover {
     transform: scale(1.1) !important; 
@@ -53,4 +45,39 @@
     object-fit: cover; 
     margin: 0 auto;  
     display: block;
+}
+/*Hide the footer*/ 
+.o_brand_promotion{  
+    display: none !important
+}
+/*Hide phone me*/ 
+.nav-link.o_nav-link_secondary.p-2{  
+    display: none !important
+}
+/* Default menu item styles */
+.nav-link {
+    background-color: transparent;
+    /*color: black; *//* Default text color */
+    transition: all 0.2s ease-in-out;
+}
+/* Active menu item styles */
+.nav-item.active .nav-link {
+    background-color: #4F2AB8;
+    color: white !important; /* Ensure text is white for active items */
+}
+/* Hover effect */
+.nav-link:hover {
+    background-color: #58E3D8;
+    color: white !important; /* Text color changes on hover */
+}
+/* Make the header top menu fixed  */
+ .o_header_main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999; /* لضمان ظهور القائمة فوق العناصر الأخرى */
+}
+body {
+    padding-top: 5px;  /*تعديل ارتفاع البُعد لمنع تداخل المحتوى */
 }

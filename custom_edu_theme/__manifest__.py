@@ -12,11 +12,13 @@
     ],
     'assets': {
     'web.assets_frontend': [
-        'custom_edu_theme/static/css/custom_styles.css',
         'custom_edu_theme/static/js/custom_scripts.js',
-        'custom_edu_theme/static/lottie/animation.json',
-        'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js',  # إضافة GSAP
-        'https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.4/lottie.min.js',  # إضافة Lottie
+        'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js',
+        'custom_edu_theme/static/css/custom_styles.css',
+       # 'custom_edu_theme/static/js/custom_scripts.js',
+        #'custom_edu_theme/static/lottie/animation.json',
+       # 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js',  # إضافة GSAP
+        #'https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.4/lottie.min.js',  # إضافة Lottie
     ],
     },
     'installable': True,

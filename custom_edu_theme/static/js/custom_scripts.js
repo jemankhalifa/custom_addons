@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
         ease: "power2.out"
     });
 
-    if (document.body.classList.contains("oe_structure.oe_empty")){
+    
     const bubbleContainer = document.createElement("div");
     bubbleContainer.classList.add("bubble-container");
     document.body.appendChild(bubbleContainer);
@@ -31,6 +31,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // إنشاء فقاعات جديدة كل نصف ثانية
     setInterval(createBubble, 500);
-    }
-
+   
 });
+
+
+
+
+  
