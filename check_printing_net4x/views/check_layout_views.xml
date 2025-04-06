@@ -8,33 +8,33 @@
                 <sheet>
                     <group>
                         <field name="name"/>
-                        <field name="journal_id"/>
+                        <field name="journal_ids" widget="many2many_tags"/>
                     </group>
-                    <group>
+                    <group string="Page Dimensions (mm)">
                         <field name="page_width"/>
                         <field name="page_height"/>
                     </group>
-                    <group>
+                    <group string="Check Number">
                         <field name="check_number_x"/>
                         <field name="check_number_y"/>
                     </group>
-                    <group>
+                    <group string="Check Date">
                         <field name="date_x"/>
                         <field name="date_y"/>
                     </group>
-                    <group>
+                    <group string="Payee">
                         <field name="payee_x"/>
                         <field name="payee_y"/>
                     </group>
-                    <group>
+                    <group string="Amount">
                         <field name="amount_x"/>
                         <field name="amount_y"/>
                     </group>
-                    <group>
+                    <group string="Amount in Words">
                         <field name="amount_words_x"/>
                         <field name="amount_words_y"/>
                     </group>
-                    <group>
+                    <group string="Signature">
                         <field name="signature_x"/>
                         <field name="signature_y"/>
                     </group>
@@ -49,7 +49,7 @@
         <field name="arch" type="xml">
             <list>
                 <field name="name"/>
-                <field name="journal_id"/>
+                <field name="journal_ids"/>
             </list>
         </field>
     </record>
@@ -69,7 +69,7 @@
 
     <menuitem id="menu_check_layout"
               name="Check Layouts"
-              parent="account.menu_finance_payables"
+              parent="account.menu_account_config"
               action="action_check_layout"
               sequence="300"/>
 

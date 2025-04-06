@@ -1,47 +1,55 @@
 <odoo>
     <template id="report_check_template">
-        <t t-call="web.external_layout">
-            <main t-att-style="'width: {}px; height: {}px;' .format(layout.page_width, layout.page_height)">
-                <t t-set="recs" t-value="docs.sudo().browse(payments)"/>
-                <t t-set="layout" t-value="docs.env['check.layout.config'].sudo().browse(layout_id)"/>
+        <t t-call="web.html_container">
+            <t t-set="pf" t-value="paper_format"/>
 
-                <t t-foreach="recs" t-as="doc">
-                    <div>
+            <!-- Dynamic paper format size -->
+            <style>
+                @page {
+                size:<t t-esc="pf['page_width']"/>mm<t t-esc="pf['page_height']"/>mm;
+                }
+                body {
+                margin: 0;
+                padding: 0;
+                }
+            </style>
 
-                        <t t-if="doc">
-                            <!-- Check Number -->
-                            <div t-if="layout"
-                                 t-att-style="'position: absolute; left: {}px; top: {}px; display: flex; align-items: center;' .format(layout.check_number_x, layout.check_number_y)">
-                                <t t-esc="doc.check_number or 'No Number'"/>
-                            </div>
+            <t t-call="web.external_layout">
+                <div class="page"
+                     t-att-style="'position: relative; width: {}mm; height: {}mm;'.format(pf['page_width'], pf['page_height'])">
 
-                            <!-- Check Date -->
-                            <div t-if="layout"
-                                 t-att-style="'position: absolute; left: {}px; top: {}px; display: flex; align-items: center;' .format(layout.date_x, layout.date_y)">
-                                <t t-esc="doc.date or 'No Date'"/>
-                            </div>
-
-                            <!-- Payee Name -->
-                            <div t-if="layout"
-                                 t-att-style="'position: absolute; left: {}px; top: {}px; display: flex; align-items: center;' .format(layout.payee_x, layout.payee_y)">
-                                <t t-esc="doc.partner_id.name or 'No Payee'"/>
-                            </div>
-
-                            <!-- Check Amount -->
-                            <div t-if="layout"
-                                 t-att-style="'position: absolute; left: {}px; top: {}px; display: flex; align-items: center;' .format(layout.amount_x, layout.amount_y)">
-                                <t t-esc="doc.amount or '0.00'"/>
-                            </div>
-
-                            <!-- Amount in Words -->
-                            <div t-if="layout"
-                                 t-att-style="'position: absolute; left: {}px; top: {}px; display: flex; align-items: center;' .format(layout.amount_words_x, layout.amount_words_y)">
-                                <t t-esc="doc.currency_id.amount_to_text(doc.amount) or 'Zero'"/>
-                            </div>
-                        </t>
+                    <!-- Check Number -->
+                    <div t-if="layout and docs"
+                         t-att-style="'position: absolute; left: {}px; top: {}px;'.format(layout.check_number_x, layout.check_number_y)">
+                        <span t-field="docs[0].check_number"/>
                     </div>
-                </t>
-            </main>
+
+                    <!-- Date -->
+                    <div t-if="layout and docs"
+                         t-att-style="'position: absolute; left: {}px; top: {}px;'.format(layout.date_x, layout.date_y)">
+                        <span t-field="docs[0].date"/>
+                    </div>
+
+                    <!-- Payee -->
+                    <div t-if="layout and docs"
+                         t-att-style="'position: absolute; left: {}px; top: {}px;'.format(layout.payee_x, layout.payee_y)">
+                        <span t-field="docs[0].partner_id"/>
+                    </div>
+
+                    <!-- Amount -->
+                    <div t-if="layout and docs"
+                         t-att-style="'position: absolute; left: {}px; top: {}px;'.format(layout.amount_x, layout.amount_y)">
+                        <span t-field="docs[0].amount"/>
+                    </div>
+
+                    <!-- Amount in Words -->
+                    <div t-if="layout and docs"
+                         t-att-style="'position: absolute; left: {}px; top: {}px; width: 300px;'.format(layout.amount_words_x, layout.amount_words_y)">
+                        <span t-esc="docs[0].currency_id.amount_to_text(docs[0].amount)"/>
+                    </div>
+
+                </div>
+            </t>
         </t>
     </template>
 </odoo>
