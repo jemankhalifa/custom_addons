@@ -1,4 +1,5 @@
-from odoo import models, fields
+from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 
 class CheckLayoutConfig(models.Model):
@@ -11,8 +12,7 @@ class CheckLayoutConfig(models.Model):
     _description = 'Check Layout Configuration'
 
     name = fields.Char(string="Layout Name", required=True)
-    journal_id = fields.Many2one('account.journal', string="Bank Journal", required=True)
-
+    journal_ids = fields.Many2many('account.journal', string="Journals")
 
     """Padding X,Y Fields (Modify as needed)"""
 
@@ -34,8 +34,24 @@ class CheckLayoutConfig(models.Model):
     signature_x = fields.Integer(string="Signature X", default=400)
     signature_y = fields.Integer(string="Signature Y", default=300)
 
+    """Page Format Dimensions"""
+    page_width = fields.Integer(string='Page Width (mm)')
+    page_height = fields.Integer(string='Page Height (mm)')
 
+    @api.constrains('page_width', 'page_height')
+    def _check_page_dimensions(self):
+        for record in self:
+            if record.page_width and record.page_width <= 0:
+                raise ValidationError("Page width must be a positive number")
+            if record.page_height and record.page_height <= 0:
+                raise ValidationError("Page height must be a positive number")
 
-    """Page Width & Height"""
-    page_width = fields.Integer(string='Page Width')
-    page_height = fields.Integer(string='Page Height')
+    """Ensure each journal is linked to only one layout."""
+
+    @api.constrains('journal_ids')
+    def _check_journal_unique_layout(self):
+        for layout in self:
+            for journal in layout.journal_ids:
+                other_layouts = self.search([('id', '!=', layout.id), ('journal_ids', 'in', journal.id)])
+                if other_layouts:
+                    raise ValidationError(f"The journal '{journal.name}' is already linked to another layout.")

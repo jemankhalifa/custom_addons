@@ -6,7 +6,8 @@
     'category': 'Accounting',
     'summary': 'Manage check payments',
     'depends': ['account',
-                'mail'
+                'mail',
+                'account_check_printing'
                 ],
     'data': [
         'security/ir.model.access.csv',
