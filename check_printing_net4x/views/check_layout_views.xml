@@ -10,10 +10,6 @@
                         <field name="name"/>
                         <field name="journal_ids" widget="many2many_tags"/>
                     </group>
-                    <group string="Page Dimensions (mm)">
-                        <field name="page_width"/>
-                        <field name="page_height"/>
-                    </group>
                     <group string="Check Number">
                         <field name="check_number_x"/>
                         <field name="check_number_y"/>
