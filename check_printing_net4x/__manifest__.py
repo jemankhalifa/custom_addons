@@ -18,5 +18,5 @@
         'report/report_action.xml',
     ],
     'installable': True,
-    'application': True,
+    'application': False,
 }

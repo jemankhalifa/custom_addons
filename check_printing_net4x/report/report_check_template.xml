@@ -1,55 +1,45 @@
 <odoo>
     <template id="report_check_template">
-        <t t-call="web.html_container">
-            <t t-set="pf" t-value="paper_format"/>
+            <t t-call="web.html_container">
+                <t t-set="display_header" t-value="False"/>
+                <t t-set="display_footer" t-value="False"/>
+                <main>
 
-            <!-- Dynamic paper format size -->
-            <style>
-                @page {
-                size:<t t-esc="pf['page_width']"/>mm<t t-esc="pf['page_height']"/>mm;
-                }
-                body {
-                margin: 0;
-                padding: 0;
-                }
-            </style>
+                    <div class="page">
 
-            <t t-call="web.external_layout">
-                <div class="page"
-                     t-att-style="'position: relative; width: {}mm; height: {}mm;'.format(pf['page_width'], pf['page_height'])">
+                        <!-- Check Number -->
+                        <div t-if="layout and docs"
+                             t-att-style="'position: absolute; left: {}px; top: {}px;'.format(layout.check_number_x, layout.check_number_y)">
+                            <span t-field="docs[0].check_number"/>
+                        </div>
 
-                    <!-- Check Number -->
-                    <div t-if="layout and docs"
-                         t-att-style="'position: absolute; left: {}px; top: {}px;'.format(layout.check_number_x, layout.check_number_y)">
-                        <span t-field="docs[0].check_number"/>
+                        <!-- Date -->
+                        <div t-if="layout and docs"
+                             t-att-style="'position: absolute; left: {}px; top: {}px;'.format(layout.date_x, layout.date_y)">
+                            <span t-field="docs[0].date"/>
+                        </div>
+
+                        <!-- Payee -->
+                        <div t-if="layout and docs"
+                             t-att-style="'position: absolute; left: {}px; top: {}px;'.format(layout.payee_x, layout.payee_y)">
+                            <span t-field="docs[0].partner_id"/>
+                        </div>
+
+                        <!-- Amount -->
+                        <div t-if="layout and docs"
+                             t-att-style="'position: absolute; left: {}px; top: {}px;'.format(layout.amount_x, layout.amount_y)">
+                            <span t-field="docs[0].amount"/>
+                        </div>
+
+                        <!-- Amount in Words -->
+                        <div t-if="layout and docs"
+                             t-att-style="'position: absolute; left: {}px; top: {}px; width: 300px;'.format(layout.amount_words_x, layout.amount_words_y)">
+                            <span t-esc="docs[0].currency_id.amount_to_text(docs[0].amount)"/>
+                        </div>
+
                     </div>
+                </main>
 
-                    <!-- Date -->
-                    <div t-if="layout and docs"
-                         t-att-style="'position: absolute; left: {}px; top: {}px;'.format(layout.date_x, layout.date_y)">
-                        <span t-field="docs[0].date"/>
-                    </div>
-
-                    <!-- Payee -->
-                    <div t-if="layout and docs"
-                         t-att-style="'position: absolute; left: {}px; top: {}px;'.format(layout.payee_x, layout.payee_y)">
-                        <span t-field="docs[0].partner_id"/>
-                    </div>
-
-                    <!-- Amount -->
-                    <div t-if="layout and docs"
-                         t-att-style="'position: absolute; left: {}px; top: {}px;'.format(layout.amount_x, layout.amount_y)">
-                        <span t-field="docs[0].amount"/>
-                    </div>
-
-                    <!-- Amount in Words -->
-                    <div t-if="layout and docs"
-                         t-att-style="'position: absolute; left: {}px; top: {}px; width: 300px;'.format(layout.amount_words_x, layout.amount_words_y)">
-                        <span t-esc="docs[0].currency_id.amount_to_text(docs[0].amount)"/>
-                    </div>
-
-                </div>
             </t>
-        </t>
     </template>
 </odoo>

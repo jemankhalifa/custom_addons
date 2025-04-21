@@ -34,10 +34,6 @@ class CheckLayoutConfig(models.Model):
     signature_x = fields.Integer(string="Signature X", default=400)
     signature_y = fields.Integer(string="Signature Y", default=300)
 
-    """Page Format Dimensions"""
-    page_width = fields.Integer(string='Page Width (mm)')
-    page_height = fields.Integer(string='Page Height (mm)')
-
     @api.constrains('page_width', 'page_height')
     def _check_page_dimensions(self):
         for record in self:
