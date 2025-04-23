@@ -19,7 +19,7 @@
     'depends': ['base', 'web', 'mail', 'crm'],
 
     'data': [
-        'views/views.xml',
+        'views/customer_installment_views.xml',
     ],
     'assets': {
         'web.assets_backend': [
