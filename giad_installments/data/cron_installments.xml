@@ -1,0 +1,13 @@
+<odoo>
+
+    <!--Scheduled Check Installments-->
+    <record id="ir_cron_check_due_installments" model="ir.cron">
+        <field name="name">Check Due Installments</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="model_id" search="[('model', '=', 'deposit.installments')]"/>
+        <field name="code">model.check_due_and_pay()</field>
+        <field name="state">code</field>
+    </record>
+</odoo>
+

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_customer_installments,customer.installments,model_customer_installments,,1,1,1,1
+access_deposit_installments,deposit.installments,model_deposit_installments,,1,1,1,1
