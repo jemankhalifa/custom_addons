@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
 
@@ -6,14 +7,27 @@
             <field name="name">customer.installments.view.list</field>
             <field name="model">customer.installments</field>
             <field name="arch" type="xml">
-                <list>
-                    <field name="partner_id" widget="badge"/>
+                <list decoration-info="state == 'draft'"
+                      decoration-warning="state == 'in_progress'"
+                      decoration-success="state == 'paid'">
+                    <field name="reference"/>
+                    <field name="partner_id" widget="badge"
+                           decoration-info="state == 'draft'"
+                           decoration-warning="state == 'in_progress'"
+                           decoration-success="state == 'paid'"/>
                     <field name="product"/>
                     <field name="total_amount" widget="monetary"/>
                     <field name="currency_id" invisible="1" optional="hide"/>
                     <field name="start_date"/>
                     <field name="installment_count"/>
-                    <field name="Installment_type"/>
+                    <field name="installment_type" widget="badge"
+                           decoration-info="state == 'draft'"
+                           decoration-warning="state == 'in_progress'"
+                           decoration-success="state == 'paid'"/>
+                    <field name="state" widget="badge"
+                           decoration-warning="state == 'in_progress'"
+                           decoration-success="state == 'paid'"/>
+                    <field name="payment_progress" widget="progressbar"/>
                     <field name="description" optional="hide"/>
                 </list>
             </field>
@@ -26,13 +40,21 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <button name="generate_installments"
-                                type="object"
+                        <button name="generate_installments" type="object" class="btn-primary"
                                 string="Generate Installments"
-                                class="btn-primary"
-                                invisible="installment_count == 0"/>
+                                invisible="state != 'draft'"/>
+                        <button name="action_confirm" type="object" class="btn-secondary"
+                                string="Confirm"
+                                invisible="state != 'draft'"/>
+
+                        <field name="state" widget="statusbar"/>
                     </header>
                     <sheet>
+                        <div class="oe_title">
+                            <h2>
+                                <field name="reference" readonly="1"/>
+                            </h2>
+                        </div>
                         <group>
                             <group>
                                 <field name="partner_id"/>
@@ -43,25 +65,15 @@
                             </group>
                             <group>
                                 <field name="installment_count"/>
-                                <field name="Installment_type"/>
+                                <field name="installment_type"/>
+                                <field name="payment_progress" widget="progressbar"/>
                                 <field name="description"/>
                             </group>
                         </group>
                         <notebook>
                             <page string="Installments">
                                 <field name="installment_ids" mode="list" readonly="1">
-                                    <list>
-                                        <field name="deposit_id" widget="badge"
-                                               decoration-info="state == 'pending'"
-                                               decoration-success="state == 'paid'"/>
-                                        <field name="amount" widget="monetary"/>
-                                        <field name="currency_id" invisible="1"
-                                               optional="hide"/>
-                                        <field name="due_date"/>
-                                        <field name="state" widget="badge"
-                                               decoration-info="state == 'pending'"
-                                               decoration-success="state == 'paid'"/>
-                                    </list>
+                                    <list ref="installments.deposit_installments_tree_view"/>
                                 </field>
                             </page>
                         </notebook>
@@ -81,11 +93,10 @@
             <field name="view_mode">list,form</field>
         </record>
 
-
         <!-- Menus   -->
         <menuitem id="customer_installments_root"
-                  name="Giad Installments"
-                  web_icon="giad_installments/static/description/icon.png"/>
+                  name="Installments"
+                  web_icon="installments/static/description/icon.png"/>
 
         <menuitem id="customer_installments"
                   name="Customer Installments"

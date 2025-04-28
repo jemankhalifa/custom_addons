@@ -30,7 +30,7 @@
         'wizard/tax_report.xml',
         'wizard/aged_partner.xml',
         'wizard/journal_audit.xml',
-        'report/report_action.xml',
+        'report/report.xml',
         'report/report_partner_ledger.xml',
         'report/report_general_ledger.xml',
         'report/report_trial_balance.xml',

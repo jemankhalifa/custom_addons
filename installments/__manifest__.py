@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Giad Installments",
+    'name': "Installments",
     'summary': "Calculation of customer installments",
     'description': """This module is allows you to manage customer installment plans for product purchases. 
                 You can define payment schedules based on total amount, start date, and installment frequency (weekly, monthly, annually). 
@@ -12,11 +12,14 @@
     'category': 'Accounting',
     'depends': ['base',
                 'mail',
-                'product'],
+                'product',
+                'account'],
     'data': [
         'data/cron_installments.xml',
+        'data/data.xml',
         'security/ir.model.access.csv',
         'views/customer_installment_views.xml',
+        'views/deposit_installment_view.xml',
     ],
     'sequence': -90,
     'application': True,

@@ -1,6 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
     <!--Scheduled Check Installments-->
+
     <record id="ir_cron_check_due_installments" model="ir.cron">
         <field name="name">Check Due Installments</field>
         <field name="interval_number">1</field>
