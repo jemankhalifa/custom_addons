@@ -17,6 +17,7 @@
     'data': [
         'data/cron_installments.xml',
         'data/data.xml',
+        'data/email_template_installment.xml',
         'security/ir.model.access.csv',
         'views/customer_installment_views.xml',
         'views/deposit_installment_view.xml',

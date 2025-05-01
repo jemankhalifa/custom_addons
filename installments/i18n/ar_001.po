@@ -1,0 +1,401 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* installments
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-29 08:17+0000\n"
+"PO-Revision-Date: 2025-04-29 08:17+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: installments
+#: model:mail.template,body_html:installments.email_template_installment_created
+msgid ""
+"<p>Dear ${object.partner_id.name},</p>\n"
+"\n"
+"            <p>Your ${object.deposit_id.installment_type} payment for\n"
+"            ${object.deposit_id.product.name} which started on\n"
+"            ${object.deposit_id.start_date} has been created today, please do your payment.</p>\n"
+"\n"
+"            <p>Thank you,<br/>\n"
+"            ${user.company_id.name}</p>\n"
+"        "
+msgstr ""دفعيتك الشهرية\الاسبوعيه ل ......... والتي بدأت في .......... بدأ استحقاقها اليوم, من فضلك قم بالسداد"
+
+
+
+
+"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__message_needaction
+msgid "Action Needed"
+msgstr "الإجراء المطلوب"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__activity_ids
+msgid "Activities"
+msgstr "الانشطة"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة النشاط المتوقع"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "رمز نوع النشاط"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_deposit_installments__amount
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: installments
+#: model:ir.model.fields.selection,name:installments.selection__customer_installments__installment_type__annually
+msgid "Annually"
+msgstr "سنوي"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: installments
+#: model:ir.actions.server,name:installments.ir_cron_check_due_installments_ir_actions_server
+msgid "Check Due Installments"
+msgstr "التحقق من الأقساط المستحقة"
+
+#. module: installments
+#: model_terms:ir.ui.view,arch_db:installments.customer_installments_view_form
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__create_uid
+#: model:ir.model.fields,field_description:installments.field_deposit_installments__create_uid
+msgid "Created by"
+msgstr "تم إنشاؤها بواسطة"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__create_date
+#: model:ir.model.fields,field_description:installments.field_deposit_installments__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها في"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__currency_id
+#: model:ir.model.fields,field_description:installments.field_deposit_installments__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__partner_id
+#: model:ir.model.fields,field_description:installments.field_deposit_installments__partner_id
+msgid "Customer"
+msgstr "العميل"
+
+#. module: installments
+#: model:ir.actions.act_window,name:installments.customer_installments_views_action
+#: model:ir.ui.menu,name:installments.customer_installments
+msgid "Customer Installments"
+msgstr "أقساط "
+
+#. module: installments
+#: model:ir.model,name:installments.model_customer_installments
+msgid "Customer Installments Plan"
+msgstr "خطة أقساط العميل"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_deposit_installments__deposit_id
+msgid "Deposit"
+msgstr "إيداع"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__display_name
+#: model:ir.model.fields,field_description:installments.field_deposit_installments__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: installments
+#: model:ir.model.fields.selection,name:installments.selection__customer_installments__state__draft
+msgid "Draft"
+msgstr "تحرير"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_deposit_installments__due_date
+msgid "Due Date"
+msgstr "تاريخ الاستحقاق"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: installments
+#: model:ir.model.fields,help:installments.field_customer_installments__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "الخط أيقونة رهيبة"
+
+#. module: installments
+#: model_terms:ir.ui.view,arch_db:installments.customer_installments_view_form
+msgid "Generate Installments"
+msgstr "توليد أقساط"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__has_message
+msgid "Has Message"
+msgstr "لديه رسالة"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__id
+#: model:ir.model.fields,field_description:installments.field_deposit_installments__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: installments
+#: model:ir.model.fields,help:installments.field_customer_installments__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "رمز للإشارة إلى نشاط متوقع."
+
+#. module: installments
+#: model:ir.model.fields,help:installments.field_customer_installments__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم التحقق، تتطلب الرسائل الجديدة انتباهك"
+
+#. module: installments
+#: model:ir.model.fields,help:installments.field_customer_installments__message_has_error
+#: model:ir.model.fields,help:installments.field_customer_installments__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم التحقق، فإن بعض الرسائل بها خطأ في التسليم"
+
+#. module: installments
+#: model:ir.model.fields.selection,name:installments.selection__customer_installments__state__in_progress
+msgid "In Progress"
+msgstr "قيد التنفيذ"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__installment_count
+msgid "Installment Count"
+msgstr "عدد الأقساط"
+
+#. module: installments
+#: model:mail.template,subject:installments.email_template_installment_created
+msgid "Installment Created for ${object.deposit_id.product.name}"
+msgstr "القسط المسجل ل"
+
+#. module: installments
+#: model:ir.model,name:installments.model_deposit_installments
+msgid "Installment Payment"
+msgstr "دفع القسط"
+
+#. module: installments
+#: model:mail.template,name:installments.email_template_installment_created
+msgid "Installment Payment Created"
+msgstr "دفع القسط المسجل"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__installment_type
+msgid "Installment Type"
+msgstr "نوع التقسيط"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__installment_ids
+#: model:ir.ui.menu,name:installments.customer_installments_root
+#: model_terms:ir.ui.view,arch_db:installments.customer_installments_view_form
+msgid "Installments"
+msgstr "الاقساط"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__message_is_follower
+msgid "Is Follower"
+msgstr "هو تابع؟"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__write_uid
+#: model:ir.model.fields,field_description:installments.field_deposit_installments__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__write_date
+#: model:ir.model.fields,field_description:installments.field_deposit_installments__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: installments
+#: model:ir.model.fields.selection,name:installments.selection__customer_installments__installment_type__monthly
+msgid "Monthly"
+msgstr "شهري"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي للنشاط"
+
+#. module: installments
+#. odoo-python
+#: code:addons/installments/models/customer_installment.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الاخطاء"
+
+#. module: installments
+#: model:ir.model.fields,help:installments.field_customer_installments__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: installments
+#: model:ir.model.fields,help:installments.field_customer_installments__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل مع خطأ التسليم"
+
+#. module: installments
+#: model:ir.model.fields.selection,name:installments.selection__customer_installments__state__paid
+msgid "Paid"
+msgstr "مدفوع"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_deposit_installments__payment_id
+#: model_terms:ir.ui.view,arch_db:installments.deposit_installments_tree_view
+msgid "Payment"
+msgstr "الدفع"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__payment_progress
+msgid "Payment Progress"
+msgstr "تقدم الدفع"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__product
+msgid "Product"
+msgstr "المنتج"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__reference
+msgid "Reference"
+msgstr "الرقم المرجعي"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__start_date
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_deposit_installments__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: installments
+#: model:ir.model.fields,help:installments.field_customer_installments__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""الحالة على أساس الأنشطة \ ن"
+"تأخر: تم تمرير تاريخ الاستحقاق بالفعل\ن"
+"اليوم: تاريخ النشاط هو اليوم \ ن"
+"المخطط: الأنشطة المستقبلية.""
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__total_amount
+msgid "Total Amount"
+msgstr "المبلغ الكلي"
+
+#. module: installments
+#: model:ir.model.fields,help:installments.field_customer_installments__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الاستثناء المسجل."
+
+#. module: installments
+#: model:ir.model.fields,field_description:installments.field_customer_installments__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: installments
+#: model:ir.model.fields,help:installments.field_customer_installments__website_message_ids
+msgid "Website communication history"
+msgstr "تاريخ اتصالات الموقع"
+
+#. module: installments
+#: model:ir.model.fields.selection,name:installments.selection__customer_installments__installment_type__weekly
+msgid "Weekly"
+msgstr "اسبوعي"
