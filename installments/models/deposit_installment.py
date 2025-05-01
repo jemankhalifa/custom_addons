@@ -1,5 +1,9 @@
 from odoo import models, fields, api
 from odoo.exceptions import UserError
+import logging
+import datetime
+
+_logger = logging.getLogger(__name__)
 
 
 class DepositInstallment(models.Model):
@@ -26,6 +30,7 @@ class DepositInstallment(models.Model):
                     rec.deposit_id.state = 'in_progress'
 
     # Creating Customer Payment
+
     @api.model
     def check_due_and_pay(self):
         today = fields.Date.today()
@@ -40,8 +45,8 @@ class DepositInstallment(models.Model):
             }).action_post()
             installment.state = 'paid'
 
-
     # Smart Button to Redirect to Payment
+
     def action_view_payment(self):
         self.ensure_one()
         if not self.payment_id:
@@ -54,3 +59,23 @@ class DepositInstallment(models.Model):
             'res_id': self.payment_id.id,
             'target': 'current',
         }
+
+    # Send email in specific date
+
+    @api.model
+    def cron_send_mail(self):
+
+        for rec in self.search([('due_date', '=', datetime.date.today())]):
+            template = self.env.ref('installments.email_template_installment_created', raise_if_not_found=False)
+            template.email_from = self.env.company.email
+            template.email_to = rec.deposit_id.partner_id.email
+            template.subject = f"Installment  Created for {rec.deposit_id.product.name}"
+            if template and rec.deposit_id.partner_id.email:
+                try:
+                    template.sudo().send_mail(rec.id, force_send=True)
+                    if not template:
+                        _logger.warning("Template not found.")
+
+                    _logger.info(f"Email sent to: {email_to}")
+                except Exception as e:
+                    _logger.warning(f"Failed to send email: {e}")

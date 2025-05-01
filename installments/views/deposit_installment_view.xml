@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
+    <!--Installment Lines View (notebook)-->
     <record id="deposit_installments_tree_view" model="ir.ui.view">
         <field name="name">deposit.installments.list</field>
         <field name="model">deposit.installments</field>
         <field name="arch" type="xml">
-            <list decoration-info="state == 'pending'"
-                  decoration-success="state == 'paid'">
+            <list decoration-success="state == 'paid'">
                 <field name="deposit_id"/>
                 <field name="amount" widget="monetary"/>
                 <field name="currency_id" invisible="1" optional="hide"/>
                 <field name="due_date"/>
-                <field name="state" widget="badge"
-                       decoration-info="state == 'pending'"
-                       decoration-success="state == 'paid'"/>
+                <field name="state" widget="badge" decoration-success="state == 'paid'"/>
                 <button name="action_view_payment" type="object" string="Payment" class="btn-primary"/>
             </list>
         </field>

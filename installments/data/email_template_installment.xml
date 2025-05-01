@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--Email Template-->
+    <record id="email_template_installment_created" model="mail.template">
+        <field name="name">Installment Payment Created</field>
+        <field name="model_id" ref="installments.model_deposit_installments"/>
+        <field name="email_from">${object.env.company.email}</field>
+        <field name="email_to">${object.partner_id.email}</field>
+        <field name="subject">Installment Created for ${object.name}</field>
+        <field name="body_html" type="html">
+            <div style="font-family: Arial, sans-serif; font-size: 14px; color: #333;">
+                <p>Dear
+                    <strong>
+                        <span t-esc="object.deposit_id.partner_id.name"/>
+                    </strong>
+                </p>
+                <p>Your
+                    <strong>
+                        <span t-esc="object.deposit_id.installment_type"/>
+                    </strong>
+                    payment has been created today for:
+                </p>
+                <ul>
+                    <li>
+                        <strong>Product:</strong>
+                        <t t-if="object.deposit_id.product">
+                            (<span t-esc="object.deposit_id.product.name"/>)
+                        </t>
+                    </li>
+                    <li>
+                        <strong>Start Date:</strong>
+                        <span t-esc="object.deposit_id.start_date"/>
+                    </li>
+                    <li>
+                        <strong>Installment Date:</strong>
+                        <span t-esc="object.due_date"/>
+                    </li>
+                    <li>
+                        <strong>Amount:</strong>
+                        <t t-esc="object.amount"
+                           t-options='{"widget": "monetary", "display_currency": object.currency_id}'/>
+                    </li>
+                </ul>
+                <p>Please proceed with your payment at your earliest convenience.</p>
+                <p>Thank you,
+                    <br/>
+                    <span t-esc="object.env.company.name"/>
+                </p>
+            </div>
+        </field>
+    </record>
+</odoo>

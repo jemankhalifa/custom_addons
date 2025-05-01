@@ -35,6 +35,7 @@ class CustomerInstallments(models.Model):
             rec.state = 'in_progress'
 
     # Automatically generate a reference number for installments
+
     @api.model
     def create(self, vals):
         if vals.get('reference', _('New')) == _('New'):
@@ -42,6 +43,7 @@ class CustomerInstallments(models.Model):
         return super(CustomerInstallments, self).create(vals)
 
     # Generating Installments Button Definition
+
     def generate_installments(self):
         self.ensure_one()
         installment_amount = self.total_amount / self.installment_count
@@ -85,6 +87,7 @@ class CustomerInstallments(models.Model):
                 date += relativedelta(months=1)
             elif self.installment_type == 'annually':
                 date += relativedelta(years=1)
+
 
     @api.depends('installment_ids.payment_id.state')
     def _compute_payment_progress(self):
