@@ -1,0 +1,25 @@
+<odoo>
+
+<template id="portal_dashboard_template" name="Dashboard Page">
+    <t t-call="website.layout">
+    <t t-set="no_footer" t-value="True"/>
+    <t t-set="no_header" t-value="True"/>
+        <div class="container mt-4">
+            <h2 class="mb-4">Dashboard</h2>
+            
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" href="/my/expenses">Expenses</a>
+                </li>
+                <!-- يمكنك إضافة المزيد من الخيارات لاحقًا -->
+            </ul>
+
+            <div class="mt-4">
+                <p>Welcome to your dashboard. Use the menu above to navigate.</p>
+            </div>
+        </div>
+    </t>
+</template>
+
+</odoo>
+
