@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="cron_git_partners" model="ir.cron">
+        <field name="name">Zoho Partners</field>
+        <field name="model_id" ref="zoho_integration.model_res_partner"/>
+        <field name="state">code</field>
+        <field name="code">model.git_zoho_contacts()</field>
+        <!-- <field name="user_id" ref="base.user_root"/> -->
+        <field name="interval_number">1</field>
+        <field name="interval_type">months</field>
+        <!--  <field name="numbercall">-1</field>
+         <field name="doall" eval="False"/> -->
+    </record>
+
+
+    <record id="ir_cron_zoho_po_sync" model="ir.cron">
+        <field name="name">Zoho PO Sync</field>
+        <field name="model_id" ref="model_res_company"/>
+        <field name="state">code</field>
+        <field name="code">env['res.company']._cron_sync_zoho_purchase_orders()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">hours</field>
+        <field name="active">True</field>
+    </record>
+
+</odoo>

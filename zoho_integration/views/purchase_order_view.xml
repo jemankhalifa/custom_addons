@@ -1,0 +1,13 @@
+<odoo>
+    <record id="view_purchase_order_form_inherit_zoho" model="ir.ui.view">
+        <field name="name">purchase.order.form.zoho</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="after">
+                <button name="export_po_to_zoho" type="object" string="Export To Zoho"
+                        class="btn-danger" groups="base.group_user"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

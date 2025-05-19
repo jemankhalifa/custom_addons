@@ -1,0 +1,24 @@
+<odoo>
+
+		<menuitem name="Zoho Books" 
+		    id="main_menu_zoho" 
+		    sequence="1"
+		    web_icon="zoho_integration,static/description/zoho_books.png"
+
+		    />
+		
+		
+		
+		<menuitem id="sub_menu_zoho_customer"
+				  name="Contacts"
+				  parent="main_menu_zoho"
+				  action="zoho_contact_action"
+				  sequence="2"/>
+
+		<!-- <menuitem id="submenu_items"
+		name="Items"
+		parent="main_menu_zoho"
+		action="zoho_item_action"
+		sequence="3" /> -->
+		
+</odoo>
