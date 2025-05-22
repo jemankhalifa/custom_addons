@@ -9,6 +9,7 @@
     'data': [
         'views/portal_dashboard.xml',
         'views/portal_expense_templates.xml',
+        #'views/website_navbar.xml'
 
     ],
     'installable': True,

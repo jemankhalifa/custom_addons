@@ -1,0 +1,51 @@
+
+<odoo>
+<template id="template" xml:space="preserve">
+    <t t-extend="PortalNavbar">
+        <t t-jquery=".navbar-collapse" t-operation="replace">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- رابط Dashboard -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard" role="button">
+                            <i class="fa fa-tachometer me-1"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    
+                    <!-- رابط المنصرفات -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/my/expenses" role="button">
+                            <i class="fa fa-money me-1"></i>
+                            المنصرفات
+                        </a>
+                    </li>
+                </ul>
+                
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <!-- زر تسجيل الخروج -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/web/session/logout" role="button">
+                            <i class="fa fa-sign-out me-1"></i>
+                            تسجيل الخروج
+                        </a>
+                    </li>
+                    
+                    <!-- معلومات المستخدم -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-user me-1"></i>
+                            <t t-esc="user.name"/>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/my/account">حسابي</a></li>
+                            <li><hr class="dropdown-divider"/></li>
+                            <li><a class="dropdown-item" href="/web/session/logout">تسجيل الخروج</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </t>
+    </t>
+</template>
+</odoo>
