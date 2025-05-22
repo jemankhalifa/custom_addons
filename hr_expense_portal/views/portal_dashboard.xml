@@ -11,7 +11,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/my/expenses">Expenses</a>
                 </li>
-                <!-- يمكنك إضافة المزيد من الخيارات لاحقًا -->
             </ul>
 
             <div class="mt-4">
