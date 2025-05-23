@@ -5,16 +5,16 @@
         <t t-set="no_footer" t-value="True"/>
         <t t-set="no_header" t-value="True"/> 
             <div class="container">
-                <a href="/my/expense/create" style ="margin-top:10px;" class="btn btn-info">Create New Expense</a>
-                <h3>My Expenses</h3>
+                <a href="/my/expense/create" style ="margin-top:10px;" class="btn btn-info">انشاء طلب سحب</a>
+                <h3>سحوباتي</h3>
                 <table class="table-striped table">
                     <thead>
                         <tr>
-                            <th>Employee</th>
-                            <th>Amount</th>
-                            <th>Date</th>
-                            <th>Status</th>
-                            <th>Edit</th>
+                            <th>الموظف</th>
+                            <th>المبلغ</th>
+                            <th>التاريغ</th>
+                            <th>الحاله</th>
+                            <th>تعديل</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -26,7 +26,7 @@
                                 <td><t t-esc="expense.state"/></td>
                                 <td>
                                     <t t-if="expense.state == 'draft'">
-                                        <a t-att-href="'/my/expense/edit/%s' % expense.id" class="btn btn-info">Edit</a>
+                                        <a t-att-href="'/my/expense/edit/%s' % expense.id" class="btn btn-info">تعديل</a>
                                 </t>
                                 </td>
                             </tr>
@@ -42,7 +42,7 @@
     <t t-set="no_footer" t-value="True"/>
     <t t-set="no_header" t-value="True"/>
         <div class="container mt-5">
-            <h3>Create New Expense</h3>
+            <h3>انشاء طلب سحب</h3>
               <style>
                 .form-control:hover {
                     border-color: #0d6efd;
@@ -75,35 +75,35 @@
                     <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
 
                     <div class="form-group mb-3">
-                        <label><i class="fa fa-user me-1 text-primary"></i>Employee Name</label>
+                        <label><i class="fa fa-user me-1 text-primary"></i>الاسم</label>
                         <input type="text" name="employee" t-att-value="employee_name" class="form-control border-primary" readonly="readonly"/>
                     </div>
 
                     <div class="form-group mb-3">
-                        <label><i class="fa fa-money-bill me-1 text-success"></i>Amount</label>
+                        <label><i class="fa fa-money-bill me-1 text-success"></i>المبلغ</label>
                         <input type="number" name="amount" class="form-control border-success" placeholder="Amount" required="required"/>
                     </div>
 
                     <div class="form-group mb-3">
-                        <label><i class="fa fa-calendar-alt me-1 text-info"></i>Date</label>
+                        <label><i class="fa fa-calendar-alt me-1 text-info"></i>التاريخ</label>
                         <input type="date" name="date" class="form-control border-info" required="required"/>
                     </div>
 
                     <div class="form-group mb-3">
-                        <label><i class="fa fa-comment me-1 text-warning"></i>Notes</label>
+                        <label><i class="fa fa-comment me-1 text-warning"></i>ملاحظات</label>
                         <textarea name="notes" class="form-control border-warning" placeholder="Notes" rows="3"></textarea>
                     </div>
 
                     <div class="form-group mb-3">
-                        <label><i class="fa fa-paperclip me-1 text-secondary"></i>Attachment</label>
+                        <label><i class="fa fa-paperclip me-1 text-secondary"></i>مرفقات</label>
                         <input type="file" name="attachment" class="form-control border-secondary"/>
                     </div>
 
                     <button type="submit" class="btn btn-success mt-2 px-4">
-                        <i class="fas fa-save"></i>Save
+                        <i class="fas fa-save"></i>حفظ
                     </button>
                     <button type="submit"  name="action" value="submit" class="btn btn-success mt-2 px-4">
-                        <i class="fa fa-paper-plane me-1"></i>Submit
+                        <i class="fa fa-paper-plane me-1"></i>ارسال للموافقة
                     </button>
 
                 </form>
@@ -117,40 +117,40 @@
     <t t-set="no_footer" t-value="True"/>
     <t t-set="no_header" t-value="True"/>
     <div class="container">
-    <h3>Modify expense request</h3>
+    <h3>تعديل الطلب</h3>
       <form method="POST" action="/my/expense/update" enctype="multipart/form-data">
         <input type="hidden" name="expense_id" t-att-value="expense.id"/>
         <div class="form-group">
         </div>
          <div class="form-group mb-3">
-            <label><i class="fa fa-user me-1 text-primary"></i>Employee Name</label>
+            <label><i class="fa fa-user me-1 text-primary"></i>الاسم</label>
             <input type="text" name="employee" t-att-value="employee_name" class="form-control border-primary" readonly="readonly"/>
         </div>
 
         <div class="form-group mb-3">
-            <label><i class="fa fa-money-bill me-1 text-success"></i>Amount</label>
+            <label><i class="fa fa-money-bill me-1 text-success"></i>المبلغ</label>
             <input type="number" name="amount" class="form-control border-success" required="required"/>
         </div>
 
         <div class="form-group mb-3">
-            <label><i class="fa fa-calendar-alt me-1 text-info"></i>Date</label>
+            <label><i class="fa fa-calendar-alt me-1 text-info"></i>التاريخ</label>
             <input type="date" name="date" class="form-control border-info" required="required"/>
         </div>
 
         <div class="form-group mb-3">
-            <label><i class="fa fa-comment me-1 text-warning"></i>Notes</label>
+            <label><i class="fa fa-comment me-1 text-warning"></i>الملاحظات</label>
             <textarea name="notes" class="form-control border-warning" rows="3"></textarea>
         </div>
 
         <div class="form-group mb-3">
-            <label><i class="fa fa-paperclip me-1 text-secondary"></i>Attachment</label>
+            <label><i class="fa fa-paperclip me-1 text-secondary"></i>المرفقات</label>
             <input type="file" name="attachment" class="form-control border-secondary"/>
         </div>
         <button type="submit" class="btn btn-success mt-2 px-4">
-            <i class="fa fa-paper-plane me-1"></i>Save
+            <i class="fa fa-paper-plane me-1"></i>حفظ
         </button>
         <button type="submit" style = "margin-left:860px;" name="action" value="submit" class="btn btn-success mt-2 px-4">
-            <i class="fa fa-paper-plane me-1"></i>Submit
+            <i class="fa fa-paper-plane me-1"></i>ارسال للموافقة
         </button>
       </form>
     </div>
