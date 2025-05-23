@@ -4,26 +4,16 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 18.0+e-20241211\n"
+"Project-Id-Version: Odoo Server 18.0-20241007\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-11 07:48+0000\n"
-"PO-Revision-Date: 2025-03-11 07:48+0000\n"
+"POT-Creation-Date: 2025-05-23 07:45+0000\n"
+"PO-Revision-Date: 2025-05-23 07:45+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-
-#. module: expense_portal
-#: model_terms:ir.ui.view,arch_db:expense_portal.view_balance_labor1
-msgid "# The compute button"
-msgstr "حساب"
-
-#. module: expense_portal
-#: model_terms:ir.ui.view,arch_db:expense_portal.view_balance_labor1
-msgid "# The smart button that shows the payments of an employee"
-msgstr "المدفوعات"
 
 #. module: expense_portal
 #: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__message_needaction
@@ -61,10 +51,15 @@ msgid "Balance"
 msgstr "الميزانية"
 
 #. module: expense_portal
+#: model:ir.actions.report,name:expense_portal.report_current_balance
+msgid "Balance Report"
+msgstr "تقرير الأرصدة"
+
+#. module: expense_portal
 #: model:ir.model.fields,field_description:expense_portal.field_account_payment__balance_sheet_id
 #: model:ir.ui.menu,name:expense_portal.labor_balance_menu
 msgid "Balance Sheet"
-msgstr "الميزانية العمومية"
+msgstr "تقرير الأرصدة"
 
 #. module: expense_portal
 #: model_terms:ir.ui.view,arch_db:expense_portal.view_balance_labor1
@@ -74,6 +69,7 @@ msgstr "إلغاء"
 
 #. module: expense_portal
 #: model:ir.model.fields.selection,name:expense_portal.selection__current_balance_labor__state__cancelled
+#: model:ir.model.fields.selection,name:expense_portal.selection__expense_portal__state__cancelled
 msgid "Cancelled"
 msgstr "ملغي"
 
@@ -85,7 +81,7 @@ msgstr "الشركة"
 #. module: expense_portal
 #: model_terms:ir.ui.view,arch_db:expense_portal.view_balance_labor1
 msgid "Compute"
-msgstr "حساب"
+msgstr "احسب"
 
 #. module: expense_portal
 #: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__create_uid
@@ -144,25 +140,25 @@ msgstr "الموظفين"
 #. module: expense_portal
 #: model:res.groups,name:expense_portal.group_expense_manager
 msgid "Expense Manager"
-msgstr "مدير النفقات"
+msgstr "مدير السحب"
 
 #. module: expense_portal
 #: model:ir.actions.act_window,name:expense_portal.action_expense_portal1
 #: model:ir.ui.menu,name:expense_portal.menu_expense_portal_root1
 msgid "Expense Portal"
-msgstr "بوابة النفقات"
+msgstr "بوابة السحب"
 
 #. module: expense_portal
 #: model:ir.model.fields,field_description:expense_portal.field_account_bank_statement_line__expensed
 #: model:ir.model.fields,field_description:expense_portal.field_account_move__expensed
 #: model:ir.model.fields,field_description:expense_portal.field_expense_portal__expensed
 msgid "Expensed?"
-msgstr "مُنفَق؟"
+msgstr "تم سحبة؟"
 
 #. module: expense_portal
 #: model:ir.ui.menu,name:expense_portal.expense_portal1
 msgid "Expenses"
-msgstr "نفقات"
+msgstr "المسحوبات"
 
 #. module: expense_portal
 #: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__message_follower_ids
@@ -315,6 +311,11 @@ msgid "Payments"
 msgstr "الدفعات"
 
 #. module: expense_portal
+#: model_terms:ir.ui.view,arch_db:expense_portal.view_balance_labor1
+msgid "Print PDF"
+msgstr ""
+
+#. module: expense_portal
 #: model:ir.model.fields,field_description:expense_portal.field_current_balance_labor__rating_ids
 #: model:ir.model.fields,field_description:expense_portal.field_expense_portal__rating_ids
 msgid "Ratings"
@@ -350,7 +351,7 @@ msgstr "الحالة"
 #. module: expense_portal
 #: model_terms:ir.ui.view,arch_db:expense_portal.view_expense_form1
 msgid "Submit to Manager"
-msgstr ""
+msgstr "ارسال للمدير"
 
 #. module: expense_portal
 #: model:ir.model.fields.selection,name:expense_portal.selection__expense_portal__state__submitted

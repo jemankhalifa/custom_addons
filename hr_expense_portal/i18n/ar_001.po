@@ -1,0 +1,118 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_expense_portal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20241007\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-23 07:40+0000\n"
+"PO-Revision-Date: 2025-05-23 07:40+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_expense_portal
+#: model_terms:ir.ui.view,arch_db:hr_expense_portal.edit_expense_template
+#: model_terms:ir.ui.view,arch_db:hr_expense_portal.portal_create_expense_form
+msgid "<i class=\"fa fa-calendar-alt me-1 text-info\"/>Date"
+msgstr "<i class=\"fa fa-calendar-alt me-1 text-info\"/>التاريخ"
+
+#. module: hr_expense_portal
+#: model_terms:ir.ui.view,arch_db:hr_expense_portal.edit_expense_template
+#: model_terms:ir.ui.view,arch_db:hr_expense_portal.portal_create_expense_form
+msgid "<i class=\"fa fa-comment me-1 text-warning\"/>Notes"
+msgstr "<i class=\"fa fa-comment me-1 text-warning\"/>ملاحظات"
+
+#. module: hr_expense_portal
+#: model_terms:ir.ui.view,arch_db:hr_expense_portal.edit_expense_template
+#: model_terms:ir.ui.view,arch_db:hr_expense_portal.portal_create_expense_form
+msgid "<i class=\"fa fa-money-bill me-1 text-success\"/>Amount"
+msgstr "<i class=\"fa fa-money-bill me-1 text-success\"/>المبلغ"
+
+#. module: hr_expense_portal
+#: model_terms:ir.ui.view,arch_db:hr_expense_portal.edit_expense_template
+msgid "<i class=\"fa fa-paper-plane me-1\"/>Save"
+msgstr "<i class=\"fa fa-paper-plane me-1\"/>حفظ"
+
+#. module: hr_expense_portal
+#: model_terms:ir.ui.view,arch_db:hr_expense_portal.edit_expense_template
+#: model_terms:ir.ui.view,arch_db:hr_expense_portal.portal_create_expense_form
+msgid "<i class=\"fa fa-paper-plane me-1\"/>Submit"
+msgstr "<i class=\"fa fa-paper-plane me-1\"/>ارسال"
+
+#. module: hr_expense_portal
+#: model_terms:ir.ui.view,arch_db:hr_expense_portal.edit_expense_template
+#: model_terms:ir.ui.view,arch_db:hr_expense_portal.portal_create_expense_form
+msgid "<i class=\"fa fa-paperclip me-1 text-secondary\"/>Attachment"
+msgstr "<i class=\"fa fa-paperclip me-1 text-secondary\"/>مرفقات"
+
+#. module: hr_expense_portal
+#: model_terms:ir.ui.view,arch_db:hr_expense_portal.edit_expense_template
+#: model_terms:ir.ui.view,arch_db:hr_expense_portal.portal_create_expense_form
+msgid "<i class=\"fa fa-user me-1 text-primary\"/>Employee Name"
+msgstr "<i class=\"fa fa-user me-1 text-primary\"/>الاسم"
+
+#. module: hr_expense_portal
+#: model_terms:ir.ui.view,arch_db:hr_expense_portal.portal_create_expense_form
+msgid "<i class=\"fas fa-save\"/>Save"
+msgstr "<i class=\"fas fa-save\"/>حفظ"
+
+#. module: hr_expense_portal
+#: model_terms:ir.ui.view,arch_db:hr_expense_portal.portal_my_expenses
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: hr_expense_portal
+#: model_terms:ir.ui.view,arch_db:hr_expense_portal.portal_create_expense_form
+#: model_terms:ir.ui.view,arch_db:hr_expense_portal.portal_my_expenses
+msgid "Create New Expense"
+msgstr "انشاء طلب سحب"
+
+#. module: hr_expense_portal
+#: model_terms:ir.ui.view,arch_db:hr_expense_portal.portal_dashboard_template
+msgid "Dashboard"
+msgstr "لوحة التحكم"
+
+#. module: hr_expense_portal
+#: model_terms:ir.ui.view,arch_db:hr_expense_portal.portal_my_expenses
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: hr_expense_portal
+#: model_terms:ir.ui.view,arch_db:hr_expense_portal.portal_my_expenses
+msgid "Edit"
+msgstr "تعديل"
+
+#. module: hr_expense_portal
+#: model_terms:ir.ui.view,arch_db:hr_expense_portal.portal_my_expenses
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: hr_expense_portal
+#: model_terms:ir.ui.view,arch_db:hr_expense_portal.portal_dashboard_template
+msgid "Expenses"
+msgstr "طلبات السحب"
+
+#. module: hr_expense_portal
+#: model_terms:ir.ui.view,arch_db:hr_expense_portal.edit_expense_template
+msgid "Modify expense request"
+msgstr "تعديل طلب السحب"
+
+#. module: hr_expense_portal
+#: model_terms:ir.ui.view,arch_db:hr_expense_portal.portal_my_expenses
+msgid "My Expenses"
+msgstr "سحوباتي"
+
+#. module: hr_expense_portal
+#: model_terms:ir.ui.view,arch_db:hr_expense_portal.portal_my_expenses
+msgid "Status"
+msgstr "الحالة"
+
+#. module: hr_expense_portal
+#: model_terms:ir.ui.view,arch_db:hr_expense_portal.portal_dashboard_template
+msgid "Welcome to your dashboard. Use the menu above to navigate."
+msgstr "اهلا بك في لوحة التحكم الخاصة بك"
