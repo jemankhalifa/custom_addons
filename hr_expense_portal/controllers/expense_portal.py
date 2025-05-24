@@ -17,6 +17,7 @@ class ExpensePortal(http.Controller):
     # @http.route(['/my/hr/dashboard'], type='http', auth="user", website=True)
     # def hr_dashboard(self, **kw):
     #     return request.render('hr_expense_portal.add_hr_portal_card')
+    
 
     @http.route(['/my/dashboard'], type='http', auth="user", website=True)
     def dashboard_page(self, **kw):
@@ -79,9 +80,15 @@ class ExpensePortal(http.Controller):
         if expense.state != 'draft':
             return request.redirect('/my/expenses')  
         employee_name = expense.employee_id.name
+        amount = expense.amount
+        date = expense.date
+        note = expense.note
         return request.render('hr_expense_portal.edit_expense_template', {
             'expense': expense,
             'employee_name': employee_name,
+            'amount': amount,
+            'date': date,
+            'note': note,
         })
     @http.route('/my/expense/update', type='http', auth='user', methods=['POST'], website=True, csrf=False)
     def update_expense(self, **post):
