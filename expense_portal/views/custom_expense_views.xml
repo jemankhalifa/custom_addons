@@ -72,7 +72,7 @@
 
     <menuitem id="menu_expense_portal_root1"
               name="Expense Portal"
-              web_icon="expense_portal/static/description/icon.png"/>
+              web_icon="expense_portal,static/description/icon.png"/>
 
     <menuitem id="expense_portal1"
               name="Expenses"
