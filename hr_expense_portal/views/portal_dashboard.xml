@@ -5,16 +5,16 @@
     <t t-set="no_footer" t-value="True"/>
     <t t-set="no_header" t-value="True"/>
         <div class="container mt-4">
-            <h2 class="mb-4">Dashboard</h2>
+            <h2 class="mb-4">لوحة التحكم</h2>
             
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a class="nav-link" href="/my/expenses">Expenses</a>
+                    <a class="nav-link" href="/my/expenses">المنصرفات و السحب</a>
                 </li>
             </ul>
 
             <div class="mt-4">
-                <p>Welcome to your dashboard. Use the menu above to navigate.</p>
+                <p>اهلا بك في لوحة التحكم الخاصة بك</p>
             </div>
         </div>
     </t>
