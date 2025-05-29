@@ -1,0 +1,130 @@
+
+/* General Styles */
+body {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    color: #4F2AB8;
+    font-weight: 900;
+}
+
+p {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+/* Button and Links */
+button, a {
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, a:hover {
+    opacity: 0.8;
+}
+
+/* Header and Section Styling */
+.header-section {
+    background-color: #4F2AB8;
+    padding: 30px;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+}
+
+.header-section h1 {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #4F2AB8;
+    font-weight: 900;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Container for Images */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.image-container img {
+    width: 40%;
+    border-radius: 12px;
+}
+
+/* Card Style for Features */
+.card {
+    background-color: white;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: #4F2AB8;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Custom Button for Call to Action */
+.cta-btn {
+    background-color: #4F2AB8;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 25px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.cta-btn:hover {
+    background-color: #3f1d8a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .image-container img {
+        width: 80%;
+    }
+
+    .header-section h1 {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+}
