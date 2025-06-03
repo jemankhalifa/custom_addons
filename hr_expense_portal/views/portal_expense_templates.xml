@@ -75,6 +75,12 @@
             <div class="card shadow-sm border rounded p-4 bg-white mt-4">
                 <form action="/my/expense/submit" method="post"  enctype="multipart/form-data">
                     <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    
+                     <t t-if="error_message">
+                        <div class="alert alert-danger" role="alert">
+                            <t t-esc="error_message"/>
+                        </div>
+                    </t>
 
                     <div class="form-group mb-3">
                         <label><i class="fa fa-user me-1 text-primary"></i>Employee Name</label>
@@ -85,6 +91,13 @@
                         <label><i class="fa fa-money-bill me-1 text-success"></i>Amount</label>
                         <input type="number" name="amount" class="form-control border-success" required="required"/>
                     </div>
+
+                    <div class="form-group mb-3">
+                        <label><i class="fa fa-wallet me-1 text-info"></i> Remaining Balance</label>
+                        <input type="text" name="remaining_balance" id="remaining_balance" class="form-control border-info" readonly="readonly"
+                        t-att-value="str(remaining_balance)"/>
+                    </div>
+
 
                     <div class="form-group mb-3">
                         <label><i class="fa fa-calendar-alt me-1 text-info"></i>Date</label>
@@ -112,6 +125,7 @@
             </div>
         </div>
     </t>
+
 </template>
 
 <template id="edit_expense_template" name="Edit Expense">
@@ -122,6 +136,12 @@
     <div class="container">
     <h3>Modify expense request</h3>
       <form method="POST" action="/my/expense/update" enctype="multipart/form-data">
+
+        <t t-if="error_message">
+            <div class="alert alert-danger" role="alert">
+                <t t-esc="error_message"/>
+            </div>
+        </t>
         <input type="hidden" name="expense_id" t-att-value="expense.id"/>
         <div class="form-group">
         </div>
@@ -133,6 +153,11 @@
         <div class="form-group mb-3">
             <label><i class="fa fa-money-bill me-1 text-success"></i>Amount</label>
             <input type="number" name="amount" t-att-value="amount" class="form-control border-success" required="required"/>
+        </div>
+        <div class="form-group mb-3">
+            <label><i class="fa fa-wallet me-1 text-info"></i> Remaining Balance</label>
+            <input type="text" name="remaining_balance" id="remaining_balance" class="form-control border-info" readonly="readonly"
+            t-att-value="str(remaining_balance)"/>
         </div>
 
         <div class="form-group mb-3">
