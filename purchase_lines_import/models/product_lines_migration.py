@@ -215,7 +215,8 @@ class OrderLineData(models.Model):
             self.date_planned = self._get_date_planned(seller).strftime(DEFAULT_SERVER_DATETIME_FORMAT)
 
         if not seller:
-            if self.product_id.seller_ids.filtered(lambda s: s.name.id == self.partner_id.id):
+            if self.product_id.seller_ids.filtered(lambda r: r.partner_id.name == self.order_id.partner_id.name):
+
                 self.price_unit = 0.0
             return
 
@@ -248,7 +249,7 @@ class OrderLineData(models.Model):
             return
 
         seller_min_qty = self.product_id.seller_ids \
-            .filtered(lambda r: r.name == self.order_id.partner_id) \
+            .filtered(lambda r: r.partner_id == self.order_id.partner_id) \
             .sorted(key=lambda r: r.min_qty)
         if seller_min_qty:
             self.product_qty = seller_min_qty[0].min_qty or 1.0

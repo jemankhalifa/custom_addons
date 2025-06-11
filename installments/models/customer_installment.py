@@ -1,5 +1,6 @@
 from odoo import models, fields, api, _
 from dateutil.relativedelta import relativedelta
+from odoo.exceptions import UserError
 
 
 class CustomerInstallments(models.Model):
@@ -87,7 +88,6 @@ class CustomerInstallments(models.Model):
                 date += relativedelta(months=1)
             elif self.installment_type == 'annually':
                 date += relativedelta(years=1)
-
 
     @api.depends('installment_ids.payment_id.state')
     def _compute_payment_progress(self):

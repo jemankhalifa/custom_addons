@@ -57,17 +57,18 @@
                         </div>
                         <group>
                             <group>
-                                <field name="partner_id"/>
-                                <field name="product"/>
-                                <field name="total_amount" widget="monetary"/>
+                                <field name="partner_id" readonly="[('state', '!=', 'draft')]"/>
+
+                                <field name="product" readonly="[('state', '!=', 'draft')]"/>
+                                <field name="total_amount" widget="monetary" readonly="[('state', '!=', 'draft')]"/>
                                 <field name="currency_id" invisible="1"/>
-                                <field name="start_date"/>
+                                <field name="start_date" readonly="[('state', '!=', 'draft')]"/>
                             </group>
                             <group>
-                                <field name="installment_count"/>
-                                <field name="installment_type"/>
+                                <field name="installment_count" readonly="[('state', '!=', 'draft')]"/>
+                                <field name="installment_type" readonly="[('state', '!=', 'draft')]"/>
                                 <field name="payment_progress" widget="progressbar"/>
-                                <field name="description"/>
+                                <field name="description" readonly="[('state', '!=', 'draft')]"/>
                             </group>
                         </group>
                         <notebook>
