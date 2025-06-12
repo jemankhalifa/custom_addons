@@ -1,6 +1,7 @@
 from odoo import models, fields, api, _
 from dateutil.relativedelta import relativedelta
 from odoo.exceptions import UserError
+from datetime import date
 
 
 class CustomerInstallments(models.Model):
