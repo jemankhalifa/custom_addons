@@ -55,20 +55,20 @@
                                 <field name="reference" readonly="1"/>
                             </h2>
                         </div>
-                        <group>
+                        <group readonly="[('state', '!=', 'draft')]">
                             <group>
-                                <field name="partner_id" readonly="[('state', '!=', 'draft')]"/>
-                                <field name="product" readonly="[('state', '!=', 'draft')]"/>
+                                <field name="partner_id" />
+                                <field name="product" />
                                 <field name="total_amount" widget="monetary"
-                                       readonly="[('state', '!=', 'draft')]"/>
+                                       />
                                 <field name="currency_id" invisible="1"/>
-                                <field name="start_date" readonly="[('state', '!=', 'draft')]"/>
+                                <field name="start_date" />
                             </group>
                             <group>
-                                <field name="installment_count" readonly="[('state', '!=', 'draft')]"/>
-                                <field name="installment_type" readonly="[('state', '!=', 'draft')]"/>
+                                <field name="installment_count" />
+                                <field name="installment_type" />
                                 <field name="payment_progress" widget="progressbar"/>
-                                <field name="description" readonly="[('state', '!=', 'draft')]"/>
+                                <field name="description" />
                             </group>
                         </group>
                         <notebook>
@@ -97,7 +97,7 @@
         <!-- Menus   -->
         <menuitem id="customer_installments_root"
                   name="Installments"
-                  web_icon="installments/static/description/icon.png"/>
+                  web_icon="installments,static/description/icon.png"/>
 
         <menuitem id="customer_installments"
                   name="Customer Installments"
