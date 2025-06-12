@@ -24,6 +24,18 @@
         <field name="active">True</field>
     </record>
 
+    <!--Scheduled Check Overdue Installments-->
+
+    <record id="ir_cron_check_overdue_installments" model="ir.cron">
+        <field name="name">Check Overdue Installments</field>
+        <field name="model_id" ref="model_deposit_installments"/>
+        <field name="state">code</field>
+        <field name="code">model.check_overdue_installments()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="active">True</field>
+    </record>
+
 
 </odoo>
 
