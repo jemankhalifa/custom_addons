@@ -1,4 +1,4 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 from odoo.exceptions import UserError
 import logging
 import datetime
@@ -81,35 +81,35 @@ class DepositInstallment(models.Model):
                     _logger.warning(f"Failed to send email: {e}")
 
 
-        # Overdue Installment Notifications
+    # Overdue Installment Notifications
 
-        @api.model
-        def check_overdue_installments(self):
-            today = fields.Date.today()
-            overdue_installments = self.search([
-                ('due_date', '<', today),
-                ('state', '!=', 'paid')
-            ])
-            for installment in overdue_installments:
-                parent = installment.deposit_id
-                partner = installment.partner_id
+    @api.model
+    def check_overdue_installments(self):
+        today = fields.Date.today()
+        overdue_installments = self.search([
+            ('due_date', '<', today),
+            ('state', '!=', 'paid')
+        ])
+        for installment in overdue_installments:
+            parent = installment.deposit_id
+            partner = installment.partner_id
 
-                parent.message_post(
-                    body=_(
+            parent.message_post(
+                body=_(
+                    f"Installment of {installment.amount} {installment.currency_id.name}"
+                    f"due on {installment.due_date} is overdue."
+                ),
+                subject=_("Overdue Installment Notification"),
+                message_type="notification"
+            )
+
+            if partner.user_id:
+                parent.activity_schedule(
+                    'mail.mail_activity_data_todo',
+                    user_id=partner.user_id.id,
+                    note=_(
                         f"Installment of {installment.amount} {installment.currency_id.name} "
-                        f"due on {installment.due_date} is overdue."
+                        f"was due on {installment.due_date} and is now overdue."
                     ),
-                    subject=_("Overdue Installment Notification"),
-                    message_type="notification"
+                    summery="Overdue Installment"
                 )
-
-                if partner.user_id:
-                    parent.activity_schedule(
-                        'mail.mail_activity_data_todo',
-                        user_id=partner.user_id.id,
-                        note=_(
-                            f"Installment of {installment.amount} {installment.currency_id.name} "
-                            f"was due on {installment.due_date} and is now overdue."
-                        ),
-                        summery="Overdue Installment"
-                    )

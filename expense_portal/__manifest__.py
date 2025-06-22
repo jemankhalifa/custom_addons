@@ -9,13 +9,16 @@
 {
     'name': 'Custom Expense Portal',
     'author': 'Net4X Innovation',
-    'sequence': -100,
-    'version': '1.0',
+    'website': 'https://net4x-innovation.com/',
+    'version': '18.0.1.0',
+    'license': 'LGPL-3',
     'category': 'Human Resources',
-    'summary': 'Custom Expense Portal for Employees',
-    'depends': ['hr_expense',
-                'account'
-                ],
+    'summary': 'Submit and manage employee expenses with approvals and reports',
+    'description': """The Expense Portal is a custom Odoo module designed to streamline the process of submitting,
+    tracking, and managing employee expenses for small businesses. It provides employees with a user-friendly interface
+    to submit their expenses, allows managers to review and approve/reject expenses, and generates PDF reports for
+    record-keeping and auditing purposes.""",
+    'depends': ['hr_expense', 'account'],
     'data': [
         'security/ir.model.access.csv',
         'security/expenses_group.xml',

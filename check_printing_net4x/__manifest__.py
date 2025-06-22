@@ -1,14 +1,13 @@
 {
     'name': 'Check Printing Management',
+    'version': '18.0.1.0',
+    'summary': 'Print checks with layout support',
+    'description': 'Custom check printing with layout and accounting integration.',
     'author': 'Net4X Innovation',
-    'sequence': -99,
-    'version': '1.0',
+    'website': 'https://net4x-innovation.com/',
+    'license': 'LGPL-3',
     'category': 'Accounting',
-    'summary': 'Manage check payments',
-    'depends': ['account',
-                'mail',
-                'account_check_printing'
-                ],
+    'depends': ['account', 'mail', 'account_check_printing'],
     'data': [
         'security/ir.model.access.csv',
         'views/check_layout_views.xml',

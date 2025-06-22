@@ -59,8 +59,7 @@
                             <group>
                                 <field name="partner_id" />
                                 <field name="product" />
-                                <field name="total_amount" widget="monetary"
-                                       />
+                                <field name="total_amount" widget="monetary"/>
                                 <field name="currency_id" invisible="1"/>
                                 <field name="start_date" />
                             </group>
