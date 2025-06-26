@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_wkf_base,wkf.base,model_wkf_base,base.group_user,1,1,1,1
+access_wkf_node,wkf.node,model_wkf_node,base.group_user,1,1,1,1
+access_wkf_trans,wkf.trans,model_wkf_trans,base.group_user,1,1,1,1
+access_wkf_log_trans,wkf.log.trans,model_wkf_log_trans,base.group_user,1,1,1,1
