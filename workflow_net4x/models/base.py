@@ -79,7 +79,7 @@ def wkf_action(self, message=''):
 
     # check note
     if trans.need_note and not self.x_wkf_note:
-       raise UserError(_('The transfer can not empty note'))
+        raise UserError(_('The transfer can not empty note'))
 
     log = trans.make_log(self._name, self.id, message)
 
@@ -159,41 +159,6 @@ def new_get_view(self, view_id=None, view_type='form', **options):
             tag.getparent().remove(tag)
     res['arch'] = etree.tostring(view)
     return res
-
-
-# @api.model
-# def get_view(self, view_id=None, view_type='form', **options):
-#         """ get_view([view_id | view_type='form'])
-#
-#         Get the detailed composition of the requested view like model, view architecture.
-#
-#         The return of the method can only depend on the requested view types,
-#         access rights (views or other records), view access rules, options,
-#         context lang and TYPE_view_ref (other context values cannot be used).
-#
-#         :param int view_id: id of the view or None
-#         :param str view_type: type of the view to return if view_id is None ('form', 'list', ...)
-#         :param dict options: boolean options to return additional features:
-#             - bool mobile: true if the web client is currently using the responsive mobile view
-#             (to use kanban views instead of list views for x2many fields)
-#         :return: composition of the requested view (including inherited views and extensions)
-#         :rtype: dict
-#         :raise AttributeError:
-#
-#             * if the inherited view has unknown position to work with other than 'before', 'after', 'inside', 'replace'
-#             * if some tag other than 'position' is found in parent view
-#
-#         :raise Invalid ArchitectureError: if there is view type other than form, list, calendar, search etc... defined on the structure
-#         """
-#         self.browse().check_access('read')
-#
-#         result = dict(self._get_view_cache(view_id, view_type, **options))
-#
-#         node = etree.fromstring(result['arch'])
-#         node = self.env['ir.ui.view']._postprocess_access_rights(node)
-#         result['arch'] = etree.tostring(node, encoding="unicode").replace('\t', '')
-#
-#         return result
 
 
 BM.default_get = default_get_new
