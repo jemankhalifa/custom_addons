@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <!--Wkf log Tree View-->
+
+        <record model="ir.ui.view" id="wkf_log_trans_tree_view">
+            <field name="name">wkf.log.trans.list</field>
+            <field name="model">wkf.log.trans</field>
+            <field name="arch" type="xml">
+                <list string="Transfer log" create="false" edit="false" delete="false">
+                    <field name="name"/>
+                    <field name="trans_id"/>
+                    <field name="create_uid"/>
+                    <field name="create_date"/>
+                    <field name="note"/>
+                    <field name="active"/>
+                    <field name="create_date"/>
+                </list>
+            </field>
+        </record>
+
+        <!--Wkf log Action View-->
+
+        <record model="ir.actions.act_window" id="action_wkf_log_trans_view">
+            <field name="name">Transfer log</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wkf.log.trans</field>
+            <field name="view_mode">list</field>
+        </record>
+
+        <!--Wkf log Menu-->
+
+        <menuitem id="log_wkf_trans_menu"
+                  name="Transfer Log"
+                  parent="menu_wkf_root"
+                  action="action_wkf_log_trans_view"
+                  sequence="40"/>
+
+    </data>
+</odoo>

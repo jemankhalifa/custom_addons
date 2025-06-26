@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <!--Wkf Node Tree View-->
+
+        <record model="ir.ui.view" id="wkf_node_tree_view">
+            <field name="name">wkf.node.list</field>
+            <field name="model">wkf.node</field>
+            <field name="arch" type="xml">
+                <list string="Custom WorkFlow Node">
+                    <field name="name"/>
+                    <field name="wkf_id"/>
+                    <field name="join_mode"/>
+                    <field name="action"/>
+                    <field name="arg"/>
+                    <field name="is_start"/>
+                    <field name="is_stop"/>
+                    <field name="show_state"/>
+                </list>
+            </field>
+        </record>
+
+        <!--Wkf Node Form View-->
+
+        <record model="ir.ui.view" id="wkf_node_form_view">
+            <field name="name">wkf.node.form</field>
+            <field name="model">wkf.node</field>
+            <field name="arch" type="xml">
+                <form string="Custom WorkFlow Node">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="wkf_id"/>
+                                <field name="event_need"/>
+                                <field name="event_users" widget="many2many_tags"/>
+                                <field name="action"/>
+                                <field name="arg"/>
+                            </group>
+                            <group>
+                                <field name="join_mode"/>
+                                <field name="is_start"/>
+                                <field name="is_stop"/>
+                                <field name="show_state"/>
+                                <field name="no_reset"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--Wkf Node Action View-->
+
+        <record model="ir.actions.act_window" id="action_wkf_node_view">
+            <field name="name">Custom WorkFlow Node</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wkf.node</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <!--Wkf Node Menu-->
+
+        <menuitem id="wkf_node_menu"
+                  name="WorkFlow Node"
+                  parent="menu_wkf_root"
+                  action="action_wkf_node_view"
+                  sequence="20"/>
+
+    </data>
+</odoo>

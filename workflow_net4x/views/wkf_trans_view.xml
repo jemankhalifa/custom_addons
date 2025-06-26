@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <!--Wkf Trans Tree View-->
+
+        <record model="ir.ui.view" id="wkf_trans_tree_view">
+            <field name="name">wkf.trans.list</field>
+            <field name="model">wkf.trans</field>
+            <field name="arch" type="xml">
+                <list string="Custom WorkFlow Transfer">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="group_ids"/>
+                    <field name="condition"/>
+                    <field name="node_from"/>
+                    <field name="node_to"/>
+                    <field name="need_note"/>
+                    <field name="wkf_id"/>
+                </list>
+            </field>
+        </record>
+
+        <!--Wkf Node Form View-->
+
+        <record model="ir.ui.view" id="wkf_trans_form_view">
+            <field name="name">wkf.trans.form</field>
+            <field name="model">wkf.trans</field>
+            <field name="arch" type="xml">
+                <form string="Custom WorkFlow Trans">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="group_ids" widget="many2many_tags"/>
+                            <field name="user_ids" widget="many2many_tags"/>
+                            <field name="condition"/>
+                            <field name="node_from"/>
+                            <field name="node_to"/>
+                            <field name="wkf_id"/>
+                            <field name="xml_groups"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--Wkf Node Action View-->
+
+        <record model="ir.actions.act_window" id="action_wkf_trans_view">
+            <field name="name">WorkFlow Transfer</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wkf.trans</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <!--Wkf Node Menu-->
+
+        <menuitem id="wkf_trans_menu"
+                  name="WorkFlow Transfer"
+                  parent="menu_wkf_root"
+                  action="action_wkf_trans_view"
+                  sequence="30"/>
+
+    </data>
+</odoo>
