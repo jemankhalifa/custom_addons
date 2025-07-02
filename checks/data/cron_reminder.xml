@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <data>
+
+        <record id="ir_cron_check_due_reminder" model="ir.cron">
+            <field name="name">Check Due Reminder</field>
+            <field name="model_id" ref="model_check_receive"/>
+            <field name="state">code</field>
+            <field name="code">model._cron_check_due_reminder()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="active">True</field>
+        </record>
+
+    </data>
+
+</odoo>

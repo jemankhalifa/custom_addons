@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_check_receive_finance_officer,access.check.receive.finance.officer,model_check_receive,group_check_receive_finance_officer,1,0,0,0
+access_check_receive_finance_manager,access.check.receive.finance.manager,model_check_receive,group_check_receive_finance_manager,1,1,1,0
+access_check_receive_general_manager,access.check.receive.general.manager,model_check_receive,group_check_receive_general_manager,1,1,1,1
+access_check_admin,access.check.admin,model_check_issuance,group_check_admin,1,1,1,1
+access_check_admin1,access.check.admin,model_check_receive,group_check_admin,1,1,1,1
+access_check_admin2,access.check.admin,model_check_report_wizard,group_check_admin,1,1,1,1
+access_check_admin3,access.check.admin,model_check_report_wizard_issuance,group_check_admin,1,1,1,1
+

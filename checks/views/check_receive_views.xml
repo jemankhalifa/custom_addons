@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- Form View -->
+    <record id="view_check_receive_form" model="ir.ui.view">
+        <field name="name">check.receive.form</field>
+        <field name="model">check.receive</field>
+        <field name="arch" type="xml">
+            <form string="Check Receive">
+                <header>
+                    <button name="action_set_received" string="Set as Received" type="object"
+                            invisible="state != 'draft'"/>
+                    <button name="action_set_deposited" string="Set as Deposited" type="object"
+                            invisible="state != 'received'"/>
+                    <button name="action_set_cleared" string="Set as Cleared" type="object"
+                            invisible="state != 'deposited'"/>
+                    <button name="action_set_bounced" string="Set as Bounced" type="object"
+                            invisible="state != 'cleared'"/>
+                    <button name="print_check_report" string="Print Check" type="object"
+                            class="oe_highlight"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,received,deposited,cleared,bounced"/>
+                </header>
+                <header>
+                    <button name="action_mark_as_reconciled"
+                            string="Mark as Reconciled"
+                            type="object"
+                            class="btn-primary"
+                            invisible="reconciliation_status == 'reconciled'"/>
+                    <field name="reconciliation_status" widget="statusbar"
+                           statusbar_visible="not_reconciled,reconciled"/>
+                </header>
+                <sheet>
+                    <group readonly="[('state', '!=', 'draft')]">
+                        <group>
+                            <field name="name"/>
+                            <field name="beneficiary"/>
+                            <field name="date"/>
+                            <field name="amount"/>
+                            <field name="statement_line_id"/>
+                            <field name="reconciliation_notes"/>
+                        </group>
+                        <group>
+                            <field name="bank_id"/>
+                            <field name="payment_id"/>
+                            <field name="check_image" widget="image"/>
+                            <field name="note"/>
+                        </group>
+                    </group>
+                    <chatter/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- List View -->
+    <record id="view_check_receive_list" model="ir.ui.view">
+        <field name="name">check.receive.list</field>
+        <field name="model">check.receive</field>
+        <field name="arch" type="xml">
+            <list string="Check Receive"
+                  decoration-info="state == 'received'"
+                  decoration-warning="state == 'deposited'"
+                  decoration-success="state == 'cleared'"
+                  decoration-danger="state == 'bounced'"
+                  decoration-muted="reconciliation_status == 'not_reconciled'">
+                <field name="name"
+                       decoration-info="state == 'received'"
+                       decoration-warning="state == 'deposited'"
+                       decoration-success="state == 'cleared'"
+                       decoration-danger="state == 'bounced'" widget="badge"/>
+                <field name="beneficiary"
+                       decoration-info="state == 'received'"
+                       decoration-warning="state == 'deposited'"
+                       decoration-success="state == 'cleared'"
+                       decoration-danger="state == 'bounced'" widget="badge"/>
+                <field name="date"/>
+                <field name="amount"/>
+                <field name="bank_id"/>
+                <field name="state"
+                       decoration-info="state == 'received'"
+                       decoration-warning="state == 'deposited'"
+                       decoration-success="state == 'cleared'"
+                       decoration-danger="state == 'bounced'" widget="badge"/>
+                <field name="reconciliation_status"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Pivot View -->
+    <record id="view_check_receive_pivot" model="ir.ui.view">
+        <field name="name">check.receive.pivot</field>
+        <field name="model">check.receive</field>
+        <field name="arch" type="xml">
+            <pivot string="Checks Reconciliation">
+                <field name="date" type="col"/>
+                <field name="beneficiary" type="row"/>
+                <field name="amount" type="measure"/>
+                <field name="reconciliation_status" type="row"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Graph View -->
+    <record id="view_check_receive_Graph" model="ir.ui.view">
+        <field name="name">check.receive.graph</field>
+        <field name="model">check.receive</field>
+        <field name="arch" type="xml">
+            <graph string="Checks Reconciliation">
+                <field name="date" type="col"/>
+                <field name="beneficiary" type="row"/>
+                <field name="amount" type="measure"/>
+                <field name="reconciliation_status" type="row"/>
+            </graph>
+        </field>
+    </record>
+
+
+    <!-- Search View -->
+    <record id="view_checks_search" model="ir.ui.view">
+        <field name="name">checks.search</field>
+        <field name="model">check.receive</field>
+        <field name="arch" type="xml">
+            <search string="Search Receive">
+
+                <group expand="1" string="State">
+                    <filter name="received" string="Received" domain="[('state','=','received')]"/>
+                    <filter name="deposited" string="Deposited" domain="[('state','=','deposited')]"/>
+                    <filter name="cleared" string="Cleared" domain="[('state','=','cleared')]"/>
+                    <filter name="bounced" string="Bounced" domain="[('state','=','bounced')]"/>
+                </group>
+
+                <group expand="1" string="reconciliation_status">
+                    <filter name="not_reconciled" string="Not_reconciled"
+                            domain="[('reconciliation_status','=','not_reconciled')]"/>
+                    <filter name="reconciled" string="Reconciled"
+                            domain="[('reconciliation_status','=','reconciled')]"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action-->
+    <record id="action_check_receive" model="ir.actions.act_window">
+        <field name="name">Check Receive</field>
+        <field name="res_model">check.receive</field>
+        <field name="view_mode">list,form,pivot,graph</field>
+    </record>
+
+    <!--Menus -->
+    <menuitem id="menu_check_receive"
+              name="Check Receive"
+              parent="menu_checks_root"
+              action="action_check_receive"
+              sequence="20"/>
+
+</odoo>

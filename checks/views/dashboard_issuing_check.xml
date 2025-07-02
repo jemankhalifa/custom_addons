@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="action_check_issued_dashboard" model="ir.actions.act_window">
+        <field name="name">Check Issuance Dashboard</field>
+        <field name="res_model">check.issuance</field>
+        <field name="view_mode">graph,pivot,list</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Analyze your issuanced checks here.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_check_issuance_dashboard"
+              name="Check Issuance Dashboard"
+              parent="menu_dashboard_root"
+              action="action_check_issued_dashboard"
+              sequence="10"/>
+
+</odoo>
