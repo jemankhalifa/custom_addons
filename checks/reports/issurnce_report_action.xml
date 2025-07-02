@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="action_checkissuance_report" model="ir.actions.report">
+        <field name="name">Check Print</field>
+        <field name="model">check.issuance</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">checks.report_check_template</field>
+        <field name="report_file">checks.report_check_template</field>
+        <field name="binding_model_id" ref="model_check_issuance"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_checkreceive_report" model="ir.actions.report">
+        <field name="name">Check Print</field>
+        <field name="model">check.receive</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">checks.report_checkreceive_template</field>
+        <field name="report_file">checks.report_checkreceive_template</field>
+        <field name="binding_model_id" ref="model_check_receive"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>
+

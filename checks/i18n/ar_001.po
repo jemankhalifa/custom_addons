@@ -1,0 +1,787 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* checks
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20250428\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-02 06:29+0000\n"
+"PO-Revision-Date: 2025-07-02 06:29+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: checks
+#: model_terms:ir.ui.view,arch_db:checks.report_check_report_pdf
+#: model_terms:ir.ui.view,arch_db:checks.report_checkissuance_report_pdf
+msgid "<strong>Amount</strong>"
+msgstr "المبلغ"
+
+#. module: checks
+#: model_terms:ir.ui.view,arch_db:checks.report_check_report_pdf
+#: model_terms:ir.ui.view,arch_db:checks.report_checkissuance_report_pdf
+msgid "<strong>Bank</strong>"
+msgstr "البنك"
+
+#. module: checks
+#: model_terms:ir.ui.view,arch_db:checks.report_check_report_pdf
+#: model_terms:ir.ui.view,arch_db:checks.report_checkissuance_report_pdf
+msgid "<strong>Check No</strong>"
+msgstr "شيك رقم"
+
+#. module: checks
+#: model_terms:ir.ui.view,arch_db:checks.report_check_report_pdf
+#: model_terms:ir.ui.view,arch_db:checks.report_checkissuance_report_pdf
+msgid "<strong>Date</strong>"
+msgstr "التاريخ"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__message_needaction
+#: model:ir.model.fields,field_description:checks.field_check_receive__message_needaction
+msgid "Action Needed"
+msgstr "الإجراء المطلوب"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__activity_ids
+#: model:ir.model.fields,field_description:checks.field_check_receive__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__activity_exception_decoration
+#: model:ir.model.fields,field_description:checks.field_check_receive__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة النشاط المتوقعة"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__activity_state
+#: model:ir.model.fields,field_description:checks.field_check_receive__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__activity_type_icon
+#: model:ir.model.fields,field_description:checks.field_check_receive__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "رمز نوع النشاط"
+
+#. module: checks
+#: model:res.groups,name:checks.group_check_admin
+msgid "Admin"
+msgstr "المشرف"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__amount
+#: model:ir.model.fields,field_description:checks.field_check_receive__amount
+#: model_terms:ir.ui.view,arch_db:checks.report_check_template
+#: model_terms:ir.ui.view,arch_db:checks.report_checkreceive_template
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: checks
+#: model_terms:ir.actions.act_window,help:checks.action_check_issued_dashboard
+msgid "Analyze your issuanced checks here."
+msgstr "قم بتحليل شيكات التأمين الخاصة بك هنا."
+
+#. module: checks
+#: model_terms:ir.actions.act_window,help:checks.action_check_receive_dashboard
+msgid "Analyze your received checks here."
+msgstr "قم بتحليل الشيكات المستلمة هنا."
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__message_attachment_count
+#: model:ir.model.fields,field_description:checks.field_check_receive__message_attachment_count
+msgid "Attachment Count"
+msgstr "عداد المرفقات"
+
+#. module: checks
+#. odoo-python
+#: code:addons/checks/models/check_issuance.py:0
+#: code:addons/custom_addons/checks/models/check_issuance.py:0
+#: model:ir.model.fields,field_description:checks.field_check_issuance__attachment_count
+#: model:ir.model.fields,field_description:checks.field_check_issuance__attachment_ids
+#: model_terms:ir.ui.view,arch_db:checks.view_check_issuance_form
+msgid "Attachments"
+msgstr "المرفقات"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__bank_id
+#: model:ir.model.fields,field_description:checks.field_check_receive__bank_id
+#: model_terms:ir.ui.view,arch_db:checks.report_check_template
+#: model_terms:ir.ui.view,arch_db:checks.report_checkreceive_template
+msgid "Bank"
+msgstr "البنك"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__bank_account_id
+msgid "Bank Account"
+msgstr "الحساب البنكي"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__statement_count
+msgid "Bank Statement Count"
+msgstr "عداد كشف الحساب المصرفي"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_receive__statement_line_id
+msgid "Bank Statement Line"
+msgstr "خط كشف حساب بنكي"
+
+#. module: checks
+#. odoo-python
+#: code:addons/checks/models/check_issuance.py:0
+#: code:addons/custom_addons/checks/models/check_issuance.py:0
+#: model_terms:ir.ui.view,arch_db:checks.view_check_issuance_form
+msgid "Bank Statements"
+msgstr "المعاملات البنكية"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__beneficiary
+#: model:ir.model.fields,field_description:checks.field_check_receive__beneficiary
+#: model_terms:ir.ui.view,arch_db:checks.report_check_template
+#: model_terms:ir.ui.view,arch_db:checks.report_checkreceive_template
+msgid "Beneficiary"
+msgstr "المستفيد"
+
+#. module: checks
+#: model:ir.model.fields.selection,name:checks.selection__check_receive__state__bounced
+msgid "Bounced"
+msgstr "ارتد"
+
+#. module: checks
+#: model_terms:ir.ui.view,arch_db:checks.view_check_report_wizard_form
+#: model_terms:ir.ui.view,arch_db:checks.view_checkissuance_report_wizard_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: checks
+#. odoo-python
+#: code:addons/checks/models/check_issuance.py:0
+#: code:addons/checks/models/check_receive.py:0
+#: code:addons/custom_addons/checks/models/check_issuance.py:0
+#: code:addons/custom_addons/checks/models/check_receive.py:0
+msgid "Cannot delete a check that is not in Draft status."
+msgstr "لا يمكن حذف شيك غير موجود في حالة المسودة."
+
+#. module: checks
+#: model:ir.actions.server,name:checks.ir_cron_check_due_reminder_ir_actions_server
+msgid "Check Due Reminder"
+msgstr " تذكير الشيك"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_receive__check_image
+msgid "Check Image"
+msgstr "صورة الشيك"
+
+#. module: checks
+#: model:ir.actions.act_window,name:checks.action_check_issuance
+#: model:ir.model,name:checks.model_check_issuance
+#: model:ir.ui.menu,name:checks.menu_check_issuance
+#: model_terms:ir.ui.view,arch_db:checks.view_check_issuance_form
+#: model_terms:ir.ui.view,arch_db:checks.view_check_issuance_list
+msgid "Check Issuance"
+msgstr "إصدار الشيكات"
+
+#. module: checks
+#: model_terms:ir.ui.view,arch_db:checks.view_check_issuance_pivot
+msgid "Check Issuance Analysis"
+msgstr "تحليل الشيكات الصادرة"
+
+#. module: checks
+#: model:ir.actions.act_window,name:checks.action_check_issued_dashboard
+#: model:ir.ui.menu,name:checks.menu_check_issuance_dashboard
+msgid "Check Issuance Dashboard"
+msgstr "لوحة معلومات الشيكات الصادرة"
+
+#. module: checksWizard
+#: model_terms:ir.ui.view,arch_db:checks.view_check_issuance_graph
+msgid "Check Issuance Overview"
+msgstr "ملخص الشيكات الصادرة"
+
+#. module: checks
+#: model:ir.model,name:checks.model_report_checks_report_checkissuance_report_pdf
+msgid "Check Issuance Report Wizard PDF"
+msgstr "معالج تقارير اصدار الشيكات PDF"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__name
+#: model:ir.model.fields,field_description:checks.field_check_receive__name
+#: model_terms:ir.ui.view,arch_db:checks.report_check_template
+#: model_terms:ir.ui.view,arch_db:checks.report_checkreceive_template
+msgid "Check Number"
+msgstr "رقم الشيك"
+
+#. module: checks
+#: model:ir.actions.report,name:checks.action_checkissuance_report
+#: model:ir.actions.report,name:checks.action_checkreceive_report
+msgid "Check Print"
+msgstr "طباعة الشيك"
+
+#. module: checks
+#: model:ir.actions.act_window,name:checks.action_check_receive
+#: model:ir.ui.menu,name:checks.menu_check_receive
+#: model_terms:ir.ui.view,arch_db:checks.view_check_receive_form
+#: model_terms:ir.ui.view,arch_db:checks.view_check_receive_list
+msgid "Check Receive"
+msgstr "الشيك الوارد"
+
+#. module: checks
+#: model:ir.actions.act_window,name:checks.action_check_receive_dashboard
+#: model:ir.ui.menu,name:checks.menu_check_receive_dashboard
+msgid "Check Receive Dashboard"
+msgstr "لوحة تحكم الشيكات الواردة"
+
+#. module: checks
+#: model:ir.model,name:checks.model_check_receive
+msgid "Check Receive Management"
+msgstr "إدارة الشيكات الواردة"
+
+#. module: checks
+#: model:ir.actions.act_window,name:checks.action_check_report_wizard
+msgid "Check Report Wizard"
+msgstr "معالج تقرير الشيك"
+
+#. module: checks
+#: model:ir.model,name:checks.model_report_checks_report_check_report_pdf
+msgid "Check Report Wizard PDF"
+msgstr "معالج تقرير الشيك PDF"
+
+#. module: checks
+#: model:ir.actions.act_window,name:checks.action_checkissuance_report_wizard
+msgid "Check Report issuance Wizard"
+msgstr "معالج تقرير الشيكات الصادرة PDF"
+
+#. module: checks
+#. odoo-python
+#: code:addons/checks/models/check_issuance.py:0
+#: code:addons/custom_addons/checks/models/check_issuance.py:0
+msgid "Check can only be issued from Draft status."
+msgstr "لا يمكن إصدار الشيك إلا من حالة المسودة."
+
+#. module: checks
+#. odoo-python
+#: code:addons/checks/models/check_issuance.py:0
+#: code:addons/checks/models/check_receive.py:0
+#: code:addons/custom_addons/checks/models/check_issuance.py:0
+#: code:addons/custom_addons/checks/models/check_receive.py:0
+msgid "Check can only be sent from Issued status."
+msgstr "لا يمكن إرسال الشيك إلا من الحالة الصادرة."
+
+#. module: checks
+#: model:ir.ui.menu,name:checks.menu_checkissuance_report_wizard
+#: model_terms:ir.ui.view,arch_db:checks.report_checkissuance_report_pdf
+msgid "Checks Issuance Report"
+msgstr "تقرير الشيكات الصادرة"
+
+#. module: checks
+#: model:ir.ui.menu,name:checks.menu_checks_root
+msgid "Checks Management"
+msgstr "إدارة الشيكات"
+
+#. module: checks
+#: model:ir.ui.menu,name:checks.menu_check_report_wizard
+#: model_terms:ir.ui.view,arch_db:checks.report_check_report_pdf
+#: model_terms:ir.ui.view,arch_db:checks.report_checkreceive_template
+msgid "Checks Receive Report"
+msgstr "تقرير الشيكات الواردة"
+
+#. module: checks
+#: model_terms:ir.ui.view,arch_db:checks.view_check_receive_Graph
+#: model_terms:ir.ui.view,arch_db:checks.view_check_receive_pivot
+msgid "Checks Reconciliation"
+msgstr "مطابقة الشيكات"
+
+#. module: checks
+#: model:ir.actions.report,name:checks.action_check_report_pdf
+#: model:ir.actions.report,name:checks.action_checkissuance_report_pdf
+msgid "Checks Report"
+msgstr "تقرير الشيكات"
+
+#. module: checks
+#: model_terms:ir.ui.view,arch_db:checks.report_check_template
+msgid "Checks issuance Report"
+msgstr "تقرير الشيكات الصادرة"
+
+#. module: checks
+#: model:ir.model.fields.selection,name:checks.selection__check_receive__state__cleared
+#: model_terms:ir.ui.view,arch_db:checks.view_checks_search
+msgid "Cleared"
+msgstr "ممسوح"
+
+#. module: checks
+#: model_terms:ir.actions.act_window,help:checks.action_check_issuance
+msgid "Create your first Check Issuance record!"
+msgstr "قم بإنشاء سجل إصدار الشيك الأول الخاص بك!"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__create_uid
+#: model:ir.model.fields,field_description:checks.field_check_receive__create_uid
+#: model:ir.model.fields,field_description:checks.field_check_report_wizard__create_uid
+#: model:ir.model.fields,field_description:checks.field_check_report_wizard_issuance__create_uid
+msgid "Created by"
+msgstr "تم الإنشاء بواسطة"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__create_date
+#: model:ir.model.fields,field_description:checks.field_check_receive__create_date
+#: model:ir.model.fields,field_description:checks.field_check_report_wizard__create_date
+#: model:ir.model.fields,field_description:checks.field_check_report_wizard_issuance__create_date
+msgid "Created on"
+msgstr "تم الإنشاء في"
+
+#. module: checks
+#: model:ir.ui.menu,name:checks.menu_dashboard_root
+msgid "Dashboard"
+msgstr "لوحة التحكم"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__date
+#: model:ir.model.fields,field_description:checks.field_check_receive__date
+#: model_terms:ir.ui.view,arch_db:checks.report_check_template
+#: model_terms:ir.ui.view,arch_db:checks.report_checkreceive_template
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: checks
+#: model:ir.model.fields.selection,name:checks.selection__check_receive__state__deposited
+#: model_terms:ir.ui.view,arch_db:checks.view_checks_search
+msgid "Deposited"
+msgstr "المٌودعة"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__display_name
+#: model:ir.model.fields,field_description:checks.field_check_receive__display_name
+#: model:ir.model.fields,field_description:checks.field_check_report_wizard__display_name
+#: model:ir.model.fields,field_description:checks.field_check_report_wizard_issuance__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: checks
+#: model_terms:ir.ui.view,arch_db:checks.view_checks_search
+msgid "Bounced"
+msgstr "ارتد"
+
+#. module: checks
+#: model:ir.model.fields.selection,name:checks.selection__check_issuance__state__draft
+#: model:ir.model.fields.selection,name:checks.selection__check_receive__state__draft
+#: model_terms:ir.ui.view,arch_db:checks.view_checkss_search
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: checks
+#: model:res.groups,name:checks.group_check_receive_finance_manager
+msgid "Finance Manager"
+msgstr "المدير المالي"
+
+#. module: checks
+#: model:res.groups,name:checks.group_check_receive_finance_officer
+msgid "Finance Officer"
+msgstr "الضابط المالي"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__message_follower_ids
+#: model:ir.model.fields,field_description:checks.field_check_receive__message_follower_ids
+msgid "Followers"
+msgstr "المتابعين"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__message_partner_ids
+#: model:ir.model.fields,field_description:checks.field_check_receive__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: checks
+#: model:ir.model.fields,help:checks.field_check_issuance__activity_type_icon
+#: model:ir.model.fields,help:checks.field_check_receive__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة الخط الرائعة مثل fa-tasks"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_report_wizard__date_from
+#: model:ir.model.fields,field_description:checks.field_check_report_wizard_issuance__date_from
+msgid "From Date"
+msgstr "من تاريخ"
+
+#. module: checks
+#: model:res.groups,name:checks.group_check_receive_general_manager
+msgid "General Manager"
+msgstr "المدير العام"
+
+#. module: checks
+#: model:ir.ui.menu,name:checks.menu_check_report_main
+#: model_terms:ir.ui.view,arch_db:checks.view_check_report_wizard_form
+#: model_terms:ir.ui.view,arch_db:checks.view_checkissuance_report_wizard_form
+msgid "Generate Check Report"
+msgstr "إنشاء تقرير الشيك"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__has_message
+#: model:ir.model.fields,field_description:checks.field_check_receive__has_message
+msgid "Has Message"
+msgstr "لديه رسالة"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__id
+#: model:ir.model.fields,field_description:checks.field_check_receive__id
+#: model:ir.model.fields,field_description:checks.field_check_report_wizard__id
+#: model:ir.model.fields,field_description:checks.field_check_report_wizard_issuance__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__activity_exception_icon
+#: model:ir.model.fields,field_description:checks.field_check_receive__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: checks
+#: model:ir.model.fields,help:checks.field_check_issuance__activity_exception_icon
+#: model:ir.model.fields,help:checks.field_check_receive__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "رمز للإشارة للنشاط المتوقع"
+
+#. module: checks
+#: model:ir.model.fields,help:checks.field_check_issuance__message_needaction
+#: model:ir.model.fields,help:checks.field_check_receive__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم التحقق، تتطلب الرسائل الجديدة انتباهك."
+
+#. module: checks
+#: model:ir.model.fields,help:checks.field_check_issuance__message_has_error
+#: model:ir.model.fields,help:checks.field_check_issuance__message_has_sms_error
+#: model:ir.model.fields,help:checks.field_check_receive__message_has_error
+#: model:ir.model.fields,help:checks.field_check_receive__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم التحقق، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__message_is_follower
+#: model:ir.model.fields,field_description:checks.field_check_receive__message_is_follower
+msgid "Is Follower"
+msgstr "هل لديه متابعين"
+
+#. module: checks
+#: model_terms:ir.ui.view,arch_db:checks.view_check_issuance_form
+msgid "Issue"
+msgstr "إصدار"
+
+#. module: checks
+#: model:ir.model.fields.selection,name:checks.selection__check_issuance__state__issued
+#: model_terms:ir.ui.view,arch_db:checks.view_checkss_search
+msgid "Issued"
+msgstr "تم الإصدار"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__write_uid
+#: model:ir.model.fields,field_description:checks.field_check_receive__write_uid
+#: model:ir.model.fields,field_description:checks.field_check_report_wizard__write_uid
+#: model:ir.model.fields,field_description:checks.field_check_report_wizard_issuance__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث تم بواسطة"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__write_date
+#: model:ir.model.fields,field_description:checks.field_check_receive__write_date
+#: model:ir.model.fields,field_description:checks.field_check_report_wizard__write_date
+#: model:ir.model.fields,field_description:checks.field_check_report_wizard_issuance__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث تم في"
+
+#. module: checks
+#: model_terms:ir.ui.view,arch_db:checks.view_check_receive_form
+msgid "Mark as Reconciled"
+msgstr "ضع علامة على أنه تم التوافق"
+
+#. module: checks
+#. odoo-python
+#: code:addons/checks/models/check_receive.py:0
+#: code:addons/custom_addons/checks/models/check_receive.py:0
+msgid "Marked as Reconciled"
+msgstr "تم وضع علامة على أنه تم التوافق"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__message_has_error
+#: model:ir.model.fields,field_description:checks.field_check_receive__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في توصيل الرسالة"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__message_ids
+#: model:ir.model.fields,field_description:checks.field_check_receive__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__my_activity_date_deadline
+#: model:ir.model.fields,field_description:checks.field_check_receive__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: checks
+#. odoo-python
+#: code:addons/checks/models/check_issuance.py:0
+#: code:addons/custom_addons/checks/models/check_issuance.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__activity_calendar_event_id
+#: model:ir.model.fields,field_description:checks.field_check_receive__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "حدث تقويم النشاط التالي"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__activity_date_deadline
+#: model:ir.model.fields,field_description:checks.field_check_receive__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي لنشاطي القادم"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__activity_summary
+#: model:ir.model.fields,field_description:checks.field_check_receive__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص نشاطي القادم"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__activity_type_id
+#: model:ir.model.fields,field_description:checks.field_check_receive__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع نشاطي القادم"
+
+#. module: checks
+#: model_terms:ir.ui.view,arch_db:checks.report_check_template
+#: model_terms:ir.ui.view,arch_db:checks.report_checkreceive_template
+msgid "No checks found for the selected criteria."
+msgstr "لم يتم العثور على أي شيكات للمعايير المحددة."
+
+#. module: checks
+#: model:ir.model.fields.selection,name:checks.selection__check_receive__reconciliation_status__not_reconciled
+msgid "Not Reconciled"
+msgstr "غير متوافق"
+
+#. module: checks
+#: model_terms:ir.ui.view,arch_db:checks.view_checks_search
+msgid "Not_reconciled"
+msgstr "غير متوافق"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__note
+#: model:ir.model.fields,field_description:checks.field_check_receive__note
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__message_needaction_counter
+#: model:ir.model.fields,field_description:checks.field_check_receive__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الاحداث"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__message_has_error_counter
+#: model:ir.model.fields,field_description:checks.field_check_receive__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الاخطاء"
+
+#. module: checks
+#: model:ir.model.fields,help:checks.field_check_issuance__message_needaction_counter
+#: model:ir.model.fields,help:checks.field_check_receive__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب حدث"
+
+#. module: checks
+#: model:ir.model.fields,help:checks.field_check_issuance__message_has_error_counter
+#: model:ir.model.fields,help:checks.field_check_receive__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل بسبب خطأ التسليم"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__payment_count
+msgid "Payment Count"
+msgstr "عداد الدفعيات"
+
+#. module: checks
+#. odoo-python
+#: code:addons/checks/models/check_issuance.py:0
+#: code:addons/custom_addons/checks/models/check_issuance.py:0
+#: model_terms:ir.ui.view,arch_db:checks.view_check_issuance_form
+msgid "Payments"
+msgstr "الدفعيات"
+
+#. module: checks
+#: model_terms:ir.ui.view,arch_db:checks.view_check_issuance_form
+#: model_terms:ir.ui.view,arch_db:checks.view_check_receive_form
+msgid "Print Check"
+msgstr "طباعة الشيك"
+
+#. module: checks
+#: model_terms:ir.ui.view,arch_db:checks.view_check_report_wizard_form
+#: model_terms:ir.ui.view,arch_db:checks.view_checkissuance_report_wizard_form
+msgid "Print Report"
+msgstr "طباعة التقرير"
+
+#. module: checks
+#: model:ir.model.fields.selection,name:checks.selection__check_receive__state__received
+#: model_terms:ir.ui.view,arch_db:checks.view_checks_search
+msgid "Received"
+msgstr "تم الاستقبال"
+
+#. module: checks
+#: model:ir.model.fields.selection,name:checks.selection__check_receive__reconciliation_status__reconciled
+#: model_terms:ir.ui.view,arch_db:checks.view_checks_search
+msgid "Reconciled"
+msgstr "متوافق"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_receive__reconciliation_notes
+msgid "Reconciliation Notes"
+msgstr "ملاحظات التوافق"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_receive__reconciliation_status
+msgid "Reconciliation Status"
+msgstr "حالة التوافق"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_receive__payment_id
+msgid "Related Payment"
+msgstr "الدفعية ذات الصلة"
+
+#. module: checks
+#. odoo-python
+#: code:addons/checks/models/check_receive.py:0
+#: code:addons/custom_addons/checks/models/check_receive.py:0
+msgid "Reminder: This check is due today or overdue!"
+msgstr "تذكير: هذا الشيك مستحق اليوم أو متأخر عن الموعد المحدد!"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__activity_user_id
+#: model:ir.model.fields,field_description:checks.field_check_receive__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__message_has_sms_error
+#: model:ir.model.fields,field_description:checks.field_check_receive__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: checks
+#: model_terms:ir.ui.view,arch_db:checks.view_checks_search
+msgid "Search Receive"
+msgstr "ابحث عن الوارد"
+
+#. module: checks
+#: model_terms:ir.ui.view,arch_db:checks.view_checkss_search
+msgid "Search issuance"
+msgstr "ابحث عن الصادر"
+
+#. module: checks
+#: model_terms:ir.ui.view,arch_db:checks.view_check_issuance_form
+msgid "Send"
+msgstr "أرسل"
+
+#. module: checks
+#: model:ir.model.fields.selection,name:checks.selection__check_issuance__state__sent
+#: model_terms:ir.ui.view,arch_db:checks.view_checkss_search
+msgid "Sent"
+msgstr "تم الإرسال"
+
+#. module: checks
+#: model_terms:ir.ui.view,arch_db:checks.view_check_receive_form
+msgid "Set as Bounced"
+msgstr "ضع كمرتد"
+
+#. module: checks
+#: model_terms:ir.ui.view,arch_db:checks.view_check_receive_form
+msgid "Set as Cleared"
+msgstr "ضع كممسوح"
+
+#. module: checks
+#: model_terms:ir.ui.view,arch_db:checks.view_check_receive_form
+msgid "Set as Deposited"
+msgstr "ضع كمدفوع"
+
+#. module: checks
+#: model_terms:ir.ui.view,arch_db:checks.view_check_receive_form
+msgid "Set as Received"
+msgstr "ضع كوارد"
+
+#. module: checks
+#: model_terms:ir.ui.view,arch_db:checks.view_checks_search
+#: model_terms:ir.ui.view,arch_db:checks.view_checkss_search
+msgid "State"
+msgstr "الحالة"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__state
+#: model:ir.model.fields,field_description:checks.field_check_receive__state
+#: model_terms:ir.ui.view,arch_db:checks.report_check_template
+#: model_terms:ir.ui.view,arch_db:checks.report_checkreceive_template
+msgid "Status"
+msgstr "حالة"
+
+#. module: checks
+#: model:ir.model.fields,help:checks.field_check_issuance__activity_state
+#: model:ir.model.fields,help:checks.field_check_receive__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr "الحالة بناءً على الأنشطة
+متأخر: تاريخ الاستحقاق قد انقضى
+اليوم: تاريخ النشاط هو اليوم
+المخطط له: أنشطة مستقبلية."
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_report_wizard__date_to
+#: model:ir.model.fields,field_description:checks.field_check_report_wizard_issuance__date_to
+msgid "To Date"
+msgstr "إلى تاريخ"
+
+#. module: checks
+#: model:ir.model.fields,help:checks.field_check_issuance__activity_exception_decoration
+#: model:ir.model.fields,help:checks.field_check_receive__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط المتوقع على السجل"
+
+#. module: checks
+#: model:ir.model.fields,field_description:checks.field_check_issuance__website_message_ids
+#: model:ir.model.fields,field_description:checks.field_check_receive__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: checks
+#: model:ir.model.fields,help:checks.field_check_issuance__website_message_ids
+#: model:ir.model.fields,help:checks.field_check_receive__website_message_ids
+msgid "Website communication history"
+msgstr "تاريخ اتصالات الموقع"
+
+#. module: checks
+#: model:ir.model,name:checks.model_check_report_wizard
+#: model:ir.model,name:checks.model_check_report_wizard_issuance
+msgid "Wizard to generate check report"
+msgstr "معالج لإصدار تقرير الشيك"
+
+#. module: checks
+#. odoo-python
+#: code:addons/checks/models/check_receive.py:0
+#: code:addons/custom_addons/checks/models/check_receive.py:0
+msgid "You do not have permission to modify this record."
+msgstr "ليس لديك الإذن لتعديل هذا السجل."
+
+#. module: checks
+#. odoo-python
+#: code:addons/checks/models/check_receive.py:0
+#: code:addons/custom_addons/checks/models/check_receive.py:0
+msgid "You do not have permission to reconcile this check."
+msgstr "ليس لديك الإذن لتسوية هذا الشيك."
+
+#. module: checks
+#: model_terms:ir.ui.view,arch_db:checks.view_checks_search
+msgid "reconciliation_status"
+msgstr "حالة التسوية"

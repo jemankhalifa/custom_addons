@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="view_checkissuance_report_wizard_form" model="ir.ui.view">
+        <field name="name">checkissuance.report.wizard.form</field>
+        <field name="model">check.report.wizard.issuance</field>
+        <field name="arch" type="xml">
+            <form string="Generate Check Report">
+                <group>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                </group>
+                <footer>
+                    <button name="action_print_check_issuance" string="Print Report" type="object"
+                            class="btn-danger"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="action_checkissuance_report_wizard" model="ir.actions.act_window">
+        <field name="name">Check Report issuance Wizard</field>
+        <field name="res_model">check.report.wizard.issuance</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_check_report_main"
+              name="Generate Check Report"
+              parent="menu_checks_root"
+              sequence="30"/>
+
+    <menuitem id="menu_checkissuance_report_wizard"
+              name="Checks Issuance Report"
+              parent="menu_check_report_main"
+              action="action_checkissuance_report_wizard"
+              sequence="1"/>
+
+</odoo>
