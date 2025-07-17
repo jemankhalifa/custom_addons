@@ -1,7 +1,7 @@
 ################################################
 
 {
-    'name': 'Purchase Lines Import',
+    'name': 'Purchase Import',
     'version': '18.0.1.0',
     'author': 'Net4X Innovation',
     'website': 'https://net4x-innovation.com/',
@@ -13,8 +13,12 @@
     'depends': ['purchase', 'account'],
     'data': [
         'security/ir.model.access.csv',
+        'views/purchase_order_wizard_action.xml',
         'views/product_lines_migration_view.xml',
     ],
+    'images': ['static/description/banner3.png'],
+    'price': 20,
+    'currency': 'USD',
     'application': False,
     'installable': True,
     'auto_install': False,
